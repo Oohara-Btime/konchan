@@ -381,7 +381,7 @@ input[type="radio"]:checked~.bullet .line.seven {
 
 .next{
     margin-left: 80%;
-    margin-top: 40%;
+    margin-top: 10%;
     padding: 1%;
     width: 10%;
 }
