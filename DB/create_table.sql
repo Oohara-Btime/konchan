@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 
 -- データベース: `konchan`
 -- テーブルの構造 `user`
---テーブル「user」が存在する場合は削除
-DROP TABLE IF EXISTS user
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `email` varchar(256) NOT NULL COMMENT 'メールアドレス',
@@ -40,8 +38,7 @@ COMMIT;
 
 
 
---テーブル「url_holding」が存在する場合は削除
-DROP TABLE IF EXISTS url_holding
+
 -- テーブルの構造 `url_holding`
 CREATE TABLE `url_holding` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -69,8 +66,7 @@ COMMIT;
 
 
 
---テーブル「user_owned_coupon」が存在する場合は削除
-DROP TABLE IF EXISTS user_owned_coupon
+
 -- テーブルの構造 `user_owned_coupon`
 CREATE TABLE `user_owned_coupon` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -92,8 +88,7 @@ COMMIT;
 
 
 
---テーブル「system」が存在する場合は削除
-DROP TABLE IF EXISTS system
+
 -- テーブルの構造 `system`
 CREATE TABLE `system` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -111,8 +106,7 @@ COMMIT;
 
 
 
---テーブル「subscription」が存在する場合は削除
-DROP TABLE IF EXISTS subscription
+
 -- テーブルの構造 `subscription`
 CREATE TABLE `subscription` (
   `email` varchar(256) NOT NULL AUTO_INCREMENT COMMENT 'メールアドレス',
@@ -134,8 +128,7 @@ COMMIT;
 
 
 
---テーブル「seasoning」が存在する場合は削除
-DROP TABLE IF EXISTS seasoning
+
 -- テーブルの構造 `seasoning`
 CREATE TABLE `seasoning` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -154,8 +147,7 @@ COMMIT;
 
 
 
---テーブル「recipe_system」が存在する場合は削除
-DROP TABLE IF EXISTS recipe_system
+
 -- テーブルの構造 `recipe_system`
 CREATE TABLE `recipe_system` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -180,8 +172,7 @@ COMMIT;
 
 
 
---テーブル「recipe_seasoning」が存在する場合は削除
-DROP TABLE IF EXISTS recipe_seasoning
+
 -- テーブルの構造 `recipe_seasoning`
 CREATE TABLE `recipe_seasoning` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -206,8 +197,7 @@ COMMIT;
 
 
 
---テーブル「recipe_ingredient」が存在する場合は削除
-DROP TABLE IF EXISTS recipe_ingredient
+
 -- テーブルの構造 `recipe_ingredient`
 CREATE TABLE `recipe_ingredient` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -232,8 +222,7 @@ COMMIT;
 
 
 
---テーブル「recipe_genre」が存在する場合は削除
-DROP TABLE IF EXISTS recipe_genre
+
 -- テーブルの構造 `recipe_genre`
 CREATE TABLE `recipe_genre` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -258,8 +247,7 @@ COMMIT;
 
 
 
---テーブル「recipe」が存在する場合は削除
-DROP TABLE IF EXISTS recipe
+
 -- テーブルの構造 `recipe`
 CREATE TABLE `recipe` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -280,8 +268,7 @@ COMMIT;
 
 
 
---テーブル「prize」が存在する場合は削除
-DROP TABLE IF EXISTS prize
+
 -- テーブルの構造 `prize`
 CREATE TABLE `prize` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -297,8 +284,7 @@ COMMIT;
 
 
 
---テーブル「m_coupon」が存在する場合は削除
-DROP TABLE IF EXISTS m_coupon
+
 -- テーブルの構造 `m_coupon`
 CREATE TABLE `m_coupon` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -321,8 +307,7 @@ COMMIT;
 
 
 
---テーブル「ingredient_category」が存在する場合は削除
-DROP TABLE IF EXISTS ingredient_category
+
 -- テーブルの構造 `ingredient_category`
 CREATE TABLE `ingredient_category` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -341,8 +326,7 @@ COMMIT;
 
 
 
---テーブル「genre」が存在する場合は削除
-DROP TABLE IF EXISTS genre
+
 -- テーブルの構造 `genre`
 CREATE TABLE `genre` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
@@ -361,8 +345,7 @@ COMMIT;
 
 
 
---テーブル「foodstuff」が存在する場合は削除
-DROP TABLE IF EXISTS foodstuff
+
 -- テーブルの構造 `foodstuff`
 CREATE TABLE `foodstuff` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
