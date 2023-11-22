@@ -22,7 +22,7 @@ SET time_zone = "+00:00";
 --テーブル「user」が存在する場合は削除
 DROP TABLE IF EXISTS user
 CREATE TABLE `user` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `email` varchar(256) NOT NULL COMMENT 'メールアドレス',
   `password` varchar(256) NOT NULL COMMENT 'パスワード',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
@@ -44,7 +44,7 @@ COMMIT;
 DROP TABLE IF EXISTS url_holding
 -- テーブルの構造 `url_holding`
 CREATE TABLE `url_holding` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `user_id` bigint(20) NOT NULL COMMENT 'ユーザid',
   `email` varchar(256) NOT NULL COMMENT 'メールアドレス',
   `period_available_url` datetime NOT NULL COMMENT 'URL利用可能期間',
@@ -60,9 +60,6 @@ ALTER TABLE `url_holding`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `user_id_2` (`user_id`),
   ADD KEY `url_holding_ibfk_2` (`email`);
--- テーブルの AUTO_INCREMENT `url_holding`
-ALTER TABLE `url_holding`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id';
 -- テーブルの制約 `url_holding`
 ALTER TABLE `url_holding`
   ADD CONSTRAINT `url_holding_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
@@ -76,7 +73,7 @@ COMMIT;
 DROP TABLE IF EXISTS user_owned_coupon
 -- テーブルの構造 `user_owned_coupon`
 CREATE TABLE `user_owned_coupon` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `coupon_id` bigint(20) NOT NULL COMMENT 'クーポンid		',
   `user_id` bigint(20) NOT NULL COMMENT 'ユーザid		',
   `number` int(11) NOT NULL DEFAULT 0 COMMENT '枚数		'
@@ -99,7 +96,7 @@ COMMIT;
 DROP TABLE IF EXISTS system
 -- テーブルの構造 `system`
 CREATE TABLE `system` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `taste_name` varchar(256) NOT NULL COMMENT '系統名',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
   `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時',
@@ -118,7 +115,7 @@ COMMIT;
 DROP TABLE IF EXISTS subscription
 -- テーブルの構造 `subscription`
 CREATE TABLE `subscription` (
-  `email` varchar(256) NOT NULL COMMENT 'メールアドレス',
+  `email` varchar(256) NOT NULL AUTO_INCREMENT COMMENT 'メールアドレス',
   `available_period` datetime NOT NULL COMMENT '利用可能期間		',
   `plan` varchar(256) NOT NULL COMMENT 'プラン		',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時		',
@@ -141,7 +138,7 @@ COMMIT;
 DROP TABLE IF EXISTS seasoning
 -- テーブルの構造 `seasoning`
 CREATE TABLE `seasoning` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `seasoning_name` varchar(256) NOT NULL COMMENT '調味料名',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
   `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時',
@@ -161,7 +158,7 @@ COMMIT;
 DROP TABLE IF EXISTS recipe_system
 -- テーブルの構造 `recipe_system`
 CREATE TABLE `recipe_system` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID',
   `taste_id` bigint(20) NOT NULL COMMENT '系統ID',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
@@ -187,7 +184,7 @@ COMMIT;
 DROP TABLE IF EXISTS recipe_seasoning
 -- テーブルの構造 `recipe_seasoning`
 CREATE TABLE `recipe_seasoning` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `recipi_id` bigint(20) NOT NULL COMMENT 'レシピID',
   `seasoning_id` bigint(20) NOT NULL COMMENT '調味料ID',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
@@ -213,7 +210,7 @@ COMMIT;
 DROP TABLE IF EXISTS recipe_ingredient
 -- テーブルの構造 `recipe_ingredient`
 CREATE TABLE `recipe_ingredient` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID',
   `ingredient_id` bigint(20) NOT NULL COMMENT '食材ID',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
@@ -239,7 +236,7 @@ COMMIT;
 DROP TABLE IF EXISTS recipe_genre
 -- テーブルの構造 `recipe_genre`
 CREATE TABLE `recipe_genre` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID		',
   `genre_id` bigint(20) NOT NULL COMMENT 'ジャンルID',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
@@ -265,7 +262,7 @@ COMMIT;
 DROP TABLE IF EXISTS recipe
 -- テーブルの構造 `recipe`
 CREATE TABLE `recipe` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `recipe_id` int(47) NOT NULL COMMENT '都道府県番号',
   `ingredient_id` varchar(50) NOT NULL COMMENT 'レシピ名',
   `recipe` varchar(10000) NOT NULL COMMENT '作り方',
@@ -287,7 +284,7 @@ COMMIT;
 DROP TABLE IF EXISTS prize
 -- テーブルの構造 `prize`
 CREATE TABLE `prize` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `prize_name` varchar(256) NOT NULL COMMENT '景品名',
   `prize_image` blob DEFAULT NULL COMMENT '景品画像'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='景品';
@@ -295,9 +292,6 @@ CREATE TABLE `prize` (
 ALTER TABLE `prize`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
--- テーブルの AUTO_INCREMENT `prize`
-ALTER TABLE `prize`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id';
 COMMIT;
 
 
@@ -307,7 +301,7 @@ COMMIT;
 DROP TABLE IF EXISTS m_coupon
 -- テーブルの構造 `m_coupon`
 CREATE TABLE `m_coupon` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `prize_id` bigint(20) NOT NULL COMMENT '景品id',
   `coupon_name` varchar(256) NOT NULL COMMENT 'クーポン名',
   `discount_rate` int(100) NOT NULL COMMENT '割引率',
@@ -319,9 +313,6 @@ ALTER TABLE `m_coupon`
   ADD KEY `prize_id` (`prize_id`),
   ADD KEY `prize_id_2` (`prize_id`),
   ADD KEY `id` (`id`);
--- テーブルの AUTO_INCREMENT `m_coupon`
-ALTER TABLE `m_coupon`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id';
 -- テーブルの制約 `m_coupon`
 ALTER TABLE `m_coupon`
   ADD CONSTRAINT `m_coupon_ibfk_1` FOREIGN KEY (`prize_id`) REFERENCES `prize` (`id`);
@@ -334,7 +325,7 @@ COMMIT;
 DROP TABLE IF EXISTS ingredient_category
 -- テーブルの構造 `ingredient_category`
 CREATE TABLE `ingredient_category` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `ingredient_category_name` varchar(256) NOT NULL COMMENT '食材カテゴリ名',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
   `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時',
@@ -354,7 +345,7 @@ COMMIT;
 DROP TABLE IF EXISTS genre
 -- テーブルの構造 `genre`
 CREATE TABLE `genre` (
-  `id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `genre_name` varchar(256) NOT NULL COMMENT 'ジャンル名',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
   `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時',
@@ -374,7 +365,7 @@ COMMIT;
 DROP TABLE IF EXISTS foodstuff
 -- テーブルの構造 `foodstuff`
 CREATE TABLE `foodstuff` (
-  `recipe_id` bigint(20) NOT NULL COMMENT 'id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `ingredient_name` varchar(256) NOT NULL COMMENT '食材名',
   `ingredient_category_id` bigint(20) NOT NULL COMMENT '食材カテゴリID',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
