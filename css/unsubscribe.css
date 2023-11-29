@@ -1,0 +1,62 @@
+body {
+    font-size: 140%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.considerations {
+    margin-right: 4%;
+    border: 2px solid #000;
+    border-radius: 8px; /* すべての角を8ピクセルで丸める */
+    padding-left: 3%;
+}
+
+.confirmation {
+    padding-left: 3%;
+}
+
+
+
+.password {
+    margin-top: 4%;
+    padding-left: 25%;
+    font-size: 130%;
+}
+
+#passWord {
+    width: 30%;
+    height: 40px;
+}
+
+.container {
+    display: flex;
+}
+
+.next {
+    width: 30%;
+    margin-top: 4%;
+    margin-left: 25%;
+    font-size: 90%; 
+}
+
+.cancel {
+    width: 35%;
+    margin-top: 4%;
+    margin-left: 2%;
+    font-size: 90%;
+}
+
+/* 画面の幅が600ピクセル以上の場合にボタンを横長に変更 */
+@media screen and (min-width: 1100px) {
+    .next {
+        width: 40%;
+        margin-top: 4%;
+        margin-left: 65%;
+        font-size: 130%; 
+    }
+
+    .cancel {
+        width: 40%;
+        font-size: 130%;
+    }
+}
