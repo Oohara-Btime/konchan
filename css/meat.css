@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.next{
+    margin-top: 30%;
+    margin-left: 56.35%;
+    width: 8%;
+    height: 55px;
+    text-size-adjust: 30px;
+}
+
+.finish{
+    margin-left: 25.04%;
+    width: 8%;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+body{
+    background-color: rgba(220, 20, 60, 0.157);
+}
+
