@@ -1,0 +1,51 @@
+p {
+    text-align: center;
+}
+
+h1 {
+    font-size: 250%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.heading {
+    font-size: 300%;
+    margin-top: 6%;
+}
+
+.content {
+    color: red;
+    font-size: 230%;
+}
+
+.container {
+    text-align: center;
+}
+
+.unsubscribe {
+    width: 30%;
+    margin-top: 4%;
+    font-size: 130%;
+}
+
+.cancel {
+    width: 30%;
+    margin-left: 3%;
+    font-size: 130%;
+}
+
+@media screen and (min-width: 1000px) {
+    .unsubscribe {
+        width: 20%;
+        margin-top: 4%;
+        font-size: 130%;
+        padding: 0%;
+    }
+    
+    .cancel {
+        width: 20%;
+        margin-left: 3%;
+        font-size: 130%;
+        padding: 0%;
+    }
+}
