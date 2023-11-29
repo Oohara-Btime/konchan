@@ -1,0 +1,79 @@
+header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background-color: red;
+    box-sizing: border-box;
+}
+
+.search_container {
+    box-sizing: border-box;
+    position: fixed;
+    position: center;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 500px;
+    overflow: hidden;
+    /* float: right; */
+}
+
+.search_container input[type="text"] {
+    border: none;
+    height: 2.0em;
+    position: center;
+    /* float: right; */
+}
+
+.search_container input[type="text"]:focus {
+    outline: 0;
+    position: center;
+    /* float: right; */
+}
+
+.search_container input[type="submit"] {
+    cursor: pointer;
+    font-family: FontAwesome;
+    border: none;
+    background: #3879D9;
+    color: #fff;
+    position: absolute;
+    width: 5.0em;
+    height: 3.0em;
+    right: 0px;
+    top: -3px;
+    outline: none;
+    /* float: right; */
+}
+
+.input-keyword{
+    position: relative;
+    display:flex ;
+    top: -50px;
+    padding-left: 670px;
+}
+
+.inner {
+    color: blue;
+    padding-left: 300px;
+}
+
+.food-button {
+    padding-left: 400px;
+}
+
+.other-button {
+    padding-left: 400px;
+}
+
+.chat_bot-button {
+    padding-left: 400px;
+}
+
+.capsule_toy-button {
+    padding-left: 400px;
+}
