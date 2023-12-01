@@ -11,14 +11,15 @@
     <!--ホーム画面に戻る-->
     <!--検索バー-->
     <div class="search-container">
+
     <button onclick="location.href=''">こんちゃん</button>
         <form action="/search" method="get">
             <input type="text" name="q" placeholder="検索キーワード">
             <input type="submit" value="検索">
         </form>
     </div>
-     <!-- ハンバーガーメニュー部分 -->
-     <div class="nav">
+    <!-- ハンバーガーメニュー部分 -->
+    <div class="nav">
     
         <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
         <input id="drawer_input" class="drawer_hidden" type="checkbox">
@@ -34,7 +35,7 @@
             <li class="nav_item"><a href="">メニュー3</a></li>
           </ul>
         </nav>
-   
+
       </div>
     <div class="text">
         <h1>クーポン一覧</h1>

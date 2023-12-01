@@ -18,11 +18,3 @@
     </button>
 </body>
 </html>
-
-<?php
-
-    use foodstuff;
-
-
-
-?>
