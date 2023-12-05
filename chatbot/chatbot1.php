@@ -3,12 +3,11 @@ include("../const.php");
 session_start();
 
 $taste_name = filter_input(INPUT_POST, 'taste_name');
-echo '' . $taste_name . '';
 
 
 try {
     $db = new PDO(DSN, DB_USER, '');
-    $stmt = $db->prepare('SELECT * FROM system');
+    $stmt = $db->prepare('SELECT * FROM taste');
 
     // SQL実行
     $stmt->execute();
@@ -43,7 +42,7 @@ try {
                 foreach ($stmt as $row) {
                 ?>
                     <li>
-                        <input type="radio" name="system" value="<?php echo $row['id'] ?>">
+                        <input type="radio" name="taste" value="<?php echo $row['id'] ?>">
                         <label><?php echo $row['taste_name'] ?>の料理</label>
                         <div class="bullet">
                             <div class="line zero"></div>

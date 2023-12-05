@@ -3,8 +3,6 @@ include("../const.php");
 session_start();
 
 $cooking_time = filter_input(INPUT_POST, 'cooking_time');
-echo '' . $cooking_time . '';
-
 
 try {
     $db = new PDO(DSN, DB_USER, '');
@@ -36,7 +34,7 @@ try {
             調理時間はどれくらいがですか？
         </p>
         <!-- <h4>I hope you enjoyed it</h4>   -->
-        <form action="chatbot3.php" method="post">
+        <form action="recipi_list_screen.php" method="post">
             <ul>
                 <li>
                     <input type="radio" name="recipe" value="<?php echo $row['id']?>">
@@ -53,7 +51,7 @@ try {
                     </div>
                 </li>
                 <li>
-                    <input type="radio" name="1">
+                <input type="radio" name="recipe" value="<?php echo $row['id']?>">
                     <label>10～30分</label>
                     <div class="bullet">
                         <div class="line zero"></div>
@@ -67,7 +65,7 @@ try {
                     </div>
                 </li>
                 <li>
-                    <input type="radio" name="1">
+                <input type="radio" name="recipe" value="<?php echo $row['id']?>">
                     <label>30分以上</label>
                     <div class="bullet">
                         <div class="line zero"></div>
@@ -88,7 +86,10 @@ try {
             </div>
         </div>
 
-        <button class="next">next</button>
+        <button type="submit" class="next">
+            <a href ="../recipi_list_screen/recipi_list_screen.php">next</a>
+        </button>
+    </form>
 </body>
 
 </html>
