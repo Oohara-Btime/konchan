@@ -3,8 +3,6 @@ include("../const.php");
 session_start();
 
 $genre_name = filter_input(INPUT_POST, 'genre_name');
-echo '' . $genre_name . '';
-
 
 try {
     $db = new PDO(DSN, DB_USER, '');
