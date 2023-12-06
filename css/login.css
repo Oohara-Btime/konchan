@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *:before,
 *:after {
@@ -8,12 +9,12 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  /* background: red; */
-  /* background-position: center; */
-  /* position: absolute;
+  background: red;
+  background-position: center;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 }
 
 input,
@@ -33,17 +34,15 @@ button {
 .cont {
   overflow: hidden;
   position: relative;
-  /* height: 100vh;
-  width: 100vh; */
-  width: 100%;
-  height: 938px;
-  /* margin: 0 auto 100px; */
+  width: 1920px;
+  height: 955.5px;
+  margin: 0 auto 0;
   background: blue;
 }
 
-.form { 
+.form {
   position: relative;
-  width: 640px;
+  width: 1120px;
   height: 100%;
   transition: transform 1.2s ease-in-out;
   padding: 50px 30px 0;
@@ -52,18 +51,16 @@ button {
 .sub-cont {
   overflow: hidden;
   position: absolute;
-  left: 840px;
+  left: 1120px;
   top: 0;
-  width: 125%;
-  height: 110%;
-  padding-left: 560px;
+  width: 1920px;
+  height: 100%;
+  padding-left: 800px;
   background: yellow;
   transition: transform 1.2s ease-in-out;
 }
-
-/* 左のスライドの動きの幅 */
 .cont.s--signup .sub-cont {
-  transform: translate3d(-840px, 0, 0);
+  transform: translate3d(-1120px, 0, 0);
 }
 
 button {
@@ -83,20 +80,18 @@ button {
   position: absolute;
   left: 0;
   top: 0;
-  width: 40%;
+  width: 800px;
   height: 100%;
   padding-top: 360px;
 }
 .img:before {
   content: "";
   position: absolute;
-  padding-left: 200px;
   right: 0;
   top: 0;
-  width: 1900px;
+  width: 1920px;
   height: 100%;
-  background-image: url('../こんちゃん画像/wallpaperbetter.com_7680x4320.jpg');
-  /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/sections-3.jpg"); */
+  background-image: url("../こんちゃん画像/wallpaperbetter.jpg");
   background-size: cover;
   transition: transform 1.2s ease-in-out;
 }
@@ -107,10 +102,10 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  /* background: rgba(238, 199, 199, 0.6); */
+  background: rgba(0, 0, 0, 0.6);
 }
 .cont.s--signup .img:before {
-  transform: translate3d(840px, 0, 0);
+  transform: translate3d(1120px, 0, 0);
 }
 .img__text {
   z-index: 2;
@@ -132,13 +127,13 @@ button {
   line-height: 1.5;
 }
 .cont.s--signup .img__text.m--up {
-  transform: translateX(700px);
+  transform: translateX(1600px);
 }
 .img__text.m--in {
-  transform: translateX(-700px);
+  transform: translateX(-1600px);
 }
 .cont.s--signup .img__text.m--in {
-  transform: translateX(50);
+  transform: translateX(0);
 }
 .img__btn {
   overflow: hidden;
@@ -227,31 +222,18 @@ input {
   text-transform: uppercase;
 }
 
-.fb-btn {
-  border: 2px solid #d3dae9;
-  color: #8fa1c7;
-}
-.fb-btn span {
-  font-weight: bold;
-  color: #455a81;
-}
-
 .sign-in {
-  padding-left: 50px;
   transition-timing-function: ease-out;
 }
 .cont.s--signup .sign-in {
   transition-timing-function: ease-in-out;
   transition-duration: 1.2s;
-  transform: translate3d(900px, 0, 0);
+  transform: translate3d(1120px, 0, 0);
 }
 
 .sign-up {
-  position: relative;
-  padding-left: 300px;
-  transform: translate3d(-900px, 0, 0);
+  transform: translate3d(-1920px, 0, 0);
 }
 .cont.s--signup .sign-up {
   transform: translate3d(0, 0, 0);
-}
-/* # sourceMappingURL=login.css.map */
+}/*# sourceMappingURL=login.css.map */

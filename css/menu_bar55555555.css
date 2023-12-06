@@ -1,10 +1,6 @@
-html,
+/* html,
 body {
     height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* margin-top: 50px; */
 }
 
 body {
@@ -18,23 +14,16 @@ h1 {
     font-weight: bold;
     padding: 25px 0 0 25px;
 }
-.menu{
-    position: relative;
-    padding-top: 100px;
-}
-a {
-    display: flex;
-    height: 60px;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-    cursor: pointer;
-}
 
-span {
-    cursor: pointer;
+a {
+    bottom: 0;
+    height: 80px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 75px;
 }
 
 .bar {
@@ -113,65 +102,4 @@ span {
 .on .bun-bot {
     background: #d7b48a;
     transform: translate3d(0, 65px, 0) scaleY(1.5);
-}
-
-.drawer_hidden {
-    display: none;
-}
-
-.nav_content {
-    width: 16%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    /* left: 0; */
-    right: 100%;
-    /* ↓ 下のやついらん気がする */
-    /* z-index: 99; */
-    background: rgb(110, 110, 110);
-    transition: center;
-    padding-top: 120px;
-    padding-left: 0px;
-}
-
-#drawer_input:checked~.nav_content {
-    left: 0%;
-} 
-
-.nav_list {
-    list-style: none;
-    word-break: break-all;
-}
-
-.nav_item1 {
-    padding-left: 90px;
-    padding-top: 50px;
-    font-size: 15px;
-    line-height: 30px;
-    word-break: break-all;
-}
-
-.nav_item2 {
-    padding-left: 90px;
-    /* padding-top: 10px; */
-    font-size: 15px;
-    /* line-height: 30px; */
-    /* word-break: break-all; */
-}
-
-.nav_item3 {
-    padding-left: 90px;
-    /* padding-top: 0px; */
-    font-size: 15px;
-    /* line-height: 30px; */
-    /* word-break: break-all; */
-}
-
-.nav_item4 {
-    padding-left: 90px;
-    padding-top: 0px;
-    font-size: 15px;
-    line-height: 30px;
-    word-break: break-all;
-}
-
+} */
