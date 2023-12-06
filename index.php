@@ -51,9 +51,9 @@
 
     <section>
         <div class="food-button">
-            <img src="../こんちゃん画像/meat.jpg" alt="#" width="350" height="300">
-            <img src="../こんちゃん画像/fish.jpg" alt="#" width="350" height="300">
-            <img src="../こんちゃん画像/vegetable.jpg" alt="#" width="350" height="300">
+            <img src="../こんちゃん画像/meat.jpg" class="meat_button" alt="#" width="350" height="300">
+            <img src="../こんちゃん画像/fish.jpg" class="fish_button" alt="#" width="350" height="300">
+            <img src="../こんちゃん画像/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300">
         </div>
 
         <div class="other-button">

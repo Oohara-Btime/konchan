@@ -1,3 +1,7 @@
+body{
+    background-color: black;
+}
+
 header {
     position: fixed;
     z-index: 999;
@@ -60,9 +64,11 @@ header {
 .inner {
     color: blue;
     padding-left: 300px;
+
 }
 
 .food-button {
+    margin-top: -4.5%;
     padding-left: 400px;
 }
 
@@ -76,4 +82,70 @@ header {
 
 .capsule_toy-button {
     padding-left: 400px;
+}
+
+img.meat_button:hover {
+    width: 350px;
+    height: 300px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+img.meat_button:active{
+    position: relative;
+    top: 3px;
+}
+
+img.fish_button:hover {
+    width: 350px;
+    height: 300px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+img.fish_button:active{
+    position: relative;
+    top: 3px;
+}
+
+img.vegetable_button:hover {
+    width: 350px;
+    height: 300px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+img.vegetable_button:active{
+    position: relative;
+    top: 3px;
+}
+
+img.vegetable_button:hover {
+    width: 350px;
+    height: 300px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+img.vegetable_button:active{
+    position: relative;
+    top: 3px;
+}
+
+img.meat_button:hover {
+    width: 350px;
+    height: 300px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+img.meat_button:active{
+    position: relative;
+    top: 3px;
+}
+
+img.meat_button:hover {
+    width: 350px;
+    height: 300px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+img.meat_button:active{
+    position: relative;
+    top: 3px;
 }
