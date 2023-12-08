@@ -2,7 +2,7 @@
 include("../const.php");
 session_start();
 
-$genre_name = filter_input(INPUT_POST, 'genre_name');
+$taste_id = filter_input(INPUT_POST, 'taste_id');
 
 try {
     $db = new PDO(DSN, DB_USER, '');
@@ -35,13 +35,14 @@ try {
         </p>
         <!-- <h4>I hope you enjoyed it</h4>   -->
         <form action="chatbot3.php" method="post">
+            <input type="hidden" name="taste_id" value="<?php echo $taste_id?>">
             <ul>
                 <?php
                 // 取得したデータを出力
                 foreach ($stmt as $row) {
                 ?>
                     <li>
-                        <input type="radio" name="genre" value="<?php echo $row['id']?>">
+                        <input type="radio" name="genre_id" value="<?php echo $row['id'] ?>">
                         <label><?php echo $row['genre_name']?></label>
                         <div class="bullet">
                             <div class="line zero"></div>
@@ -66,8 +67,8 @@ try {
             </div>
         </div>
 
-    <button class="next">
-        <a href="chatbot3.php">next</a>
+    <button type="submit" class="next">
+        next
     </button>
     </form>
 </body>
