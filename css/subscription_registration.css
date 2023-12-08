@@ -6,19 +6,42 @@
 body {
   background-color: black;
   position: center;
-  z-index: 3;
 }
 
-.h1 {
-  font-size: 50px;
+h1 {
+  display: block;
+  font-size: 3.2em;
   color: white;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  color: white;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  display: block;
+  color: white;
+  font-size: 140%;
+  text-align: center;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .radio-tile-group {
@@ -28,9 +51,9 @@ body {
 }
 .radio-tile-group .input-container {
   position: relative;
-  height: 7rem;
-  width: 7rem;
-  margin: 0.5rem;
+  height: 20rem;
+  width: 20rem;
+  margin: 1.5rem;
 }
 .radio-tile-group .input-container .radio-button {
   opacity: 0;
@@ -48,7 +71,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 120%;
   border: 2px solid #079ad9;
   border-radius: 5px;
   padding: 1rem;
@@ -56,12 +79,12 @@ body {
 }
 .radio-tile-group .input-container .icon svg {
   fill: #079ad9;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
 }
 .radio-tile-group .input-container .radio-tile-label {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 2.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -80,4 +103,40 @@ body {
 .radio-tile-group .input-container .radio-button:checked + .radio-tile .radio-tile-label {
   color: white;
   background-color: #079ad9;
+}
+
+.registration {
+  width: 50%;
+  margin: auto;
+  display: block;
+  font-size: 160%;
+  text-align: center;
+}
+
+.cancel {
+  width: 50%;
+  margin: auto;
+  display: block;
+  font-size: 160%;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .registration {
+    margin-top: 40%;
+    margin-left: 65%;
+    width: 20%;
+    margin: auto;
+    display: block;
+    font-size: 160%;
+    text-align: center;
+  }
+  .cancel {
+    font-size: 130%;
+    width: 20%;
+    margin: auto;
+    display: block;
+    font-size: 160%;
+    text-align: center;
+  }
 }/*# sourceMappingURL=subscription_registration.css.map */
