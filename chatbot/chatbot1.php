@@ -2,9 +2,6 @@
 include("../const.php");
 session_start();
 
-$taste_name = filter_input(INPUT_POST, 'taste_name');
-
-
 try {
     $db = new PDO(DSN, DB_USER, '');
     $stmt = $db->prepare('SELECT * FROM taste');
@@ -42,7 +39,7 @@ try {
                 foreach ($stmt as $row) {
                 ?>
                     <li>
-                        <input type="radio" name="taste" value="<?php echo $row['id'] ?>">
+                        <input type="radio" name="taste_id" value="<?php echo $row['id'] ?>">
                         <label><?php echo $row['taste_name'] ?>の料理</label>
                         <div class="bullet">
                             <div class="line zero"></div>
@@ -67,8 +64,8 @@ try {
             </div>
         </div>
 
-        <button class="next">
-            <a href="chatbot2.php">next</a>
+        <button type="submit" class="next">
+            next
         </button>
         </form>
 </body>

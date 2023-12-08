@@ -84,6 +84,7 @@ if (isset($_SESSION["login"])) {
     exit();
 }
 
+
 $email = filter_input(INPUT_POST, 'email');
 $password = filter_input(INPUT_POST, 'password');
 echo '' . $email . ',' . $password . '';
@@ -98,7 +99,7 @@ if ($email && $password) {
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
             session_regenerate_id(TRUE); //セッションidを再発行
-            $_SESSION["login"] = $email; //セッションにログイン情報を登録
+            $_SESSION["login"] = $stmt->fetch(); //セッションにログイン情報を登録
             header("Location: ../index.php"); //ログイン後のページにリダイレクト
             exit();
         }

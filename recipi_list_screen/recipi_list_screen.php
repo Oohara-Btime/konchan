@@ -3,12 +3,12 @@ include("../const.php");
 session_start();
 
 $prefectures_id = filter_input(INPUT_POST, 'prefectures_id');
-// $taste_id = filter_input(INPUT_POST, 'taste_id');
-// $genre_id = filter_input(INPUT_POST, 'genre_id');
-// $cooking_time = filter_input(INPUT_POST, 'cooking_time');
-$taste_id = 1;
-$genre_id = 1;
-$cooking_time = 5;
+$taste_id = filter_input(INPUT_POST, 'taste_id');
+$genre_id = filter_input(INPUT_POST, 'genre_id');
+$cooking_time = filter_input(INPUT_POST, 'cooking_time');
+// $taste_id = 1;
+// $genre_id = 1;
+// $cooking_time = 5;
 $sql = '';
 
 if ($prefectures_id != '' && $prefectures_id != null) {
@@ -47,25 +47,25 @@ try {
 </head>
 
 <body>
-    <a href="../index.php">
-        <?php
-        if ($stmt) {
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    <?php
+    echo $taste_id.",";
+    echo $genre_id.",";
+    echo $cooking_time.",";
+    if ($stmt) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                $recipe = $row['recipe_image'];
-                $recipe_id = $row['recipe_id'];
-        ?>
-                <html>
-                <form action="../chatbot/chatbot1.php" method="post">
-                    <input type="image" src=<?php echo ("../pic/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>">
-                </form>
-
-                </html>
-        <?php
-            }
+            $recipe = $row['recipe_image'];
+            $recipe_id = $row['recipe_id'];
+    ?>
+            <html>
+            <form action="recipi_detail_screen.php" method="post">
+                <input type="image" src=<?php echo ("../pic/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>">
+            </form>
+            </html>
+    <?php
         }
-        ?>
-    </a>
+    }
+    ?>
 </body>
 
 </html>
