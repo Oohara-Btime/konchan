@@ -6,9 +6,6 @@ $prefectures_id = filter_input(INPUT_POST, 'prefectures_id');
 $taste_id = filter_input(INPUT_POST, 'taste_id');
 $genre_id = filter_input(INPUT_POST, 'genre_id');
 $cooking_time = filter_input(INPUT_POST, 'cooking_time');
-// $taste_id = 1;
-// $genre_id = 1;
-// $cooking_time = 5;
 $sql = '';
 
 if ($prefectures_id != '' && $prefectures_id != null) {
@@ -48,6 +45,7 @@ try {
 
 <body>
     <?php
+    // var_dump($_POST);
     echo $taste_id.",";
     echo $genre_id.",";
     echo $cooking_time.",";
@@ -58,8 +56,12 @@ try {
             $recipe_id = $row['recipe_id'];
     ?>
             <html>
-            <form action="recipi_detail_screen.php" method="post">
-                <input type="image" src=<?php echo ("../pic/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>">
+            <form action="recipi_detail_screen.php" method="post">                
+                <!-- <input type="text" name="recipe_id" src=<?php echo ("../pic/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>"> -->
+                <input type="image" src=<?php echo ("../pic/" . $recipe); ?>>
+                    <input type="hidden" name="recipe_id" alt="画像なし" value="<?php echo ($recipe_id); ?>">
+                    </input>
+                </input>
             </form>
             </html>
     <?php
