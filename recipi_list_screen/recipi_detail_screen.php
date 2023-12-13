@@ -2,7 +2,36 @@
 include("../const.php");
 session_start();
 
-$next = filter_input(INPUT_POST, 'next');
+$recipe_id = filter_input(INPUT_POST, 'recipe_id');
+
+try {
+    $db = new PDO(DSN, DB_USER, '');
+    
+    // ----- recipe select を実施 ----------
+    // echo'DB接続確認';
+    $stmt = $db->prepare('SELECT * FROM recipe WHERE id = :id');
+
+    // var_dump($_POST);
+        // echo $_POST['recipe_id'];
+    $inID = intval($_POST['recipe_id']);
+    echo $inID;
+    $stmt->bindParam(':id', $inID, PDO::PARAM_INT);
+    // "select name from test where id = :id and num = :num"
+    // SQL実行
+    $stmt->execute();
+    if ($stmt) {
+        $date = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    // ------------------------------------
+
+    // ----
+    
+
+} catch (PDOException $e) {
+    echo "接続に失敗しました。";
+    echo $e->getMessage();
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +43,17 @@ $next = filter_input(INPUT_POST, 'next');
 </head>
 <body>
     <?php 
-    echo $_POST;
-    
-    
+        echo '  ';
+        echo $date[0]["recipe_name"];
+        echo '  ';
+        echo $date[0]["recipe"];
+        echo '  ';
+        echo $date[0]["cooking_time"];
+        echo '分';
     ?>
+    <html>
+        <image src=<?php echo ("../pic/" . $date[0]["recipe_image"]); ?>>
+    </image>
+    </html>
 </body>
 </html>
