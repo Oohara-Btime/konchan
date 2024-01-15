@@ -1,0 +1,315 @@
+body {
+    background-color: rgb(252, 255, 206);
+}
+
+.images {
+    text-align: center;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/* * 画面全体を覆うオーバーレイ */ 
+#overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* セミトランスペアレントな黒 */
+    display: none;
+    /* 最初は非表示 */
+}
+
+/* ポップアップのスタイル */
+#popup1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    /* 最初は非表示 */
+}
+
+
+.gacha-container {
+    width: 22%;
+    height: 10%;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    
+}
+
+.gacha-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 100%;
+    background-color: #888;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gacha-handle::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.gacha-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    /* 円形にする */
+}
+
+.gacha-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    /* 円形にする */
+}
+
+@media screen and (min-width: 300px) {
+    .gacha-container {
+        width: 22%;
+        height: 7%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 49%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .gacha-container {
+        width: 22%;
+        height: 7.5%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 49.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+
+}
+
+@media screen and (min-width: 370px) {
+    .gacha-container {
+        width: 22%;
+        height: 8.3%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 49.9%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+
+}
+
+@media screen and (min-width: 390px) {
+    .gacha-container {
+        width: 22%;
+        height: 8.5%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+
+}
+
+@media screen and (min-width: 400px) {
+    .gacha-container {
+        width: 20%;
+        height: 8%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 50.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+
+}
+
+@media screen and (min-width: 420px) {
+    .gacha-container {
+        width: 20%;
+        height: 9%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+
+}
+
+@media screen and (min-width: 450px) {
+    .gacha-container {
+        width: 20%;
+        height: 10%;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+    
+        position: absolute;
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        
+    }
+
+}
+
+
+
+@media screen and (min-width: 500px) {
+    .images {
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+    .gacha-container {
+        position: absolute;
+        width: 105px;
+        height: 105px;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        overflow: hidden;
+
+        top: 51%;
+        left: 50%;
+        
+        transform: translate(-50%);
+        
+    }
+
+    .gacha-handle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+        height: 100%;
+        background-color: #888;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .gacha-handle::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 30px;
+        background-color: #444;
+        border-radius: 5px;
+    }
+
+    .gacha-body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 50%;
+        /* 円形にする */
+    }
+
+    .gacha-image {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 50%;
+        /* 円形にする */
+    }
+
+}
