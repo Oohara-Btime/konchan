@@ -45,10 +45,6 @@ try {
 
 <body>
     <?php
-    // var_dump($_POST);
-    echo $taste_id.",";
-    echo $genre_id.",";
-    echo $cooking_time.",";
     if ($stmt) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 

@@ -14,7 +14,6 @@ try {
     // var_dump($_POST);
         // echo $_POST['recipe_id'];
     $inID = intval($_POST['recipe_id']);
-    echo $inID;
     $stmt->bindParam(':id', $inID, PDO::PARAM_INT);
     // "select name from test where id = :id and num = :num"
     // SQL実行
