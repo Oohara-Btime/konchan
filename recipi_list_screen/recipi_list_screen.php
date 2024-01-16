@@ -6,9 +6,6 @@ $prefectures_id = filter_input(INPUT_POST, 'prefectures_id');
 $taste_id = filter_input(INPUT_POST, 'taste_id');
 $genre_id = filter_input(INPUT_POST, 'genre_id');
 $cooking_time = filter_input(INPUT_POST, 'cooking_time');
-// $taste_id = 1;
-// $genre_id = 1;
-// $cooking_time = 5;
 $sql = '';
 
 if ($prefectures_id != '' && $prefectures_id != null) {
@@ -42,15 +39,11 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/recipe_list_screen.css">
     <title>こんちゃん</title>
 </head>
 
 <body>
     <?php
-    echo $taste_id.",";
-    echo $genre_id.",";
-    echo $cooking_time.",";
     if ($stmt) {
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -58,14 +51,23 @@ try {
             $recipe_id = $row['recipe_id'];
     ?>
             <html>
-            <form action="recipi_detail_screen.php" method="post">
-                <input type="image" src=<?php echo ("../pic/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>">
+            <link rel="stylesheet" href="../css/recipi_list_screen.css">
+            <h1>画像を押してレシピを検索🔍</h1>
+            <form action="recipi_detail_screen.php" method="post">                
+                <!-- <input type="text" name="recipe_id" src=<?php echo ("../pic/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>"> -->
+                <div class="foodimage">
+                    <input type="image" src=<?php echo ("../pic/" . $recipe); ?> width = "250px" height ="250px">
+                    <input type="hidden" name="recipe_id" alt="画像なし" value="<?php echo ($recipe_id); ?>">
+                    </input>
+                    </input>
+                </div>
             </form>
             </html>
     <?php
         }
     }
     ?>
+    <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
 </body>
 
 </html>

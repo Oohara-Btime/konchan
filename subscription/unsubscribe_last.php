@@ -1,3 +1,17 @@
+<?php
+session_start();
+include("../const.php");
+if (isset($_SESSION['email'])) {
+    $sql=$pdo->prepare('select * from user where email and password=? ');
+    $sql->execute([$_REQUEST['email'],$_REQUEST['password']]);
+    echo 'パスワード確認';
+} else {
+    echo '退会失敗';
+    // header("Location:unsubscribe.php");
+    // exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +31,12 @@
         <p>本当に退会してもよろしいですか？</p>
     </div>
 
-
+    <form action="unsubscribe_process.php" method="post">
     <div class="container">
-        <button class="unsubscribe">退会</button>
-        <button class="cancel">キャンセル</button>
+        <input type="submit" name="unsubscribe" value="退会" class="unsubscribe" >
+        <button type="button" onclick="location.href='../index.php'" class="cancel">キャンセル</button>
     </div>
+    </form>
 
 </body>
 </html>
