@@ -123,6 +123,8 @@ COMMIT;
 
 
 -- テーブルの構造 `recipe`
+--
+
 CREATE TABLE `recipe` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `prefectures_id` int(47) NOT NULL COMMENT '都道府県番号',
@@ -135,16 +137,35 @@ CREATE TABLE `recipe` (
   `delete_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '削除フラグ',
   `recipe_image` blob NOT NULL COMMENT 'レシピ画像'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='レシピ';
+
+--
 -- テーブルのデータのダンプ `recipe`
+--
+
 INSERT INTO `recipe` (`id`, `prefectures_id`, `recipe_name`, `recipe`, `cooking_time`, `create_date`, `update_date`, `delete_date`, `delete_flag`, `recipe_image`) VALUES
 (1, 0, 'アスパラベーコン', '巻いて焼く', 3, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x41422e706e67),
-(2, 0, '切り干し大根', '切って浸す', 9, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x4b442e706e67);
+(2, 0, '切り干し大根', '切って浸す', 9, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x4b442e706e67),
+(3, 1, 'イカ飯', '焼いて米を詰める', 10, '2024-01-16 10:53:46', '2024-01-16 10:53:46', NULL, 0, 0x494b414d4553492e706e67);
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
 -- テーブルのインデックス `recipe`
+--
 ALTER TABLE `recipe`
   ADD PRIMARY KEY (`id`);
+
+--
+-- ダンプしたテーブルの AUTO_INCREMENT
+--
+
+--
 -- テーブルの AUTO_INCREMENT `recipe`
+--
 ALTER TABLE `recipe`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
 COMMIT;
 
 
@@ -214,7 +235,6 @@ ALTER TABLE `ingredient_category`
 COMMIT;
 
 
--- テーブルの構造 `foodstuff`
 CREATE TABLE `foodstuff` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `ingredient_name` varchar(256) NOT NULL COMMENT '食材名',
@@ -225,26 +245,55 @@ CREATE TABLE `foodstuff` (
   `delete_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '削除フラグ',
   `ingredient_image` blob NOT NULL COMMENT '食材画像'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='食材';
+
+--
 -- テーブルのデータのダンプ `foodstuff`
+--
+
 INSERT INTO `foodstuff` (`id`, `ingredient_name`, `ingredient_category_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`, `ingredient_image`) VALUES
 (1, 'アスパラガス', 3, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x412e706e67),
 (2, 'ベーコン', 1, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x422e706e67),
-(3, '大根', 3, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x442e706e67);
+(3, '大根', 3, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x442e706e67),
+(4, 'イカ', 2, '2024-01-16 10:49:29', '2024-01-16 10:49:29', NULL, 0, 0x494b412e706e67),
+(5, '米', 4, '2024-01-16 10:50:20', '2024-01-16 10:50:20', NULL, 0, 0x4b4f4d452e706e67);
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
 -- テーブルのインデックス `foodstuff`
+--
 ALTER TABLE `foodstuff`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`),
   ADD KEY `ingredient_category_id` (`ingredient_category_id`);
+
+--
+-- ダンプしたテーブルの AUTO_INCREMENT
+--
+
+--
 -- テーブルの AUTO_INCREMENT `foodstuff`
+--
 ALTER TABLE `foodstuff`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=6;
+
+--
+-- ダンプしたテーブルの制約
+--
+
+--
 -- テーブルの制約 `foodstuff`
+--
 ALTER TABLE `foodstuff`
   ADD CONSTRAINT `foodstuff_ibfk_1` FOREIGN KEY (`ingredient_category_id`) REFERENCES `ingredient_category` (`id`);
 COMMIT;
 
 
 -- テーブルの構造 `recipe_ingredient`
+--
+
 CREATE TABLE `recipe_ingredient` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID',
@@ -254,20 +303,47 @@ CREATE TABLE `recipe_ingredient` (
   `delete_date` datetime DEFAULT NULL COMMENT '削除日時',
   `delete_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '削除フラグ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='レシピ_食材';
+
+--
 -- テーブルのデータのダンプ `recipe_ingredient`
+--
+
 INSERT INTO `recipe_ingredient` (`id`, `recipe_id`, `ingredient_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
 (1, 1, 1, '2024-01-15 10:20:25', '2024-01-15 10:20:25', NULL, 0),
 (2, 1, 2, '2024-01-15 10:21:11', '2024-01-15 10:21:11', NULL, 0),
-(3, 2, 3, '2024-01-15 10:22:05', '2024-01-15 10:22:05', NULL, 0);
+(3, 2, 3, '2024-01-15 10:22:05', '2024-01-15 10:22:05', NULL, 0),
+(4, 3, 4, '2024-01-16 11:14:32', '2024-01-16 11:14:32', NULL, 0),
+(5, 3, 5, '2024-01-16 11:14:43', '2024-01-16 11:14:43', NULL, 0);
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
 -- テーブルのインデックス `recipe_ingredient`
+--
 ALTER TABLE `recipe_ingredient`
   ADD PRIMARY KEY (`id`),
   ADD KEY `recipe_id` (`recipe_id`),
   ADD KEY `ingredient_id` (`ingredient_id`);
+
+--
+-- ダンプしたテーブルの AUTO_INCREMENT
+--
+
+--
 -- テーブルの AUTO_INCREMENT `recipe_ingredient`
+--
 ALTER TABLE `recipe_ingredient`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=6;
+
+--
+-- ダンプしたテーブルの制約
+--
+
+--
 -- テーブルの制約 `recipe_ingredient`
+--
 ALTER TABLE `recipe_ingredient`
   ADD CONSTRAINT `recipe_ingredient_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`),
   ADD CONSTRAINT `recipe_ingredient_ibfk_2` FOREIGN KEY (`ingredient_id`) REFERENCES `foodstuff` (`id`);
@@ -298,6 +374,8 @@ COMMIT;
 
 
 -- テーブルの構造 `recipe_taste`
+--
+
 CREATE TABLE `recipe_taste` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID',
@@ -307,19 +385,45 @@ CREATE TABLE `recipe_taste` (
   `delete_date` datetime DEFAULT NULL COMMENT '削除日時',
   `delete_flag` tinyint(4) NOT NULL COMMENT '削除フラグ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='レシピ_系統';
+
+--
 -- テーブルのデータのダンプ `recipe_taste`
+--
+
 INSERT INTO `recipe_taste` (`id`, `recipe_id`, `taste_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
 (1, 1, 1, '2024-01-15 10:24:33', '2024-01-15 10:24:33', NULL, 0),
-(2, 2, 1, '2024-01-15 10:25:01', '2024-01-15 10:25:01', NULL, 0);
+(2, 2, 1, '2024-01-15 10:25:01', '2024-01-15 10:25:01', NULL, 0),
+(3, 3, 2, '2024-01-16 11:16:29', '2024-01-16 11:16:29', NULL, 0);
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
 -- テーブルのインデックス `recipe_taste`
+--
 ALTER TABLE `recipe_taste`
   ADD PRIMARY KEY (`id`),
   ADD KEY `recipe_id` (`recipe_id`),
   ADD KEY `taste_id` (`taste_id`);
+
+--
+-- ダンプしたテーブルの AUTO_INCREMENT
+--
+
+--
 -- テーブルの AUTO_INCREMENT `recipe_taste`
+--
 ALTER TABLE `recipe_taste`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
+
+--
+-- ダンプしたテーブルの制約
+--
+
+--
 -- テーブルの制約 `recipe_taste`
+--
 ALTER TABLE `recipe_taste`
   ADD CONSTRAINT `recipe_taste_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`),
   ADD CONSTRAINT `recipe_taste_ibfk_2` FOREIGN KEY (`taste_id`) REFERENCES `taste` (`id`);
@@ -351,6 +455,8 @@ COMMIT;
 
 
 -- テーブルの構造 `recipe_genre`
+--
+
 CREATE TABLE `recipe_genre` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID		',
@@ -360,19 +466,45 @@ CREATE TABLE `recipe_genre` (
   `delete_date` datetime DEFAULT NULL COMMENT '削除日時',
   `delete_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '削除フラグ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='レシピ_ジャンル';
+
+--
 -- テーブルのデータのダンプ `recipe_genre`
+--
+
 INSERT INTO `recipe_genre` (`id`, `recipe_id`, `genre_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
 (1, 1, 1, '2024-01-15 10:16:04', '2024-01-15 10:16:04', NULL, 0),
-(2, 2, 1, '2024-01-15 10:16:45', '2024-01-15 10:16:45', NULL, 0);
+(2, 2, 1, '2024-01-15 10:16:45', '2024-01-15 10:16:45', NULL, 0),
+(3, 3, 1, '2024-01-16 11:13:32', '2024-01-16 11:13:32', NULL, 0);
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
 -- テーブルのインデックス `recipe_genre`
+--
 ALTER TABLE `recipe_genre`
   ADD PRIMARY KEY (`id`),
   ADD KEY `recipe_id` (`recipe_id`),
   ADD KEY `genre_id` (`genre_id`);
+
+--
+-- ダンプしたテーブルの AUTO_INCREMENT
+--
+
+--
 -- テーブルの AUTO_INCREMENT `recipe_genre`
+--
 ALTER TABLE `recipe_genre`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
+
+--
+-- ダンプしたテーブルの制約
+--
+
+--
 -- テーブルの制約 `recipe_genre`
+--
 ALTER TABLE `recipe_genre`
   ADD CONSTRAINT `recipe_genre_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`),
   ADD CONSTRAINT `recipe_genre_ibfk_2` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`id`);
