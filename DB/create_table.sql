@@ -269,8 +269,8 @@ COMMIT;
 
 
 
--- テーブルの構造 `system`
-CREATE TABLE `system` (
+-- テーブルの構造 `taste`
+CREATE TABLE `taste` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `taste_name` varchar(256) NOT NULL COMMENT '系統名',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
@@ -278,11 +278,11 @@ CREATE TABLE `system` (
   `delete_date` datetime COMMENT '削除日時',
   `delete_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '削除フラグ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='系統';
--- テーブルのインデックス `system`
-ALTER TABLE `system`
+-- テーブルのインデックス `taste`
+ALTER TABLE `taste`
   ADD PRIMARY KEY (`id`);
--- テーブルの AUTO_INCREMENT `system`
-ALTER TABLE `system`
+-- テーブルの AUTO_INCREMENT `taste`
+ALTER TABLE `taste`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id';
 COMMIT;
 
@@ -290,8 +290,8 @@ COMMIT;
 
 
 
--- テーブルの構造 `recipe_system`
-CREATE TABLE `recipe_system` (
+-- テーブルの構造 `recipe_taste`
+CREATE TABLE `recipe_taste` (
   `id` bigint(20) NOT NULL COMMENT 'id',
   `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID',
   `taste_id` bigint(20) NOT NULL COMMENT '系統ID',
@@ -300,18 +300,18 @@ CREATE TABLE `recipe_system` (
   `delete_date` datetime COMMENT '削除日時',
   `delete_falg` tinyint(4) NOT NULL COMMENT '削除フラグ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='レシピ_系統';
--- テーブルのインデックス `recipe_system`
-ALTER TABLE `recipe_system`
+-- テーブルのインデックス `recipe_taste`
+ALTER TABLE `recipe_taste`
   ADD PRIMARY KEY (`id`),
   ADD KEY `recipe_id` (`recipe_id`),
   ADD KEY `taste_id` (`taste_id`);
--- テーブルの AUTO_INCREMENT `recipe_system`
-ALTER TABLE `recipe_system`
+-- テーブルの AUTO_INCREMENT `recipe_taste`
+ALTER TABLE `recipe_taste`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id';
--- テーブルの制約 `recipe_system`
-ALTER TABLE `recipe_system`
-  ADD CONSTRAINT `recipe_system_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`),
-  ADD CONSTRAINT `recipe_system_ibfk_2` FOREIGN KEY (`taste_id`) REFERENCES `system` (`id`);
+-- テーブルの制約 `recipe_taste`
+ALTER TABLE `recipe_taste`
+  ADD CONSTRAINT `recipe_taste_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`),
+  ADD CONSTRAINT `recipe_taste_ibfk_2` FOREIGN KEY (`taste_id`) REFERENCES `taste` (`id`);
 COMMIT;
 
 

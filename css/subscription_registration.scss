@@ -6,12 +6,36 @@
 body {
     background-color: black;
     position: center;
-    z-index: 3;
 }
 
-.h1{
-    font-size: 50px;
+h1 {
+    display: block;
+    font-size: 3.2em;
     color: white;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 2em;
+    color: white;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    display: block;
+    color: white;
+    font-size: 140%;
+    text-align: center;
 }
 
 $primary-color: #079ad9;
@@ -20,7 +44,7 @@ $primary-color: #079ad9;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    // height: 100vh;
 }
 
 .radio-tile-group {
@@ -31,9 +55,9 @@ $primary-color: #079ad9;
     //set dimensions for invisible container
     .input-container {
         position: relative;
-        height: 7rem;
-        width: 7rem;
-        margin: 0.5rem;
+        height: 20rem;
+        width: 20rem;
+        margin: 1.5rem;
 
         //make actual radio input invisible
         // + stretch to fill container
@@ -49,13 +73,14 @@ $primary-color: #079ad9;
         }
 
         //default tile styles
+        // アイコンのデザイン
         .radio-tile {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            height: 100%;
+            width: 100%; // 横幅
+            height: 120%; // 高さ
             border: 2px solid $primary-color;
             border-radius: 5px;
             padding: 1rem;
@@ -64,13 +89,13 @@ $primary-color: #079ad9;
 
         .icon svg {
             fill: $primary-color;
-            width: 3rem;
-            height: 3rem;
+            width: 4rem;
+            height: 4rem;
         }
 
         .radio-tile-label {
             text-align: center;
-            font-size: 0.75rem;
+            font-size: 2.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -94,5 +119,59 @@ $primary-color: #079ad9;
                 background-color: $primary-color;
             }
         }
+    }
+}
+
+
+// レスポンシブの時のボタンのデザイン
+.registration {
+    // width: 20%;
+    // margin-top: 4%;
+    // margin-left: 65%;
+    // font-size: 130%;
+
+    width: 50%;
+    margin: auto;
+    display: block;
+    font-size: 160%;
+    text-align: center;
+}
+
+.cancel {
+    // width: 20%;
+    // font-size: 130%;
+
+    width: 50%;
+    margin: auto;
+    display: block;
+    font-size: 160%;
+    text-align: center;
+}
+
+// PCサイズの時のボタンのデザイン
+@media screen and (min-width:500px){
+    .registration {
+        
+        // width: 40%;
+        margin-top: 40%;
+        margin-left: 65%;
+        // font-size: 130%;
+
+        width: 20%;
+        margin: auto;
+        display: block;
+        font-size: 160%;
+        text-align: center;
+    }
+
+    .cancel {
+        // width: 40%;
+        font-size: 130%;
+
+        width: 20%;
+        margin: auto;
+        display: block;
+        font-size: 160%;
+        text-align: center;
     }
 }
