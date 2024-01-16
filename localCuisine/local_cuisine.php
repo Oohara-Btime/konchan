@@ -62,8 +62,12 @@
     <!-- ポップアップ -->
     <div id="popup1">
         <span id="closeBtn" onclick="closePopup1()">×</span>
-        <h2>ポップアップ</h2>
-        <p>ここにポップアップのコンテンツを追加できます。</p>
+        <h2>郷土料理</h2>
+        <form action="../recipi_list_screen/recipi_list_screen.php" method="post">
+            <input type="image" src=<?php echo ("../pic/" . $recipe); ?> width = "250px" height ="250px">
+            <!-- <input type="hidden" name="prefectures_id" value="<?php echo $prefectures_id ?>"> -->
+            <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
+        </form>
     </div>
 
 
