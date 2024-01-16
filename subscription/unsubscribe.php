@@ -50,15 +50,17 @@
     
     <p>退会手続きを進める場合は、本人確認が必要なためパスワードを入力し「次へ」をクリックしてください。</p>
 
+    <form action="unsubscribe_last.php" method="post">
     <div class="password">
         <p>パスワード確認</p>
-        <input type="text" value="password" id="passWord" >
+        <input type="password" name="password">
     </div>
 
     <div class="container">
-        <button class="next">次へ</button>
-        <button class="cancel">キャンセル</button>
+        <input type="submit" value="次へ" class="next">
+        <button type="button" onclick="location.href='../index.php'" class="cancel" >キャンセル</button>
     </div>
+    </form>
 
 </body>
 </html>
