@@ -14,7 +14,6 @@ try {
     // var_dump($_POST);
         // echo $_POST['recipe_id'];
     $inID = intval($_POST['recipe_id']);
-    echo $inID;
     $stmt->bindParam(':id', $inID, PDO::PARAM_INT);
     // "select name from test where id = :id and num = :num"
     // SQL実行
@@ -39,6 +38,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/recipi_detail_screen.css">
     <title>こんちゃん</title>
 </head>
 <body>
@@ -52,8 +52,9 @@ try {
         echo '分';
     ?>
     <html>
-        <image src=<?php echo ("../pic/" . $date[0]["recipe_image"]); ?>>
+        <image src=<?php echo ("../pic/" . $date[0]["recipe_image"]); ?> width = "250px" height ="250px">
     </image>
+    <a href="../index.php">ホームへ戻る</a>
     </html>
 </body>
 </html>
