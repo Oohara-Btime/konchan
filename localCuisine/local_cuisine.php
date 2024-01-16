@@ -1,3 +1,39 @@
+<?php
+include("../const.php");
+session_start();
+
+$prefectures_id = filter_input(INPUT_POST, 'prefectures_id');
+$taste_id = filter_input(INPUT_POST, 'taste_id');
+$genre_id = filter_input(INPUT_POST, 'genre_id');
+$cooking_time = filter_input(INPUT_POST, 'cooking_time');
+$sql = '';
+
+if ($prefectures_id != '' && $prefectures_id != null) {
+    $sql .= 'SELECT * FROM recipe WHERE prefectures_id = ' . $prefectures_id;
+} elseif (
+    $taste_id != '' && $taste_id != null &&
+    $genre_id != '' && $genre_id != null &&
+    $cooking_time != '' && $cooking_time != null
+) {
+    $sql .= 'SELECT * FROM recipe JOIN recipe_taste on recipe.id = recipe_taste.recipe_id and recipe_taste.taste_id = ' . $taste_id . ' and recipe_taste.delete_flag = false ' .
+        ' JOIN recipe_genre on recipe.id = recipe_genre.recipe_id and recipe_genre.genre_id = ' . $genre_id . ' and recipe_genre.delete_flag = false ' .
+        ' WHERE recipe.cooking_time <= ' . $cooking_time . ' and recipe.delete_flag = false';
+}
+try {
+    $db = new PDO(DSN, DB_USER, '');
+    if ($sql != '') {
+        $stmt = $db->prepare($sql);
+        // SQL実行
+        $stmt->execute();
+    }
+} catch (PDOException $e) {
+    echo "接続に失敗しました。";
+    echo $e->getMessage();
+    exit;
+}
+?>
+
+
 <!doctype html>
 <html>
 
@@ -65,7 +101,6 @@
         <h2>郷土料理</h2>
         <form action="../recipi_list_screen/recipi_list_screen.php" method="post">
             <input type="image" src=<?php echo ("../pic/" . $recipe); ?> width = "250px" height ="250px">
-            <!-- <input type="hidden" name="prefectures_id" value="<?php echo $prefectures_id ?>"> -->
             <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
         </form>
     </div>
