@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: black;
+  position: center;
+}
+
+h1 {
+  display: block;
+  font-size: 3.2em;
+  color: white;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  color: white;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  display: block;
+  color: white;
+  font-size: 140%;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-tile-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.radio-tile-group .input-container {
+  position: relative;
+  height: 20rem;
+  width: 20rem;
+  margin: 1.5rem;
+}
+.radio-tile-group .input-container .radio-button {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.radio-tile-group .input-container .radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120%;
+  border: 2px solid #079ad9;
+  border-radius: 5px;
+  padding: 1rem;
+  transition: transform 300ms ease;
+}
+.radio-tile-group .input-container hr {
+  border-width: 1px 0px 10px 320px;
+  border-style: solid;
+  border-color: #079ad0;
+  margin-left: -6.5%;
+}
+.radio-tile-group .input-container .icon svg {
+  fill: #079ad9;
+  width: 4rem;
+  height: 4rem;
+}
+.radio-tile-group .input-container .radio-tile-label {
+  text-align: center;
+  font-size: 155%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+  padding-bottom: 20%;
+}
+.radio-tile-group .input-container .number-tile-label {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+}
+.radio-tile-group .input-container .months-tile-label {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+}
+.radio-tile-group .input-container .discount-tile-label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: red;
+}
+.radio-tile-group .input-container .transparency-tile-label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.radio-tile-group .input-container .price-tile-label {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile {
+  background-color: #079ad9;
+  border: 2px solid #079ad9;
+  color: white;
+  transform: scale(1.1, 1.1);
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .icon svg {
+  fill: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .radio-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .number-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .months-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .discount-tile-label {
+  color: red;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .price-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile hr {
+  border-color: white;
+}
+
+.registration {
+  width: 50%;
+  margin: auto;
+  display: block;
+  font-size: 160%;
+  text-align: center;
+}
+
+.cancel {
+  width: 50%;
+  margin: auto;
+  display: block;
+  font-size: 160%;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .button {
+    margin-top: 7%;
+  }
+  .registration {
+    margin-top: 40%;
+    margin-left: 65%;
+    width: 20%;
+    margin: auto;
+    display: block;
+    font-size: 160%;
+    text-align: center;
+  }
+  .cancel {
+    font-size: 130%;
+    width: 20%;
+    margin: auto;
+    display: block;
+    font-size: 160%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=subscription_registration.css.map */

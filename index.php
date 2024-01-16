@@ -36,23 +36,28 @@
         </div>
         <nav class="nav_content">
             <ul class="nav_list">
-                <li class="nav_item1"><a href="">⌂ホーム</a></li>
+                <li class="nav_item1"><a href="top.html">⌂ホーム</a></li>
                 <li class="nav_item2"><a href="">🔎検索</a></li>
-                <li class="nav_item3"><a href="">肉</a></li>
-                <li class="nav_item3"><a href="">魚</a></li>
-                <li class="nav_item3"><a href="">野菜</a></li>
-                <li class="nav_item3"><a href="">麺類、米類</a></li>
-                <li class="nav_item4"><a href="">郷土料理</a></li>
-                <li class="nav_item5"><a href="">⚙️詳細設定</a></li>
+                <li class="nav_item3"><a href="meat.php">肉</a></li>
+                <li class="nav_item3"><a href="fish.php">魚</a></li>
+                <li class="nav_item3"><a href="vegetable.php">野菜</a></li>
+                <li class="nav_item3"><a href="other.php">麺類、米類</a></li>
+                <li class="nav_item4"><a href="local_cuisine.php">郷土料理</a></li>
+                <li class="nav_item5"><a href="detailed_preference.php">⚙️詳細設定</a></li>
             </ul>
         </nav>
     </section>
 
     <section>
         <div class="food-button">
-            <img src="../こんちゃん画像/meat.jpg" alt="#" width="350" height="300">
-            <img src="../こんちゃん画像/fish.jpg" alt="#" width="350" height="300">
-            <img src="../こんちゃん画像/vegetable.jpg" alt="#" width="350" height="300">
+            <form action="meat.php">
+                <button><img src="../こんちゃん画像/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
+            </form> 
+            <form action="fish.php">
+                <button><img src="../こんちゃん画像/fish.jpg" class="fish_button" alt="#" width="350" height="300">><
+            </form>
+            fo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            <img src="../こんちゃん画像/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300">
         </div>
 
         <div class="other-button">
@@ -61,11 +66,11 @@
         </div>
 
         <div class="chat_bot-button">
-            <img src="../こんちゃん画像/meat.jpg" alt="#" width="1061" height="200">
+            <img src="../こんちゃん画像/ダウンロード (2).jpg" alt="#" width="1061" height="200">
         </div>
 
         <div class="capsule_toy-button">
-            <img src="../こんちゃん画像/meat.jpg" alt="#" width="1061" height="200">
+            <img src="../こんちゃん画像/ガチャ.jpg" alt="#" width="1061" height="200">
         </div>
     </section>
 

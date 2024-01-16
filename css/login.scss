@@ -30,12 +30,12 @@ button {
 
 // 変数の設定
 $contW: 1920px; // コンテナの幅
-$imgW: 800px; // 画像の幅
+$imgW: 850px; // 画像の幅
 $formW: $contW - $imgW; // フォームの幅
 $switchAT: 1.2s; // アニメーションの切り替え時間
 
 $inputW: 260px; // 入力フォームの幅
-$btnH: 36px; // ボタンの高さ
+$btnH: 50px; // ボタンの高さ
 
 // コンテナと画像の幅の差の比率
 $diffRatio: (
@@ -60,9 +60,9 @@ $diffRatio: (
     overflow: hidden;
     position: relative;
     width: $contW;
-    height: 955.5px;
+    height: 955px;
     margin: 0 auto 0;
-    background: blue;
+    background: white; // blue
     
 }
 
@@ -73,6 +73,7 @@ $diffRatio: (
     height: 100%;
     transition: transform $switchAT ease-in-out;
     padding: 50px 30px 0;
+    padding-top: 13%;
 }
 
 // サブコンテナのスタイル
@@ -84,7 +85,7 @@ $diffRatio: (
     width: $contW;
     height: 100%;
     padding-left: $imgW;
-    background: yellow;
+    background: white; // yellow
     transition: transform $switchAT ease-in-out;
 
     @include signUpActive {
@@ -157,16 +158,19 @@ button {
         width: 100%;
         padding: 0 20px;
         text-align: center;
-        color: #fff;
+        color: white; // new hereのやつ
         transition: transform $switchAT ease-in-out;
+        padding-top: 20%;
+        
 
         h2 {
             margin-bottom: 10px;
             font-weight: normal;
+            font-size: 50px;
         }
 
         p {
-            font-size: 14px;
+            font-size: 25px;
             line-height: 1.5;
         }
 
@@ -192,13 +196,13 @@ button {
         overflow: hidden;
         z-index: 2;
         position: relative;
-        width: 100px;
+        width: 200px;
         height: $btnH;
         margin: 0 auto;
         background: transparent;
-        color: #fff;
+        color: white; //ボタンの色変更
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 30px;
         cursor: pointer;
 
         // ボタンの後ろの要素
@@ -247,7 +251,7 @@ button {
 // 見出しのスタイル
 h2 {
     width: 100%;
-    font-size: 26px;
+    font-size: 50px;
     text-align: center;
 }
 
@@ -259,7 +263,7 @@ label {
     text-align: center;
 
     span {
-        font-size: 12px;
+        font-size: 30px;
         color: #cfcfcf;
         text-transform: uppercase;
     }
@@ -268,19 +272,20 @@ label {
 // 入力フォームのスタイル
 input {
     display: block;
-    width: 100%;
-    margin-top: 5px;
+    width: 200%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+    margin-top: 15px;
     padding-bottom: 5px;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    font-size: 30px;
     text-align: center;
+    transform: translateX(-25%);
 }
 
 // パスワード忘れのリンクスタイル
 .forgot-pass {
     margin-top: 15px;
     text-align: center;
-    font-size: 12px;
+    font-size: 30px;
     color: #cfcfcf;
 }
 
