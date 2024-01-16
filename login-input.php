@@ -1,3 +1,11 @@
+<?php
+    // errorっていうパラメータが渡ってきたら$errorという変数に値を代入する
+    $error=$_GET['error'];
+    $errormsg='';
+    if ($error == 1){
+        $errormsg='メールアドレスまたはパスワードが違います。';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +29,9 @@
                     <span>Password</span>
                     <input type="password" name="password"/>
                 </label>
+                <?php
+                    echo($errormsg);
+                ?>
                 <p class="forgot-pass">Forgot password?</p>
                 <button type="submit" class="submit">Sign In</button>
             </form>
