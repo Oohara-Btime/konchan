@@ -1,14 +1,17 @@
 <?php
-session_start();
 include("../const.php");
+session_start();
+
+$email = filter_input(INPUT_POST, 'email');
+$password = filter_input(INPUT_POST, 'password');
+
 if (isset($_SESSION['email'])) {
     $sql=$pdo->prepare('select * from user where email and password=? ');
-    $sql->execute([$_REQUEST['email'],$_REQUEST['password']]);
+    $sql->execute([$_REQUEST['password']]);
     echo 'パスワード確認';
 } else {
-    echo '退会失敗';
-    // header("Location:unsubscribe.php");
-    // exit();
+    header("Location:unsubscribe.php");
+    exit();
 }
 ?>
 
@@ -33,7 +36,7 @@ if (isset($_SESSION['email'])) {
 
     <form action="unsubscribe_process.php" method="post">
     <div class="container">
-        <input type="submit" name="unsubscribe" value="退会" class="unsubscribe" >
+        <button type="hidden" onclick="location.href='../index.php'" name="unsubscribe" value="" class="unsubscribe" >退会する</button>
         <button type="button" onclick="location.href='../index.php'" class="cancel">キャンセル</button>
     </div>
     </form>

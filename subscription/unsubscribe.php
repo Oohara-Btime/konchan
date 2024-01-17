@@ -57,7 +57,7 @@
     </div>
 
     <div class="container">
-        <input type="submit" value="次へ" class="next">
+        <button type="hidden" onclick="location.href='unsubscribe_last.php'" value="password" class="next">次へ</button>
         <button type="button" onclick="location.href='../index.php'" class="cancel" >キャンセル</button>
     </div>
     </form>
