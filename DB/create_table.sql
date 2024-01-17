@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-01-16 03:43:04
+-- 生成日時: 2024-01-17 04:15:52
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -359,7 +359,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
-(1, 'nissy0930@gmail.com', 'nissy0930', '2024-01-11 11:32:38', '2024-01-11 11:32:38', NULL, 0);
+(1, 'nissy0930@gmail.com', 'nissy0930', '2024-01-11 11:32:38', '2024-01-11 11:32:38', NULL, 0),
+(2, 'kkr2290007@stu.o-hara.ac.jp', 'ren20032525', '2024-01-17 12:15:29', '2024-01-17 12:15:29', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -584,7 +585,7 @@ ALTER TABLE `url_holding`
 -- テーブルの AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=3;
 
 --
 -- テーブルの AUTO_INCREMENT `user_owned_coupon`
