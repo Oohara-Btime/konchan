@@ -38,11 +38,11 @@
             <ul class="nav_list">
                 <li class="nav_item1"><a href="top.html">⌂ホーム</a></li>
                 <li class="nav_item2"><a href="">🔎検索</a></li>
-                <li class="nav_item3"><a href="meat.php">肉</a></li>
-                <li class="nav_item3"><a href="fish.php">魚</a></li>
-                <li class="nav_item3"><a href="vegetable.php">野菜</a></li>
-                <li class="nav_item3"><a href="other.php">麺類、米類</a></li>
-                <li class="nav_item4"><a href="local_cuisine.php">郷土料理</a></li>
+                <li class="nav_item3"><a href="ingredient_specified_search/meat.php">肉</a></li>
+                <li class="nav_item3"><a href="ingredient_specified_search/fish.php">魚</a></li>
+                <li class="nav_item3"><a href="ingredient_specified_search/vegetable.php">野菜</a></li>
+                <li class="nav_item3"><a href="ingredient_specified_search/other.php">麺類、米類</a></li>
+                <li class="nav_item4"><a href="localCuisine/local_cuisine.php">郷土料理</a></li>
                 <li class="nav_item5"><a href="detailed_preference.php">⚙️詳細設定</a></li>
             </ul>
         </nav>
