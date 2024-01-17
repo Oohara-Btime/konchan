@@ -4,6 +4,8 @@
     $errormsg='';
     if ($error == 1){
         $errormsg='メールアドレスまたはパスワードが違います。';
+    }elseif ($error == 2){
+        $errormsg='このメールアドレスは登録されています。';
     }
 ?>
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -30,7 +32,9 @@
                     <input type="password" name="password"/>
                 </label>
                 <?php
-                    echo($errormsg);
+                    if ($error == 1){
+                        echo($errormsg);
+                    }
                 ?>
                 <p class="forgot-pass">Forgot password?</p>
                 <button type="submit" class="submit">Sign In</button>
@@ -54,19 +58,26 @@
             </div>
             <div class="form sign-up">
                 <h2>Time to feel like home,</h2>
-                <label>
-                    <!-- <span>Name</span> -->
-                    <!-- <input type="text" /> -->
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" />
-                </label>
-                <label>
-                    <span>Password</span>
-                    <input type="password" />
-                </label>
-                <button type="button" class="submit">Sign Up</button>
+                <form action="new_registration.php" method="post">
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email"/>
+                    </label>
+                    <?php
+                    if ($error == 2){
+                        echo($errormsg);
+                    }
+                    ?>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password"/>
+                    </label>
+                    <label>
+                        <span>retype_Password</span>
+                        <input type="password" name="retype_password"/>
+                    </label>
+                <button type="submit" class="submit">Sign Up</button>
+                </form>
                 <!-- <button type="button" class="fb-btn">Join with <span>facebook</span></button> -->
             </div>
         </div>
@@ -79,7 +90,7 @@
     <!-- <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter"> -->
         <!-- <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png"> -->
     <!-- </a> -->
-    <script src="../js/login.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
