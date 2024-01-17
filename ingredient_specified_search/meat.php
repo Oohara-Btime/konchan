@@ -1,20 +1,60 @@
+<?php
+include("../const.php");
+session_start();
+
+try {
+    $db = new PDO(DSN, DB_USER, '');
+    $stmt = $db->prepare('SELECT * FROM foodstuff WHERE ingredient_category_id = 1');
+
+    // SQL実行
+    $stmt->execute();
+} catch (PDOException $e) {
+    echo "接続に失敗しました。";
+    echo $e->getMessage();
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/meat.css">
+    <link rel="stylesheet" href="../css/meat.css">
     <title>こんちゃん</title>
 </head>
+
 <body>
-    <h1>肉</h1>
+    <h1>
+        肉
+    </h1>
 
-    <button class="next">
-        <a href="fish.php">→</a>
-    </button>
-
-    <button class="finish">
-        確定
-    </button>
+    <form action="fish.php" method="post">
+        <?php
+        // 取得したデータを出力
+        foreach ($stmt as $row) {
+            ?>
+            <li>
+                <input type="checkbox" name="ingredient_category_id" value="<?php echo $row['id'] ?>">
+                <label>
+                    <?php echo $row['ingredient_name'] ?>
+                </label>
+            </li>
+            <?php
+        }
+        ?>
+        <button class="next">
+            <a href="fish.php">→</a>
+        </button>
+    </form>
+    
+    <form action="index.php" method="post">
+        <button type="button" onclick="location.href='../index.php'">確定</button>
+    </form>
 </body>
 </html>
+
+        <!-- <button type="submit" class="finish">
+            <a href="index.php">確定</a>
+        </button> -->
