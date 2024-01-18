@@ -43,18 +43,27 @@ try {
 </head>
 <body>
     <?php 
-        echo '  ';
+        echo '<p>';
+        echo '<p>';
+        echo '<p>';
+        echo '料理名: ';
         echo $date[0]["recipe_name"];
-        echo '  ';
+        echo '<p>';
+        echo 'レシピ: ';
         echo $date[0]["recipe"];
-        echo '  ';
+        echo '<p>';
+        echo '調理時間: ';
         echo $date[0]["cooking_time"];
         echo '分';
+        echo '<p>';
+
     ?>
     <html>
-        <image src=<?php echo ("../pic/" . $date[0]["recipe_image"]); ?> width = "250px" height ="250px">
+        <div class=foodimage>
+            <image src=<?php echo ("../pic/" . $date[0]["recipe_image"]); ?> width = "250px" height ="250px">
+        </div>
     </image>
-    <a href="../index.php">ホームへ戻る</a>
+    <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
     </html>
 </body>
 </html>
