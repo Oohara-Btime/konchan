@@ -34,8 +34,10 @@ try {
         <?php
         // 取得したデータを出力
         foreach ($stmt as $row) {
+            $ingredient_image = $row['ingredient_image'];
             ?>
             <li>
+                <input type="image" src=<?php echo ("../pic/" . $ingredient_image); ?> width="250px" height="250px">
                 <input type="checkbox" name="ingredient_category_id" value="<?php echo $row['id'] ?>">
                 <label>
                     <?php echo $row['ingredient_name'] ?>
@@ -48,13 +50,11 @@ try {
             <a href="fish.php">→</a>
         </button>
     </form>
-    
+
     <form action="index.php" method="post">
         <button type="button" onclick="location.href='../index.php'">確定</button>
     </form>
 </body>
+
 </html>
 
-        <!-- <button type="submit" class="finish">
-            <a href="index.php">確定</a>
-        </button> -->
