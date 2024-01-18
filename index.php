@@ -45,20 +45,24 @@
                 <li class="nav_item4"><a href="localCuisine/local_cuisine.php">郷土料理</a></li>
                 <li class="nav_item5"><a href="detailed_preference.php">⚙️詳細設定</a></li>
                 <li class="nav_item5"><form action="subscription/unsubscribe.php"><input type="submit" value="退会"></form></li>
+                <li class="nav_item5"><form action="login-input.php"><input type="submit" value="新規登録"></form></li>
+                <li class="nav_item5"><form action="login-input.php"><input type="submit" value="ログイン"></form></li>
+                <li class="nav_item5"><form action="user/logout.php"><input type="submit" value="ログアウト"></form></li>
             </ul>
         </nav>
     </section>
 
     <section>
         <div class="food-button">
-            <form action="meat.php">
+            <form action="ingredient_specified_search/meat.php">
                 <button><img src="pic/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
             </form> 
-            <form action="fish.php">
-                <button><img src="pic/fish.jpg" class="fish_button" alt="#" width="350" height="300">><
+            <form action="ingredient_specified_search/fish.php">
+                <button><img src="pic/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
             </form>
-            fo                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-            <img src="pic/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300">
+            <form action="ingredient_specified_search/vegetable.php">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+            <button><img src="pic/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
+            </form>
         </div>
 
         <div class="other-button">
