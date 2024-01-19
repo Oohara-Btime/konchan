@@ -2,17 +2,29 @@
 include("../const.php");
 session_start();
 
-$email = filter_input(INPUT_POST, 'email');
+// var_dump($_SESSION);
+$user_id = $_SESSION["user"]["id"];
 $password = filter_input(INPUT_POST, 'password');
+$db = new PDO(DSN, DB_USER, '');
 
-if (isset($_SESSION['email'])) {
-    $sql=$pdo->prepare('select * from user where email and password=? ');
-    $sql->execute([$_REQUEST['password']]);
-    echo 'パスワード確認';
-} else {
-    header("Location:unsubscribe.php");
-    exit();
+
+try{
+    $stmt = $db->prepare('select * from user where id=? and password=? and delete_flag = false');
+    $stmt->execute([$user_id,$password]);
+    $count = $stmt->rowCount();
+    if ($count === 1){
+        /* 何もしない */
+    }else{
+        header('Location:unsubscribe.php?error=1');
+        exit();
+    }
+        
+}catch (PDOException $e) {
+    echo "接続に失敗しました。";
+    echo $e->getMessage();
+    exit;
 }
+
 ?>
 
 <!DOCTYPE html>
