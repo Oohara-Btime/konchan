@@ -1,3 +1,12 @@
+<?php
+// errorっていうパラメータが渡ってきたら$errorという変数に値を代入する
+$error = filter_input(INPUT_GET, 'error');
+$errormsg = '';
+if ($error == 1) {
+    $errormsg = 'メールアドレスがありません';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,22 +19,15 @@
     <body>
         <h1>パスワードリセット</h1>
         <div class="form">
-            <form action="#">
+            <form action="password_resetting.php" method="post">
                 <div class="text-input">
                     <label for="username">メールアドレス入力</label>
                     <input type="text" name="username" id="username" placeholder="" />
                     <span class="separator"> </span>
                 </div>
 
-                <!-- <div class="text-input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="" />
-                    <span class="separator"> </span>
-                </div> -->
-
                 <div class="form-bottom">
                     <input type="submit" id="submit" value="完了" />
-                    <!-- <a href="https://hub.docker.com/login/" class="original-src">Original Source</a> -->
                 </div>
             </form>
         </div>
