@@ -2,8 +2,8 @@
 include("const.php");
 session_start();
 
-$email = $_POST['email'];
-$password =  $_POST['password'];
+$email = filter_input(INPUT_POST, 'email');
+$password =  filter_input(INPUT_POST, 'password');
 
 try {
     $db = new PDO(DSN, DB_USER, '');

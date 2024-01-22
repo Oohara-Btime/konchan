@@ -22,7 +22,7 @@ header {
     border-radius: 20px;
     height: 2.5em;
     width: 500px;
-    overflow: hidden;
+    overflow: scroll; /*hiddenでもええで*/
     /* float: right; */
 }
 
@@ -149,4 +149,12 @@ img.meat_button:hover {
 img.meat_button:active{
     position: relative;
     top: 3px;
+}
+
+.cooking{
+    height: 100%;
+    right: 0;
+    position: fixed;
+    top: 100px;
+    width:  400px;
 }
