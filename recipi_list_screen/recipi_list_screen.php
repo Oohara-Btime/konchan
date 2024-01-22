@@ -19,7 +19,13 @@ if ($prefectures_id != '' && $prefectures_id != null) {
     $sql .= 'SELECT * FROM recipe JOIN recipe_taste on recipe.id = recipe_taste.recipe_id and recipe_taste.taste_id = ' . $taste_id . ' and recipe_taste.delete_flag = false ' .
         ' JOIN recipe_genre on recipe.id = recipe_genre.recipe_id and recipe_genre.genre_id = ' . $genre_id . ' and recipe_genre.delete_flag = false ' .
         ' WHERE recipe.cooking_time <= ' . $cooking_time . ' and recipe.delete_flag = false';
-}
+    } //elseif(
+
+    // ){
+    //     $sql .= 'SELECT recipe_id, COUNT(recipe_id) FROM recipe_ingredient 
+    //             where ingredient_id = 1 or ingredient_id = 2 or ingredient_id = 3 
+    //             GROUP BY recipe_id';
+    // }
 try {
     $db = new PDO(DSN, DB_USER, '');
     if ($sql != '') {
