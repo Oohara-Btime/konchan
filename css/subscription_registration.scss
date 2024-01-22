@@ -39,6 +39,7 @@ p {
 }
 
 $primary-color: #079ad9;
+$primary2-color: red;
 
 .container {
     display: flex;
@@ -87,6 +88,14 @@ $primary-color: #079ad9;
             transition: transform 300ms ease;
         }
 
+
+        hr{
+            border-width: 1px 0px 10px 320px;
+            border-style: solid;
+            border-color: #079ad0;
+            margin-left: -6.5%;
+        }
+
         .icon svg {
             fill: $primary-color;
             width: 4rem;
@@ -94,6 +103,52 @@ $primary-color: #079ad9;
         }
 
         .radio-tile-label {
+            text-align: center;
+            font-size: 155%;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $primary-color;
+            padding-bottom: 20%;
+        }
+
+        .number-tile-label {
+            text-align: center;
+            font-size: 2.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $primary-color;
+        }
+
+        .months-tile-label {
+            text-align: center;
+            font-size: 2.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $primary-color;
+        }
+
+        .discount-tile-label {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $primary2-color;
+        }
+
+        .transparency-tile-label {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+        }
+
+        .price-tile-label {
             text-align: center;
             font-size: 2.75rem;
             font-weight: 600;
@@ -117,6 +172,30 @@ $primary-color: #079ad9;
             .radio-tile-label {
                 color: white;
                 background-color: $primary-color;
+            }
+
+            .number-tile-label {
+                color: white;
+                background-color: $primary-color;
+            }
+
+            .months-tile-label {
+                color: white;
+                background-color: $primary-color;
+            }
+
+            .discount-tile-label {
+                color: red;
+                background-color: $primary-color;
+            }
+
+            .price-tile-label {
+                color: white;
+                background-color: $primary-color;
+            }
+
+            hr{
+                border-color: white;
             }
         }
     }
@@ -150,6 +229,11 @@ $primary-color: #079ad9;
 
 // PCサイズの時のボタンのデザイン
 @media screen and (min-width:500px){
+
+    .button {
+        margin-top: 7%;
+    }
+
     .registration {
         
         // width: 40%;

@@ -77,12 +77,59 @@ p {
   padding: 1rem;
   transition: transform 300ms ease;
 }
+.radio-tile-group .input-container hr {
+  border-width: 1px 0px 10px 320px;
+  border-style: solid;
+  border-color: #079ad0;
+  margin-left: -6.5%;
+}
 .radio-tile-group .input-container .icon svg {
   fill: #079ad9;
   width: 4rem;
   height: 4rem;
 }
 .radio-tile-group .input-container .radio-tile-label {
+  text-align: center;
+  font-size: 155%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+  padding-bottom: 20%;
+}
+.radio-tile-group .input-container .number-tile-label {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+}
+.radio-tile-group .input-container .months-tile-label {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #079ad9;
+}
+.radio-tile-group .input-container .discount-tile-label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: red;
+}
+.radio-tile-group .input-container .transparency-tile-label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+}
+.radio-tile-group .input-container .price-tile-label {
   text-align: center;
   font-size: 2.75rem;
   font-weight: 600;
@@ -104,6 +151,25 @@ p {
   color: white;
   background-color: #079ad9;
 }
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .number-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .months-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .discount-tile-label {
+  color: red;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile .price-tile-label {
+  color: white;
+  background-color: #079ad9;
+}
+.radio-tile-group .input-container .radio-button:checked + .radio-tile hr {
+  border-color: white;
+}
 
 .registration {
   width: 50%;
@@ -122,6 +188,9 @@ p {
 }
 
 @media screen and (min-width: 500px) {
+  .button {
+    margin-top: 7%;
+  }
   .registration {
     margin-top: 40%;
     margin-left: 65%;
