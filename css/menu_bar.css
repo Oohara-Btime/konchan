@@ -38,8 +38,8 @@ span {
 }
 
 .bar {
-    background: #333;
-    height: 10px;
+    background: red;
+    height: 15px;
     left: 0;
     position: absolute;
     top: 0;
@@ -126,10 +126,10 @@ span {
     top: 0;
     left: 0;
     right: 100%;
-    background: rgb(110, 110, 110);
+    background: red;
     transition: center;
     padding-top: 120px;
-    padding-left: 0px;
+    padding-left: 10px;
 }
 
 #drawer_input:checked~.nav_content {

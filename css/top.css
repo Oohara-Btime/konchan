@@ -1,6 +1,6 @@
-body{
+/* body{
     background-color: blue;
-}
+} */
 
 header {
     position: fixed;
@@ -8,7 +8,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 40px;
+    padding: 32px 40px;
     background-color: black;
     box-sizing: border-box;
 }
@@ -20,7 +20,7 @@ header {
     border: 1px solid #999;
     padding: 3px 10px;
     border-radius: 20px;
-    height: 2.3em;
+    height: 2.5em;
     width: 500px;
     overflow: hidden;
     /* float: right; */
@@ -28,7 +28,7 @@ header {
 
 .search_container input[type="text"] {
     border: none;
-    height: 2.0em;
+    height: 2.5em;
     position: center;
     /* float: right; */
 }
@@ -47,7 +47,7 @@ header {
     color: #fff;
     position: absolute;
     width: 5.0em;
-    height: 3.0em;
+    height: 3.1em;
     right: 0px;
     top: -3px;
     outline: none;
@@ -57,7 +57,7 @@ header {
 .input-keyword{
     position: relative;
     display:flex ;
-    top: -50px;
+    top: -31px;
     padding-left: 670px;
 }
 
