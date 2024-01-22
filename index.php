@@ -1,3 +1,27 @@
+<?php
+    include("const.php");
+    session_start();
+    $foodstuff_id_list=filter_input(INPUT_POST, 'foodstuff_id_list' , FILTER_DEFAULT,FILTER_REQUIRE_ARRAY);
+    $stmt=null;
+    // idをコンマ区切りの文字列にする。(配列を文字列に変換)
+    if($foodstuff_id_list != null){
+    $ids = implode( ',', $foodstuff_id_list);
+        try {
+            $db = new PDO(DSN, DB_USER, '');
+            // 受けとったidの食材情報を取得
+            $stmt = $db->prepare('SELECT * FROM foodstuff where id in ('.$ids.') and delete_flag = false');
+        
+            // SQL実行
+            $stmt->execute();
+            $count = $stmt->rowCount();
+        } catch (PDOException $e) {
+            echo "接続に失敗しました。";
+            echo $e->getMessage();
+            exit;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +32,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/top.css">
     <link rel="stylesheet" href="css/menu_bar.css">
-    <link rel="stylesheet" href="au.css">
+    <link rel="stylesheet" href="css/au.css">
 </head>
     <body>
         <header id="header">
@@ -98,9 +122,25 @@
         </div>
     </section>
 
-    <section>
-        <div class="text">
-            
+    <section class="cooking">
+        <div class="">
+            <form action="recipi_list_screen/recipi_list_screen.php">
+            <?php
+                // 取得したデータを出力
+                if ($stmt!== null) {
+                    foreach ($stmt as $row) {
+            ?>
+                <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
+                <label><?php echo $row['ingredient_name'] ?></label><br>
+                <?php
+                }
+                ?>
+                <br>
+                <button type="submit">調理開始</button>
+                <?php
+                }
+                ?>
+            </form>
         </div>
     </section>
 
