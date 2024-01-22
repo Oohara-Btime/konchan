@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/top.css">
     <link rel="stylesheet" href="css/menu_bar.css">
+    <link rel="stylesheet" href="au.css">
 </head>
     <body>
         <header id="header">
@@ -43,12 +44,30 @@
                 <li class="nav_item3"><a href="ingredient_specified_search/vegetable.php">野菜</a></li>
                 <li class="nav_item3"><a href="ingredient_specified_search/other.php">麺類、米類</a></li>
                 <li class="nav_item4"><a href="localCuisine/local_cuisine.php">郷土料理</a></li>
-                <li class="nav_item5"><a href="detailed_preference.php">⚙️詳細設定</a></li>
-                <li class="nav_item5"><form action="subscription/unsubscribe.php"><input type="submit" value="退会"></form></li>
-                <li class="nav_item5"><form action="login-input.php"><input type="submit" value="新規登録"></form></li>
-                <li class="nav_item5"><form action="login-input.php"><input type="submit" value="ログイン"></form></li>
-                <li class="nav_item5"><form action="user/logout.php"><input type="submit" value="ログアウト"></form></li>
             </ul>
+                <select class="old-select">
+                    <option value="login-input">新規登録</option>
+                    <option value="subscribe/subscription_registration">有料会員登録</option>
+                    <option value="login-input">ログイン</option>
+                    <option value="email_address_changing">メールアドレス変更</option>
+                    <option value="password_changing">パスワード変更</option>
+                    <option value="password_resetting">パスワード再設定</option>
+                    <option value="password_reset">パスワードリセット</option>
+                    <option value="logout">ログアウト</option>
+                    <option value="unsubscribe">退会</option>
+                    <option value="jquery" selected>⚙️詳細設定</option>
+                </select>
+
+                <!-- Bouton Select reconstruit -->
+                <div class="new-select">
+                    <div class="selection">
+                        <p>
+                            <span></span>
+                            <i></i>
+                        </p>
+                        <span></span>
+                    </div>
+                </div>
         </nav>
     </section>
 
@@ -84,7 +103,8 @@
             
         </div>
     </section>
-    
-        <script src="menu_bar.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/menu_bar.js"></script>
     </body>
 </html>
