@@ -6,7 +6,7 @@
         <!-- ページのタイトル -->
         <title>Document</title>
         <!-- setting.cssとリンクする -->
-        <link rel="stylesheet" href="setting.css">
+        <link rel="stylesheet" href="../setting.css">
     </head>
 
     <body>
