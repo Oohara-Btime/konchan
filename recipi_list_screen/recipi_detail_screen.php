@@ -60,7 +60,7 @@ try {
     ?>
     <html>
         <div class=foodimage>
-            <image src=<?php echo ("../pic/" . $date[0]["recipe_image"]); ?> width = "250px" height ="250px">
+            <image src=<?php echo ("../ing/" . $date[0]["recipe_image"]); ?> width = "250px" height ="250px">
         </div>
     </image>
     <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>

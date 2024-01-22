@@ -37,7 +37,7 @@ try {
             $ingredient_image = $row['ingredient_image'];
             ?>
             <li>
-                <input type="image" src=<?php echo ("../pic/" . $ingredient_image); ?> width="250px" height="250px">
+                <input type="image" src=<?php echo ("../img/" . $ingredient_image); ?> width="250px" height="250px">
                 <input type="checkbox" name="ingredient_category_id" value="<?php echo $row['id'] ?>">
                 <label>
                     <?php echo $row['ingredient_name'] ?>
