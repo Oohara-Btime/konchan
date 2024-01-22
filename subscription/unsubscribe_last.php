@@ -8,18 +8,17 @@ $password = filter_input(INPUT_POST, 'password');
 $db = new PDO(DSN, DB_USER, '');
 
 
-try{
+try {
     $stmt = $db->prepare('select * from user where id=? and password=? and delete_flag = false');
-    $stmt->execute([$user_id,$password]);
+    $stmt->execute([$user_id, $password]);
     $count = $stmt->rowCount();
-    if ($count === 1){
+    if ($count === 1) {
         /* 何もしない */
-    }else{
+    } else {
         header('Location:unsubscribe.php?error=1');
         exit();
     }
-        
-}catch (PDOException $e) {
+} catch (PDOException $e) {
     echo "接続に失敗しました。";
     echo $e->getMessage();
     exit;
@@ -47,11 +46,10 @@ try{
     </div>
 
     <form action="unsubscribe_process.php" method="post">
-    <div class="container">
-        <button type="hidden" onclick="location.href='../index.php'" name="unsubscribe" value="" class="unsubscribe" >退会する</button>
-        <button type="button" onclick="location.href='../index.php'" class="cancel">キャンセル</button>
-    </div>
+        <div class="container">
+            <button type="hidden" name="unsubscribe" value="" class="unsubscribe">退会する</button>
+            <button type="button" onclick="location.href='../index.php'" class="cancel">キャンセル</button>
+        </div>
     </form>
-
 </body>
 </html>

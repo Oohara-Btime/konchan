@@ -73,9 +73,9 @@ if ($error == 1) {
                 echo "<FONT COLOR=RED>$errormsg</FONT><br/>";
             }
             ?>
-        
+            
             <label for="password">パスワード：</label>
-            <input type="password" name="password" id="password" required class="" style=" height: 40px; margin-top: 5px;" size=40 placeholder="パスワードを入力" ><br>
+            <input type="password" name="password" id="password" required class="" style=" height: 40px; margin-top: 5px;" size=40 placeholder="パスワードを入力"><br>
         </div>
 
 
