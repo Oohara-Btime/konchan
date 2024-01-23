@@ -58,7 +58,7 @@ if ($error == 1) {
             </div>
             <div class="form sign-up">
                 <h2>Time to feel like home,</h2>
-                <form name="new_registration" action="new_registration.php" method="post">
+                <form name="new_registration" action="../detailed_preference/new_registration.php" method="post">
                     <label>
                         <span>Email</span>
                         <input type="email" name="email" />
@@ -106,7 +106,7 @@ if ($error == 1) {
     <!-- <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter"> -->
     <!-- <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png"> -->
     <!-- </a> -->
-    <script src="js/login.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
