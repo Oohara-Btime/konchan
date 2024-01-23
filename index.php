@@ -70,15 +70,15 @@
                 <li class="nav_item4"><a href="localCuisine/local_cuisine.php">郷土料理</a></li>
             </ul>
                 <select class="old-select">
-                    <option value="login-input">新規登録</option>
-                    <option value="subscribe/subscription_registration">有料会員登録</option>
-                    <option value="login-input">ログイン</option>
-                    <option value="email_address_changing">メールアドレス変更</option>
-                    <option value="password_changing">パスワード変更</option>
-                    <option value="password_resetting">パスワード再設定</option>
-                    <option value="password_reset">パスワードリセット</option>
-                    <option value="logout">ログアウト</option>
-                    <option value="unsubscribe">退会</option>
+                    <option value="detailed_preference/login-input">新規登録</option>
+                    <option value="detailed_preference/subscription_registration">有料会員登録</option>
+                    <option value="detailed_preference/login-input">ログイン</option>
+                    <option value="detailed_preference/email_address_changing">メールアドレス変更</option>
+                    <option value="detailed_preference/password_changing">パスワード変更</option>
+                    <option value="detailed_preference/password_resetting">パスワード再設定</option>
+                    <option value="detailed_preference/password_reset">パスワードリセット</option>
+                    <option value="detailed_preference/logout">ログアウト</option>
+                    <option value="detailed_preference/unsubscribe">退会</option>
                     <option value="jquery" selected>⚙️詳細設定</option>
                 </select>
 
@@ -98,28 +98,28 @@
     <section>
         <div class="food-button">
             <form action="ingredient_specified_search/meat.php">
-                <button><img src="pic/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
+                <button><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
             </form> 
             <form action="ingredient_specified_search/fish.php">
-                <button><img src="pic/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
+                <button><img src="img/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
             </form>
             <form action="ingredient_specified_search/vegetable.php">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-            <button><img src="pic/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
+            <button><img src="img/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
             </form>
         </div>
 
         <div class="other-button">
-            <img src="pic/meat.jpg" alt="#" width="528" height="150">
-            <img src="pic/fish.jpg" alt="#" width="528" height="150">
+            <img src="img/other.jpg" alt="#" width="528" height="230">
+            <img src="img/other.jpg" alt="#" width="528" height="230">
         </div>
 
         <div class="chat_bot-button">
-            <img src="pic/ダウンロード (2).jpg" alt="#" width="1061" height="200">
+            <img src="img/ダウンロード (2).jpg" alt="#" width="528" height="230">
+            <img src="img/ガチャ.jpg" alt="#" width="528" height="230">
         </div>
 
-        <div class="capsule_toy-button">
-            <img src="pic/ガチャ.jpg" alt="#" width="1061" height="200">
-        </div>
+        <!-- <div class="capsule_toy-button">
+        </div> -->
     </section>
 
     <section class="cooking">
