@@ -19,43 +19,41 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/vegetable.css">
-    <title>こんちゃん</title>
-</head>
-<body>
-    <h1>野菜</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/vegetable.css">
+        <title>こんちゃん</title>
+    </head>
 
-    <form action="other.php" method="post">
-        <?php
-        // 取得したデータを出力
-        foreach ($stmt as $row) {
-            $ingredient_image = $row['ingredient_image'];
-            ?>
-            <li>
-                <input type="image" src=<?php echo ("../img/" . $ingredient_image); ?> width="250px" height="250px">
-                <input type="checkbox" name="ingredient_category_id" value="<?php echo $row['id'] ?>">
-                <label>
-                    <?php echo $row['ingredient_name'] ?>
-                </label>
-            </li>
+    <body>
+        <h1>野菜</h1>
+
+        <form action="../index.php" method="post">
             <?php
-        }
-        ?>
+            // 取得したデータを出力
+            foreach ($stmt as $row) {
+                $ingredient_image = $row['ingredient_image'];
+                ?>
+                <li>
+                    <input type="image" src=<?php echo ("../img/" . $ingredient_image); ?> width="250px" height="250px">
+                    <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>">
+                    <label>
+                        <?php echo $row['ingredient_name'] ?>
+                    </label>
+                </li>
+                <?php
+            }
+            ?>
 
-        <button class="next">
-            <a href="fish.php">←</a>
-        </button>
+            <button class="next">
+                <a href="fish.php">←</a>
+            </button>
 
-        <button class="next">
-            <a href="other.php">→</a>
-        </button>
-    </form>
-
-    <form action="index.php" method="post">
-        <button type="button" onclick="location.href='../index.php'">確定</button>
-    </form>
-</body>
+            <button class="next">
+                <a href="other.php">→</a>
+            </button>
+            <button type="submit">確定</button>
+        </form>
+    </body>
 </html>

@@ -22,7 +22,7 @@ header {
     border-radius: 20px;
     height: 2.5em;
     width: 500px;
-    overflow: scroll; /*hiddenでもええで*/
+    overflow: hidden; /*hiddenでもええで*/
     /* float: right; */
 }
 
@@ -62,7 +62,7 @@ header {
 }
 
 .inner {
-    color: blue;
+    color: pink;
     padding-left: 300px;
 
 }
@@ -78,10 +78,6 @@ header {
 }
 
 .chat_bot-button {
-    padding-left: 400px;
-}
-
-.capsule_toy-button {
     padding-left: 400px;
 }
 

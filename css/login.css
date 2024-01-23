@@ -92,7 +92,7 @@ button {
   top: 0;
   width: 1920px;
   height: 100%;
-  background-image: url("../こんちゃん画像/wallpaperbetter.jpg");
+  background-image: url("../img/fruit.jpg");
   background-size: cover;
   transition: transform 1.2s ease-in-out;
 }
