@@ -3,21 +3,21 @@
 include("../const.php");
 session_start();
 
-// var_dump($_SESSION);
-$user_id = $_SESSION["user"]["id"];
-$email = filter_input(INPUT_POST, 'username');
+$email = filter_input(INPUT_POST, 'email');
 $db = new PDO(DSN, DB_USER, '');
 
 
 try {
     $stmt = $db->prepare('select * from user where email=? delete_flag = false');
-    $stmt->execute([$user_id]);
+    $stmt->execute([$email]);
     $count = $stmt->rowCount();
     if ($count === 1) {
         /* 何もしない */
+        echo "接続成功";
     } else {
-        header('Location:password_reset.php?error=1');
-        exit();
+        echo "パスワードリセット失敗";
+        // header('Location:password_reset.php?error=1');
+        // exit();
     }
 } catch (PDOException $e) {
     echo "接続に失敗しました。";
