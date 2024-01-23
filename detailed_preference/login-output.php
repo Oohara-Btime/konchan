@@ -19,7 +19,7 @@ try {
     $_SESSION['user']=[
         // resultのidの中身をSESSIONに入れる(ここにSESSIONに入れることで他の画面でidが使用できる)
         'id'=>$result['id']];
-        header('Location:index.php');
+        header('Location:../index.php');
     }else{
         // ログイン画面に戻る
         // Location・・・その画面に移動する
