@@ -6,7 +6,7 @@
         <!-- ページのタイトル -->
         <title>Document</title>
         <!-- setting.cssとリンクする -->
-        <link rel="stylesheet" href="../setting.css">
+        <link rel="stylesheet" href="../css/setting.css">
     </head>
 
     <body>
@@ -14,18 +14,18 @@
         <h1>メールアドレス変更</h1>
         <!--  -->
         <div class="form">
-            <form action="#">
+            <form action="email_address_process.php" method="post">
                 <!-- 新しいメールアドレスの入力フォーム -->
                 <div class="text-input">
-                    <label for="username">新しいメールアドレス</label>
-                    <input type="text" name="username" id="username" placeholder="" />
+                    <label for="new-email">新しいメールアドレス</label>
+                    <input type="text" name="new-email" id="new-email" placeholder="" />
                     <span class="separator"> </span>
                 </div>
 
                 <!-- メールアドレス確認の入力フォーム -->
                 <div class="text-input">
-                    <label for="password">メールアドレスの確認</label>
-                    <input type="password" name="password" id="password" placeholder="" />
+                    <label for="confirmation-email">メールアドレスの確認</label>
+                    <input type="text" name="confirmation-email" id="confirmation-email" placeholder="" />
                     <span class="separator"> </span>
                 </div>
 
@@ -36,6 +36,6 @@
             </form>
         </div>
         <!-- setting.jsとリンクさせる -->
-        <script src="setting.js"></script>
+        <!-- <script src="setting.js"></script> -->
     </body>
 </html>
