@@ -33,12 +33,12 @@ if ($error == 1) {
             </div>
 
             <div class="form-bottom">
-                <!-- <input type="submit" id="submit" value="完了"/> -->
-                <button type="submit" id="submit">送信</button>
+                <input type="submit" id="submit" value="完了"/>
+                <!-- <button type="submit" id="submit">送信</button> -->
             </div>
         </form>
     </div>
-    <script src="../js/setting.js"></script>
+    <!-- <script src="../js/setting.js"></script> -->
 </body>
 
 </html>
