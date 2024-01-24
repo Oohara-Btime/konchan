@@ -61,12 +61,12 @@
         </div>
         <nav class="nav_content">
             <ul class="nav_list">
-                <li class="nav_item1"><a href="top.html">⌂ホーム</a></li>
+                <li class="nav_item1"><a href="index.html">⌂ホーム</a></li>
                 <li class="nav_item2"><a href="">🔎検索</a></li>
                 <li class="nav_item3"><a href="ingredient_specified_search/meat.php">肉</a></li>
                 <li class="nav_item3"><a href="ingredient_specified_search/fish.php">魚</a></li>
                 <li class="nav_item3"><a href="ingredient_specified_search/vegetable.php">野菜</a></li>
-                <li class="nav_item3"><a href="ingredient_specified_search/other.php">麺類、米類</a></li>
+                <li class="nav_item3"><a href="ingredient_specified_search/other.php">その他</a></li>
                 <li class="nav_item4"><a href="localCuisine/local_cuisine.php">郷土料理</a></li>
             </ul>
                 <select class="old-select">
@@ -74,8 +74,8 @@
                     <option value="detailed_preference/subscription_registration">有料会員登録</option>
                     <option value="detailed_preference/login-input">ログイン</option>
                     <option value="detailed_preference/email_address_changing">メールアドレス変更</option>
-                    <option value="detailed_preference/password_changing">パスワード変更</option>
-                    <option value="detailed_preference/password_resetting">パスワード再設定</option>
+                    <!-- <option value="detailed_preference/password_changing">パスワード変更</option> -->
+                    <!-- <option value="detailed_preference/password_resetting">パスワード再設定</option> -->
                     <option value="detailed_preference/password_reset">パスワードリセット</option>
                     <option value="detailed_preference/logout">ログアウト</option>
                     <option value="detailed_preference/unsubscribe">退会</option>

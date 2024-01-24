@@ -40,7 +40,7 @@ span {
 
 .bar {
     background: black;
-    height: 15px;
+    height: 10px;
     left: 0;
     position: absolute;
     top: 0;
@@ -129,7 +129,7 @@ span {
     right: 100%;
     background-color: aqua;
     transition: center;
-    padding-top: 120px;
+    padding-top: 187px;
     padding-left: 10px;
     overflow: scroll;
 }
@@ -141,25 +141,29 @@ span {
 .nav_list {
     list-style: none;
     word-break: break-all;
+    font-family: 'Open Sans';
     text-align: center;
-    background-color: orange;
     cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-top: 1px;
+}
 
-    position: absolute;
-    left: 0;
-    right: 0;
+.nav_list.reveal:hover{
+    background-color: #444;
+    color: #f5f5f5;
 }
 
 .nav_item1 {
     padding-left: 90px;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     font-size: 15px;
-    line-height: 30px;
-    word-break: break-all;
+    text-align: center;
+    margin-top: 1px;
+    background-color: white; /*黄色*/
 }
+
+/* .nav_item1.reveal:hover{
+    background-color: #444;
+    color: #f5f5f5; */
+/* } */
 
 .nav_item2 {
     padding-left: 90px;
@@ -167,6 +171,9 @@ span {
     font-size: 15px;
     /* line-height: 30px; */
     /* word-break: break-all; */
+    font-family: 'Open Sans';
+    margin-top: 1px;
+    background-color: white; /*黄色*/
 }
 
 .nav_item3 {
@@ -175,6 +182,8 @@ span {
     font-size: 15px;
     /* line-height: 30px; */
     /* word-break: break-all; */
+    margin-top: 1px;
+    background-color: white; /*黄色*/
 }
 
 .nav_item4 {
@@ -183,5 +192,7 @@ span {
     font-size: 15px;
     line-height: 30px;
     word-break: break-all;
+    margin-top: 1px;
+    background-color: white; /*黄色*/
 }
 
