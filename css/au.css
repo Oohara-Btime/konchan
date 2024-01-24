@@ -31,62 +31,13 @@ ul {
     list-style-type: none;
 }
 
-/* Fin Réinitialisation */
-
-/* Démo */
-
-/* body {
-    background: blue;
-    padding-bottom: 30px;
-} */
-
-/* .demo {
-    width: 600px;
-    margin: 100px auto 0 auto;
-}
-
-.demo h2 {
-    font-weight: 300;
-    color: #444;
-    font-size: 1.4em;
-    border-bottom: 1px solid #444;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.demo p {
-    font-weight: 300;
-    color: #444;
-    font-size: 0.9em;
-    line-height: 25px;
-    margin-bottom: 40px;
-    text-align: justify;
-}
-
-.demo span {
-    display: block;
-    font-weight: 300;
-    font-style: italic;
-    font-size: 0.75em;
-    text-align: center;
-    color: #6a6a6a
-}
-
-.demo span a {
-    color: #6a6a6a
-}
-
-.demo span a:hover {
-    text-decoration: underline;
-} */
-
 /* Old-Select */
 
 .old-select {
-    position: absolute;
+    position: relative;
     top: -9999px;
     left: -9999px;
+    margin-top: -50%;
 }
 
 /* New-Select */
@@ -129,7 +80,7 @@ ul {
 .new-select .selection {
     width: 100%;
     height: 100%;
-    background-color: brown;
+    background-color: white; /*茶色*/
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
     cursor: pointer;
@@ -188,19 +139,23 @@ ul {
 }
 
 .new-select .selection>span {
-    display: block;
-    width: 0;
-    height: 0;
-    border-style: solid;
+    display: block; /* 新しいセレクトボックスの選択部分の矢印スタイル */
+    width: 0; /* ブロック要素として表示 */
+    height: 0; /* 幅を0に設定 */
+    border-style: solid; /* 境界線のスタイルを実線に設定 */
+    /* 境界線の幅を上辺：14px、右辺：8px、下辺：0、左辺：8pxに設定 */
+    /* 高さ：14px、幅：16px */
     border-width: 14px 8px 0 8px;
     /* Height: 14px / Width: 16px */
-    border-color: green transparent transparent transparent;
+    /* 境界線の色を上辺：緑、右辺：透明、下辺：透明、左辺：透明に設定 */
+    border-color: #bbb transparent transparent transparent;
 
-    position: absolute;
-    top: 18px;
-    /* 50 / 2 - 14 / 2 */
-    right: 22px;
-    /* 60 / 2 - 16 / 2 */
+    position: absolute; /* 絶対位置に配置 */
+    top: 18px; /* 要素の上端を親要素の上端から18px下へ配置 */
+    /* 50 / 2 - 14 / 2 */  /* 計算式：50 / 2 - 14 / 2 */
+    right: 22px; /* 要素の右端を親要素の右端から22px左へ配置 */
+    /* 60 / 2 - 16 / 2 */  /* 計算式：60 / 2 - 16 / 2 */
+
 }
 
 .new-select .selection.open>span {
@@ -212,22 +167,25 @@ ul {
 }
 
 .new-option {
-    text-align: center;
-    background-color: orange;
-    cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-top: 1px;
+    text-align: center; /* テキストの水平方向の配置を中央に設定 */
+    background-color: white; /* 背景色をオレンジに設定 */
+    cursor: pointer; /* マウスカーソルが要素に合った時、ポインターに変更 */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* 要素に影をつける。水平方向のオフセット：0、垂直方向のオフセット：1px、ぼかし半径：1px、影の色：rgba(0, 0, 0, 0.1) */
+    position: relative; /* 要素の位置を親要素を基準に相対的に設定 */
+    margin-top: 1px; /* 上側のマージンを1pxに設定 */
 
-    position: absolute;
-    left: 0;
-    right: 0;
+    /* 注意: 同じプロパティで position を複数回指定しているが、後者が優先される */
+    position: absolute; /* 要素の位置をページ全体を基準に絶対的に設定 */
+    left: 0; /* 要素の左端をページ全体の左端に合わせる */
+    right: 0; /* 要素の右端をページ全体の右端に合わせる */
 
+    /* 要素の変化をアニメーション化する際のトランジションを設定 */
+    /* プロパティ：すべて（全てのプロパティ）、時間：300ミリ秒、イージング：ease-in-out */
     transition: all 300ms ease-in-out;
-    -o-transition: all 300ms ease-in-out;
-    -ms-transition: all 300ms ease-in-out;
-    -moz-transition: all 300ms ease-in-out;
-    -webkit-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out; /* Opera ブラウザに対するトランジションのプレフィックス */
+    -ms-transition: all 300ms ease-in-out; /* Internet Explorer に対するトランジションのプレフィックス */
+    -moz-transition: all 300ms ease-in-out; /* Firefox ブラウザに対するトランジションのプレフィックス */
+    -webkit-transition: all 300ms ease-in-out; /* WebKit（Chrome, Safari）に対するトランジションのプレフィックス */
 }
 
 .new-option p {
