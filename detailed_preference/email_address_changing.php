@@ -31,7 +31,7 @@
 
                 <div class="form-bottom">
                     <!-- フォームの送信ボタン -->
-                    <input type="submit" id="submit" value="完了" />
+                    <input type="submit" id="submit" value="変更" />
                 </div>
             </form>
         </div>
