@@ -8,7 +8,7 @@ $genre_id = filter_input(INPUT_POST, 'genre_id');
 $cooking_time = filter_input(INPUT_POST, 'cooking_time');
 $foodstuff_id_list = filter_input(INPUT_POST, 'foodstuff_id_list', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 $sql = '';
-$stmt;
+$stmt = null;
 
 if ($prefectures_id != '' && $prefectures_id != null) {
     $sql .= 'SELECT id as recipe_id,prefectures_id,recipe_name,recipe,cooking_time,recipe_image FROM recipe WHERE prefectures_id = ' . $prefectures_id . ' and recipe.delete_flag = false';
@@ -21,21 +21,23 @@ if ($prefectures_id != '' && $prefectures_id != null) {
         ' JOIN recipe_genre on recipe.id = recipe_genre.recipe_id and recipe_genre.genre_id = ' . $genre_id . ' and recipe_genre.delete_flag = false ' .
         ' WHERE recipe.cooking_time <= ' . $cooking_time . ' and recipe.delete_flag = false';
 } elseif ($foodstuff_id_list != '' && $foodstuff_id_list != null) {
-    $ingredients = implode(',', $foodstuff_id_list);
-    $sql .= 'SELECT recipe_id, COUNT(recipe_id) FROM recipe_ingredient 
-    WHERE ingredient_id IN (' . $ingredients . ') 
-    GROUP BY recipe_id';
+    $ids = implode( ',', $foodstuff_id_list);
+    $sql .='SELECT r.id as recipe_id ,r.recipe_image FROM recipe AS r '.
+    ' LEFT JOIN(SELECT distinct recipe_id FROM recipe_ingredient WHERE ingredient_id NOT IN ('.$ids.')) AS ri'.
+    ' ON r.id = ri.recipe_id';
+    foreach($foodstuff_id_list as $i => $foodstuff_id ){
+        $sql .= ' JOIN recipe_ingredient AS ri'.$i.
+                ' ON r.id = ri'.$i.'.recipe_id and ri'.$i.'.ingredient_id ='.$foodstuff_id ;
+    }
+    $sql .= ' WHERE ri.recipe_id IS NULL';
 }
-// $sql .= 'SELECT recipe_id, COUNT(recipe_id) FROM recipe_ingredient 
-//     where ingredient_id = 1 or ingredient_id = 2 or ingredient_id = 3 
-//     GROUP BY recipe_id
-//     WHERE ';
 try {
     $db = new PDO(DSN, DB_USER, '');
     if ($sql != '') {
         $stmt = $db->prepare($sql);
         // SQL実行
         $stmt->execute();
+        
         // $count=$stmt->rowCount();
     }
 } catch (PDOException $e) {
