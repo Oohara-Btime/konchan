@@ -18,7 +18,8 @@ try {
         $result = $stmt->fetch();
     $_SESSION['user']=[
         // resultのidの中身をSESSIONに入れる(ここにSESSIONに入れることで他の画面でidが使用できる)
-        'id'=>$result['id']];
+        'id'=>$result['id'],
+        'email'=>$result['email']];
         header('Location:../index.php');
     }else{
         // ログイン画面に戻る
