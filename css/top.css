@@ -1,6 +1,6 @@
-/* body{
+body{
     background-color: blue;
-} */
+}
 
 header {
     position: fixed;
@@ -74,12 +74,17 @@ header {
 }
 
 .other-button {
+    display: flex;
+    margin-top: 0%;
     padding-left: 400px;
 }
 
 .chat_bot-button {
+    display: flex;
+    margin-top: 0%;
     padding-left: 400px;
 }
+
 
 img.meat_button:hover {
     width: 350px;
@@ -114,35 +119,35 @@ img.vegetable_button:active{
     top: 3px;
 }
 
-img.vegetable_button:hover {
-    width: 350px;
-    height: 300px;
+img.other_button:hover {
+    width: 528px;
+    height: 230px;
     opacity: 0.5;
     cursor:pointer;
 }
-img.vegetable_button:active{
+img.other-button:active{
     position: relative;
     top: 3px;
 }
 
-img.meat_button:hover {
-    width: 350px;
-    height: 300px;
+img.local_cuisine_button:hover {
+    width: 528px;
+    height: 230px;
     opacity: 0.5;
     cursor:pointer;
 }
-img.meat_button:active{
+img.local_cuisine_button:active{
     position: relative;
     top: 3px;
 }
 
-img.meat_button:hover {
-    width: 350px;
-    height: 300px;
+img.chatbot_button:hover {
+    width: 528px;
+    height: 230px;
     opacity: 0.5;
     cursor:pointer;
 }
-img.meat_button:active{
+img.chatbot_button:active{
     position: relative;
     top: 3px;
 }
