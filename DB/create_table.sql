@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-01-24 06:06:37
+-- 生成日時: 2024-01-26 03:36:11
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -141,7 +141,11 @@ INSERT INTO `foodstuff` (`id`, `ingredient_name`, `ingredient_category_id`, `cre
 (97, 'きゅうり', 3, '2024-01-24 13:43:17', '2024-01-24 13:43:17', NULL, 0, 0x4b59555552492e706e67),
 (98, 'エンドウ豆', 3, '2024-01-24 13:43:17', '2024-01-24 13:43:17', NULL, 0, 0x4544414d414d452e706e67),
 (99, 'ニンニク', 3, '2024-01-24 13:50:34', '2024-01-24 13:50:34', NULL, 0, 0x4e494e4e494b552e706e67),
-(100, '生姜', 3, '2024-01-24 13:55:48', '2024-01-24 13:55:48', NULL, 0, 0x53484f5547412e706e67);
+(100, '生姜', 3, '2024-01-24 13:55:48', '2024-01-24 13:55:48', NULL, 0, 0x53484f5547412e706e67),
+(101, 'じゃがいも', 3, '2024-01-25 10:35:59', '2024-01-25 10:35:59', NULL, 0, 0x4a414741494d4f2e706e67),
+(102, '里芋', 3, '2024-01-25 10:35:59', '2024-01-25 10:35:59', NULL, 0, 0x5341544f494d4f2e706e67),
+(103, '長芋', 3, '2024-01-25 10:35:59', '2024-01-25 10:35:59', NULL, 0, 0x4e414741494d4f2e706e67),
+(104, 'さつまいも', 3, '2024-01-25 10:35:59', '2024-01-25 10:35:59', NULL, 0, 0x534154554d41494d4f2e706e67);
 
 -- --------------------------------------------------------
 
@@ -264,7 +268,8 @@ CREATE TABLE `recipe` (
 INSERT INTO `recipe` (`id`, `prefectures_id`, `recipe_name`, `recipe`, `cooking_time`, `create_date`, `update_date`, `delete_date`, `delete_flag`, `recipe_image`) VALUES
 (1, 0, 'アスパラベーコン', '巻いて焼く', 3, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x41422e706e67),
 (2, 0, '切り干し大根', '切って浸す', 9, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x4b442e706e67),
-(3, 1, 'イカ飯', '焼いて米を詰める', 10, '2024-01-16 10:53:46', '2024-01-16 10:53:46', NULL, 0, 0x494b414d4553492e706e67);
+(3, 1, 'イカ飯', '焼いて米を詰める', 10, '2024-01-16 10:53:46', '2024-01-16 10:53:46', NULL, 0, 0x494b414d4553492e706e67),
+(4, 0, '焼きベーコン', '2分焼く', 2, '2024-01-25 11:36:39', '2024-01-25 11:36:39', NULL, 0, 0x4242422e706e67);
 
 -- --------------------------------------------------------
 
@@ -316,7 +321,8 @@ INSERT INTO `recipe_ingredient` (`id`, `recipe_id`, `ingredient_id`, `create_dat
 (2, 1, 2, '2024-01-15 10:21:11', '2024-01-15 10:21:11', NULL, 0),
 (3, 2, 3, '2024-01-15 10:22:05', '2024-01-15 10:22:05', NULL, 0),
 (4, 3, 4, '2024-01-16 11:14:32', '2024-01-16 11:14:32', NULL, 0),
-(5, 3, 5, '2024-01-16 11:14:43', '2024-01-16 11:14:43', NULL, 0);
+(5, 3, 5, '2024-01-16 11:14:43', '2024-01-16 11:14:43', NULL, 0),
+(6, 4, 2, '2024-01-25 11:37:43', '2024-01-25 11:37:43', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -381,15 +387,16 @@ CREATE TABLE `seasoning` (
 --
 
 CREATE TABLE `subscription` (
-  `id` bigint(20) NOT NULL COMMENT 'サブスクのID',
+  `id` bigint(20) NOT NULL COMMENT 'id',
   `email` varchar(256) NOT NULL COMMENT 'メールアドレス',
-  `available_period` datetime NOT NULL COMMENT '利用可能期間		',
-  `plan` varchar(256) NOT NULL COMMENT 'プラン		',
-  `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時		',
-  `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時		',
-  `delete_date` datetime DEFAULT NULL COMMENT '削除日時		',
-  `delete_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '削除フラグ		'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='サブスク';
+  `plan` varchar(256) NOT NULL COMMENT 'プラン',
+  `use_start_date` date NOT NULL COMMENT '開始日',
+  `use_end_date` date NOT NULL COMMENT '終了日',
+  `create_date` date NOT NULL COMMENT '作成日時',
+  `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時',
+  `delete_date` date DEFAULT NULL COMMENT '削除日時',
+  `delete_flag` tinyint(1) NOT NULL COMMENT '削除フラグ'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -601,7 +608,7 @@ ALTER TABLE `user_owned_coupon`
 -- テーブルの AUTO_INCREMENT `foodstuff`
 --
 ALTER TABLE `foodstuff`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=101;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=105;
 
 --
 -- テーブルの AUTO_INCREMENT `genre`
@@ -631,7 +638,7 @@ ALTER TABLE `prize`
 -- テーブルの AUTO_INCREMENT `recipe`
 --
 ALTER TABLE `recipe`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=5;
 
 --
 -- テーブルの AUTO_INCREMENT `recipe_genre`
@@ -643,7 +650,7 @@ ALTER TABLE `recipe_genre`
 -- テーブルの AUTO_INCREMENT `recipe_ingredient`
 --
 ALTER TABLE `recipe_ingredient`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=7;
 
 --
 -- テーブルの AUTO_INCREMENT `recipe_seasoning`
@@ -667,7 +674,7 @@ ALTER TABLE `seasoning`
 -- テーブルの AUTO_INCREMENT `subscription`
 --
 ALTER TABLE `subscription`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'サブスクのID';
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id';
 
 --
 -- テーブルの AUTO_INCREMENT `taste`
