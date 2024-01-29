@@ -94,63 +94,59 @@
             </nav>
         </section>
 
-        <section>
-            <div class="food-button">
-                <form action="ingredient_specified_search/meat.php">
-                    <button><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
-                </form> 
-                <form action="ingredient_specified_search/fish.php">
-                    <button><img src="img/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
-                </form>
-                <form action="ingredient_specified_search/vegetable.php">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-                    <button><img src="img/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
-                </form>
-            </div>
+        <form action="" name="ingredientSpecificationForm" method="post">
+            <section>
+                    <div class="food-button">
+                            <button type="button" onclick="ingredientSpecification('ingredient_specified_search/meat.php')"><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
+                            <button type="button" onclick="ingredientSpecification('ingredient_specified_search/fish.php')"><img src="img/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
+                            <button type="button" onclick="ingredientSpecification('ingredient_specified_search/vegetable.php')"><img src="img/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
+                    </div>
 
-            <div class="other-button">
-                <form action="ingredient_specified_search/other.php">
-                    <button><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
-                </form>
-                <form action="localCuisine/local_cuisine.php">
-                    <button><img src="img/other.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
-                </form>
-            </div>
+                    <div class="other-button">
+                            <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
+                            <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/other.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
+                    </div>
 
-            <div class="chat_bot-button">
-                <form action="chatbot/chatbot1.php">
-                    <button><img src="img/ダウンロード (2).jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
-                </form>
-                <form action="">
-                    <button><img src="img/ガチャ.jpg" alt="#" width="528" height="230"></button>
-                </form>
-            </div>
+                <div class="chat_bot-button">
+                        <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/ダウンロード (2).jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
+                        <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/ガチャ.jpg" alt="#" width="528" height="230"></button>
+                </div>
 
-            <!-- <div class="capsule_toy-button">
-            </div> -->
-        </section>
+                <!-- <div class="capsule_toy-button">
+                </div> -->
+            </section>
 
-        <section class="cooking">
-            <div class="">
-                <form action="recipi_list_screen/recipi_list_screen.php">
-                <?php
-                    // 取得したデータを出力
-                    if ($stmt!== null) {
-                        foreach ($stmt as $row) {
-                ?>
-                    <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
-                    <label><?php echo $row['ingredient_name'] ?></label><br>
+            <section class="cooking">
+                <div class="">
+                    <!-- <form action="recipi_list_screen/recipi_list_screen.php"> -->
                     <?php
-                    }
+                        // 取得したデータを出力
+                        if ($stmt!== null) {
+                            foreach ($stmt as $row) {
                     ?>
-                    <br>
-                    <button type="submit">調理開始</button>
-                    <?php
-                    }
-                    ?>
-                </form>
-            </div>
-        </section>
+                        <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
+                        <label><?php echo $row['ingredient_name'] ?></label><br>
+                        <?php
+                        }
+                        ?>
+                        <br>
+                        <button type="button"  onclick="ingredientSpecification('recipi_list_screen/recipi_list_screen.php')">調理開始</button>
+                        <?php
+                        }
+                        ?>
+                    
+                </div>
+            </section>
+        </form>
 
+
+        <script>
+            var form = document.ingredientSpecificationForm;
+            function ingredientSpecification(page){
+                form.action=page;
+                form.submit();
+            }
+        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/menu_bar.js"></script>
     </body>
