@@ -2,7 +2,6 @@
 include("../const.php");
 session_start();
 
-// $ingredient_category_id = filter_input(INPUT_POST, 'ingredient_category_id');
 $foodstuff_id_list=filter_input(INPUT_POST, 'foodstuff_id_list' , FILTER_DEFAULT,FILTER_REQUIRE_ARRAY);
 
 try {
@@ -52,20 +51,16 @@ try {
                 </li>
                 <?php
             }
-            foreach ($foodstuff_id_list as $row) {
-                if (!in_array($row, $meat_list )){
-
-                
+            if ($foodstuff_id_list != null){
+                foreach ($foodstuff_id_list as $row) {
+                    if (!in_array($row, $meat_list )){
                 ?>
                 <input type="hidden" name="foodstuff_id_list[]" value="<?php echo $row ?>">
                 <?php
+                    }
                 }
             }
                 ?>
-
-            <button type="submit" class="next">
-                <a href="fish.php">→</a>
-            </button>
             <button type="submit">確定</button>
         </form>
     </body>
