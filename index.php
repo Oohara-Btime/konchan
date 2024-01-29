@@ -95,26 +95,32 @@
         </section>
 
         <section>
-            <div class="food-button">
-                <form action="ingredient_specified_search/meat.php">
-                    <button><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
-                </form> 
-                <form action="ingredient_specified_search/fish.php">
-                    <button><img src="img/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
-                </form>
-                <form action="ingredient_specified_search/vegetable.php">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-                    <button><img src="img/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
-                </form>
-            </div>
+            <form action="" name="ingredientSpecificationForm" method="post">
+                <?php
+                if($foodstuff_id_list != null){
+                foreach ($foodstuff_id_list as $row) {
+                ?>
+                <input type="hidden" name="foodstuff_id_list[]" value="<?php echo $row ?>">
+                <?php
+                }
+            }
+                ?>
+                <div class="food-button">
+                    <!-- <form action="ingredient_specified_search/meat.php"> -->
+                        <button type="button" onclick="ingredientSpecification('ingredient_specified_search/meat.php')"><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
+                    <!-- <form action="ingredient_specified_search/fish.php"> -->
+                        <button type="button" onclick="ingredientSpecification('ingredient_specified_search/fish.php')"><img src="img/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
+                    <!-- <form action="ingredient_specified_search/vegetable.php">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          -->
+                        <button type="button" onclick="ingredientSpecification('ingredient_specified_search/vegetable.php')"><img src="img/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
+                </div>
 
-            <div class="other-button">
-                <form action="ingredient_specified_search/other.php">
-                    <button><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
-                </form>
-                <form action="localCuisine/local_cuisine.php">
-                    <button><img src="img/other.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
-                </form>
-            </div>
+                <div class="other-button">
+                    <!-- <form action="ingredient_specified_search/other.php"> -->
+                        <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
+                    <!-- <form action="localCuisine/local_cuisine.php"> -->
+                        <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/other.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
+                </div>
+            </form>
 
             <div class="chat_bot-button">
                 <form action="chatbot/chatbot1.php">
@@ -151,6 +157,13 @@
             </div>
         </section>
 
+        <script>
+            var form = document.ingredientSpecificationForm;
+            function ingredientSpecification(page){
+                form.action=page;
+                form.submit();
+            }
+        </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/menu_bar.js"></script>
     </body>
