@@ -46,28 +46,29 @@
             </div>
         </header>
 
-        <section>
-            <input id="drawer_input" class="drawer_hidden" type="checkbox">
-            <div class="menu">
-                <a href="#" class="burger on">
-                    <label for="drawer_input"><span class="bar bun-top"></span></label>
-                    <label for="drawer_input"><span class="bar lettuce"></span></label>
-                    <label for="drawer_input"><span class="bar mustard"></span></label>
-                    <label for="drawer_input"><span class="bar ketchup"></span></label>
-                    <label for="drawer_input"><span class="bar patty"></span></label>
-                    <label for="drawer_input"><span class="bar bun-bot"></span></label>
-                </a>
-            </div>
-            <nav class="nav_content">
-                <ul class="nav_list">
-                    <li class="nav_item1"><a href="index.html">⌂ホーム</a></li>
-                    <li class="nav_item2"><a href="">🔎検索</a></li>
-                    <li class="nav_item3"><a href="ingredient_specified_search/meat.php">肉</a></li>
-                    <li class="nav_item3"><a href="ingredient_specified_search/fish.php">魚</a></li>
-                    <li class="nav_item3"><a href="ingredient_specified_search/vegetable.php">野菜</a></li>
-                    <li class="nav_item3"><a href="ingredient_specified_search/other.php">その他</a></li>
-                    <li class="nav_item4"><a href="localCuisine/local_cuisine.php">郷土料理</a></li>
-                </ul>
+        <form action="" name="ingredientSpecificationForm" method="post">
+            <section>
+                <input id="drawer_input" class="drawer_hidden" type="checkbox">
+                <div class="menu">
+                    <a href="#" class="burger on">
+                        <label for="drawer_input"><span class="bar bun-top"></span></label>
+                        <label for="drawer_input"><span class="bar lettuce"></span></label>
+                        <label for="drawer_input"><span class="bar mustard"></span></label>
+                        <label for="drawer_input"><span class="bar ketchup"></span></label>
+                        <label for="drawer_input"><span class="bar patty"></span></label>
+                        <label for="drawer_input"><span class="bar bun-bot"></span></label>
+                    </a>
+                </div>
+                <nav class="nav_content">
+                    <ul class="nav_list">
+                        <li class="nav_item1"><a href="" onclick="ingredientSpecification('index.html'); return false">⌂ホーム</a></li>
+                        <li class="nav_item2"><a href="">🔎検索</a></li>
+                        <li class="nav_item3"><a href="" onclick="ingredientSpecification('ingredient_specified_search/meat.php'); return false">🥩肉</a></li>
+                        <li class="nav_item3"><a href="" onclick="ingredientSpecification('ingredient_specified_search/fish.php'); return false">🐟魚</a></li>
+                        <li class="nav_item3"><a href="" onclick="ingredientSpecification('ingredient_specified_search/vegetable.php'); return false">🥬野菜</a></li>
+                        <li class="nav_item3"><a href="" onclick="ingredientSpecification('ingredient_specified_search/other.php'); return false">☣その他</a></li>
+                        <li class="nav_item4"><a href="" onclick="ingredientSpecification('localCuisine/local_cuisine.php'); return false">郷土料理</a></li>
+                    </ul>
                     <select class="old-select">
                         <option value="detailed_preference/login-input">新規登録</option>
                         <option value="detailed_preference/subscription_registration">有料会員登録</option>
@@ -91,10 +92,9 @@
                             <span></span>
                         </div>
                     </div>
-            </nav>
-        </section>
+                </nav>
+            </section>
 
-        <form action="" name="ingredientSpecificationForm" method="post">
             <section>
                     <div class="food-button">
                             <button type="button" onclick="ingredientSpecification('ingredient_specified_search/meat.php')"><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
@@ -111,9 +111,6 @@
                         <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/ダウンロード (2).jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
                         <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/ガチャ.jpg" alt="#" width="528" height="230"></button>
                 </div>
-
-                <!-- <div class="capsule_toy-button">
-                </div> -->
             </section>
 
             <section class="cooking">
@@ -124,21 +121,19 @@
                         if ($stmt!== null) {
                             foreach ($stmt as $row) {
                     ?>
-                        <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
-                        <label><?php echo $row['ingredient_name'] ?></label><br>
-                        <?php
-                        }
-                        ?>
+                            <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
+                            <label><?php echo $row['ingredient_name'] ?></label><br>
+                            <?php
+                            }
+                            ?>
                         <br>
                         <button type="button"  onclick="ingredientSpecification('recipi_list_screen/recipi_list_screen.php')">調理開始</button>
                         <?php
                         }
                         ?>
-                    
                 </div>
             </section>
         </form>
-
 
         <script>
             var form = document.ingredientSpecificationForm;

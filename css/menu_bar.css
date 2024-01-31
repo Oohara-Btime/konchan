@@ -8,10 +8,11 @@ body {
     /* overflow: scroll; */
 }
 
-body {
-    background-image: url("../img/キノコ野郎.jpg");
+/* body { */
+    /* background-color: white; */
+    /* background-image: url("../img/キノコ野郎.jpg"); */
     /* overflow: scroll; */
-} 
+/* }  */
 
 h1 {
     color: #999;
@@ -39,7 +40,7 @@ span {
 }
 
 .bar {
-    background: aqua;
+    background: black;
     height: 10px;
     left: 0;
     position: absolute;
@@ -127,7 +128,7 @@ span {
     top: 0;
     left: 0;
     right: 100%;
-    background-color: black; /*aqua*/
+    background-color: khaki; /*aqua*/
     transition: center;
     padding-top: 187px;
     padding-left: 10px;
