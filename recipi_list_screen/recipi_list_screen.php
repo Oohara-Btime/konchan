@@ -54,10 +54,11 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>こんちゃん</title>
 </head>
+<link rel="stylesheet" href="../css/recipi_list_screen.css">
 
 <body>
     <?php
-    if ($stmt && $stmt->rowCount() > 0) {
+        if ($stmt && $stmt->rowCount() > 0) {
     ?>
         <h1>画像を押してレシピを表示！</h1>
     <?php
@@ -66,7 +67,6 @@ try {
                 $recipe_id = $row['recipe_id'];
                 $recipe_name = $row['recipe_name'];
     ?>
-        <link rel="stylesheet" href="../css/recipi_list_screen.css">
         <div class="r_name">
             <h3>
                 <?php
@@ -90,26 +90,6 @@ try {
     }
     ?>
     <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
-    <style>
-        button {
-            margin-left: 48%;
-            margin-top: 2%;
-        }
-
-
-        .foodimage {
-            margin-left: 830px;
-        }
-
-        h1 {
-            margin-left: 750px;
-        }
-        .r_name {
-            width: 50%;
-            margin: auto;
-            text-align: center;
-        }
-    </style>
 </body>
 
 </html>

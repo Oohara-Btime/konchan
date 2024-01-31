@@ -2,3 +2,22 @@ body{
     background-color: cornsilk;
 }
 
+button {
+    margin-left: 48%;
+    margin-top: 2%;
+}
+
+
+.foodimage {
+    margin-left: 830px;
+}
+
+h1 {
+    margin-left: 750px;
+}
+.r_name {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
