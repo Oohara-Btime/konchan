@@ -10,6 +10,8 @@ if ($error == 1) {
     $errormsg = '既に次のプランが登録されています。';
 } elseif ($error == 4) {
     $errormsg = 'ログインまたは新規登録をしてください。';
+} elseif ($error == 5) {
+    $errormsg = '次のプランを登録しました。';
 }
 ?>
 
@@ -35,6 +37,8 @@ if ($error == 1) {
         } elseif ($error == 3) {
             echo ($errormsg);
         } elseif ($error == 4) {
+            echo ($errormsg);
+        } elseif ($error == 5) {
             echo ($errormsg);
         }
         ?>
