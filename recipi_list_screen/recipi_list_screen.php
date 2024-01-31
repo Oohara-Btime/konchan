@@ -21,13 +21,13 @@ if ($prefectures_id != '' && $prefectures_id != null) {
         ' JOIN recipe_genre on recipe.id = recipe_genre.recipe_id and recipe_genre.genre_id = ' . $genre_id . ' and recipe_genre.delete_flag = false ' .
         ' WHERE recipe.cooking_time <= ' . $cooking_time . ' and recipe.delete_flag = false';
 } elseif ($foodstuff_id_list != '' && $foodstuff_id_list != null) {
-    $ids = implode( ',', $foodstuff_id_list);
-    $sql .='SELECT r.id as recipe_id ,r.recipe_image FROM recipe AS r '.
-    ' LEFT JOIN(SELECT distinct recipe_id FROM recipe_ingredient WHERE ingredient_id NOT IN ('.$ids.')) AS ri'.
-    ' ON r.id = ri.recipe_id';
-    foreach($foodstuff_id_list as $i => $foodstuff_id ){
-        $sql .= ' JOIN recipe_ingredient AS ri'.$i.
-                ' ON r.id = ri'.$i.'.recipe_id and ri'.$i.'.ingredient_id ='.$foodstuff_id ;
+    $ids = implode(',', $foodstuff_id_list);
+    $sql .= 'SELECT r.id as recipe_id ,r.recipe_image FROM recipe AS r ' .
+        ' LEFT JOIN(SELECT distinct recipe_id FROM recipe_ingredient WHERE ingredient_id NOT IN (' . $ids . ')) AS ri' .
+        ' ON r.id = ri.recipe_id';
+    foreach ($foodstuff_id_list as $i => $foodstuff_id) {
+        $sql .= ' JOIN recipe_ingredient AS ri' . $i .
+            ' ON r.id = ri' . $i . '.recipe_id and ri' . $i . '.ingredient_id =' . $foodstuff_id;
     }
     $sql .= ' WHERE ri.recipe_id IS NULL';
 }
@@ -37,7 +37,6 @@ try {
         $stmt = $db->prepare($sql);
         // SQL実行
         $stmt->execute();
-        
         // $count=$stmt->rowCount();
     }
 } catch (PDOException $e) {
@@ -59,31 +58,58 @@ try {
 <body>
     <?php
     if ($stmt && $stmt->rowCount() > 0) {
+    ?>
+        <h1>画像を押してレシピを表示！</h1>
+    <?php
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $recipe = $row['recipe_image'];
-            $recipe_id = $row['recipe_id'];
-            ?>
-            <html>
-            <link rel="stylesheet" href="../css/recipi_list_screen.css">
-            <h1>画像を押してレシピを検索🔍</h1>
-            <form action="recipi_detail_screen.php" method="post">
-                <!-- <input type="text" name="recipe_id" src=<?php echo ("../img/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>"> -->
-                <div class="foodimage">
-                    <input type="image" src=<?php echo ("../img/" . $recipe); ?> width="250px" height="250px">
-                    <input type="hidden" name="recipe_id" alt="画像なし" value="<?php echo ($recipe_id); ?>">
-                    </input>
-                    </input>
-                </div>
-            </form>
-
-            </html>
-            <?php
+                $recipe = $row['recipe_image'];
+                $recipe_id = $row['recipe_id'];
+                $recipe_name = $row['recipe_name'];
+    ?>
+        <link rel="stylesheet" href="../css/recipi_list_screen.css">
+        <div class="r_name">
+            <h3>
+                <?php
+                    echo $recipe_name;
+                ?>
+            </h3>
+        </div>
+        <form action="recipi_detail_screen.php" method="post">
+            <!-- <input type="text" name="recipe_id" src=<?php echo ("../img/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>"> -->
+            <div class="foodimage">
+                <input type="image" src=<?php echo ("../img/" . $recipe); ?> width="250px" height="250px">
+                <input type="hidden" name="recipe_id" alt="画像なし" value="<?php echo ($recipe_id); ?>">
+                </input>
+                </input>
+            </div>
+        </form>
+    <?php
         }
     } else {
         echo '<p>検索結果がありません。</p>';
     }
     ?>
     <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
+    <style>
+        button {
+            margin-left: 48%;
+            margin-top: 2%;
+        }
+
+
+        .foodimage {
+            margin-left: 830px;
+        }
+
+        h1 {
+            margin-left: 750px;
+        }
+        .r_name {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
 </body>
 
 </html>
