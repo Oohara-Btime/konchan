@@ -8,8 +8,6 @@ $user_email = $_SESSION["user"]["email"];
 $plan =  filter_input(INPUT_POST, 'radio');
 $db = new PDO(DSN, DB_USER, '');
 
-$date = date("Y/m/d H:i:s");
-
 
 try {
     $stmt = $db->prepare('select * from subscription where email=? and delete_flag=false');

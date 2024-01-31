@@ -8,6 +8,8 @@ if ($error == 1) {
     $errormsg = '有料会員登録に失敗しました。';
 } elseif ($error == 3) {
     $errormsg = '既に次のプランが登録されています。';
+} elseif ($error == 4) {
+    $errormsg = 'ログインまたは新規登録をしてください。';
 }
 ?>
 
@@ -31,6 +33,8 @@ if ($error == 1) {
         } elseif ($error == 2) {
             echo ($errormsg);
         } elseif ($error == 3) {
+            echo ($errormsg);
+        } elseif ($error == 4) {
             echo ($errormsg);
         }
         ?>
