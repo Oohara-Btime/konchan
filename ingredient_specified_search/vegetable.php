@@ -3,6 +3,7 @@ include("../const.php");
 session_start();
 
 $foodstuff_id_list = filter_input(INPUT_POST, 'foodstuff_id_list', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+$vegetable_list = [];
 
 try {
     $db = new PDO(DSN, DB_USER, '');
