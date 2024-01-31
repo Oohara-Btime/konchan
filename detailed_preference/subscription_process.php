@@ -50,22 +50,22 @@ try {
             if ($plan === '1') {
                 $stmt = $db->prepare("insert into subscription (email, plan, use_start_date, use_end_date, create_date) values(?,?,?,DATE_ADD(str_to_date('$before_use_end_date', '%Y-%m-%d'), INTERVAL 3 MONTH),CURRENT_TIMESTAMP)");
                 $stmt->execute([$user_email, $plan, $before_use_end_date]);
-                header("Location:subscription_result.php?error=1");
+                header("Location:subscription_result.php?error=5");
                 exit();
             } elseif ($plan === '3') {
                 $stmt = $db->prepare("insert into subscription (email, plan, use_start_date, use_end_date, create_date) values(?,?,?,DATE_ADD(str_to_date('$before_use_end_date', '%Y-%m-%d'), INTERVAL 3 MONTH),CURRENT_TIMESTAMP)");
                 $stmt->execute([$user_email, $plan, $before_use_end_date]);
-                header("Location:subscription_result.php?error=1");
+                header("Location:subscription_result.php?error=5");
                 exit();
             } elseif ($plan === '6') {
                 $stmt = $db->prepare("insert into subscription (email, plan, use_start_date, use_end_date, create_date) values(?,?,?,DATE_ADD(str_to_date('$before_use_end_date', '%Y-%m-%d'), INTERVAL 3 MONTH),CURRENT_TIMESTAMP)");
                 $stmt->execute([$user_email, $plan, $before_use_end_date]);
-                header("Location:subscription_result.php?error=1");
+                header("Location:subscription_result.php?error=5");
                 exit();
             } elseif ($plan === '12') {
                 $stmt = $db->prepare("insert into subscription (email, plan, use_start_date, use_end_date, create_date) values(?,?,?,DATE_ADD(str_to_date('$before_use_end_date', '%Y-%m-%d'), INTERVAL 3 MONTH),CURRENT_TIMESTAMP)");
                 $stmt->execute([$user_email, $plan, $before_use_end_date]);
-                header("Location:subscription_result.php?error=1");
+                header("Location:subscription_result.php?error=5");
                 exit();
             }
         } else {
