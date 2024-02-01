@@ -39,7 +39,7 @@
                 <p class = logo>こんちゃん</p>
             </div>
             <div class="input-keyword">    
-                <form method="get" action="#" class="search_container">
+                <form method="get" action="keyword-search.php" class="search_container">
                     <input type="text" size="60" placeholder="キーワード検索">
                     <input type="submit" value="&#xf002">
                 </form>
@@ -77,7 +77,7 @@
                         <!-- <option value="detailed_preference/password_changing">パスワード変更</option> -->
                         <!-- <option value="detailed_preference/password_resetting">パスワード再設定</option> -->
                         <option value="detailed_preference/password_reset">パスワードリセット</option>
-                        <option value="detailed_preference/logout">ログアウト</option>
+                        <option value="detailed_preference/logout-input">ログアウト</option>
                         <option value="detailed_preference/unsubscribe">退会</option>
                         <option value="index" selected>⚙️詳細設定</option>
                     </select>
