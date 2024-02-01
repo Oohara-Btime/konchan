@@ -34,8 +34,7 @@ try {
         <div class="ingredient-container">
             <?php foreach ($stmt as $row): ?>
                 <div class="ingredient-item">
-                    <input type="image" src="<?php echo "../img/" . $row['ingredient_image']; ?>" width="250px"
-                        height="200px">
+                    <img src="<?php echo "../img/" . $row['ingredient_image']; ?>" width="250px" height="200px" alt="Ingredient Image">
                     <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>">
                     <label>
                         <?php echo $row['ingredient_name'] ?>
