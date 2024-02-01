@@ -1,0 +1,103 @@
+h1 {
+    font-size: 300%;
+    margin-top: 7%;
+    margin-left: 12%;
+}
+
+.heading {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    font-size: 350%;
+}
+
+.content {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: red;
+    font-size: 230%;
+}
+
+.container {
+    text-align: center;
+}
+
+.home {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    width: 30%;
+    margin-top: 4%;
+    font-size: 130%;
+}
+
+
+
+
+@media screen and (min-width: 300px) {
+    .heading {
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    
+        font-size: 260%;
+    }
+    .home {
+        width: 20%;
+        font-size: 130%;
+        margin-top: 10%;
+    }
+    .content {
+        color: rgb(0, 64, 255);
+        font-size: 230%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .heading {
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    
+        font-size: 300%;
+    }
+    .home {
+        width: 20%;
+        font-size: 130%;
+        margin-top: 5%;
+    }
+    .content {
+        color: rgb(0, 64, 255);
+        font-size: 230%;
+    }
+}
