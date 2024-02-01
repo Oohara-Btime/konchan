@@ -17,7 +17,7 @@
 
     p {
         font-weight: 100;
-        /* text-align: center; */
+        text-align: center;
         margin: 0;
         padding: 0;
         font-size: 1245px;
@@ -418,7 +418,7 @@
     }
 
     body {
-        background: bisque;
+        background: khaki;
         font-family: 'Roboto';
         font-weight: 500;
         text-transform: uppercase;
@@ -798,6 +798,7 @@
         margin-top: 10%;
         padding: 1%;
         width: 10%;
+        background-color: white;
     }
 
     .circle_number {
@@ -819,6 +820,6 @@
     }
 
     .current_page {
-        background-color: chartreuse;
+        background-color: orange;
     }   
 }
