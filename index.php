@@ -39,7 +39,7 @@
                 <p class = logo>こんちゃん</p>
             </div>
             <div class="input-keyword">    
-                <form method="post" action="keyword-search.php" class="search_container">
+                <form method="post" action="recipi_list_screen/recipi_list_screen.php" class="search_container">
                     <input type="text" name="keyword" size="60" placeholder="キーワード検索">
                     <input type="submit" value="&#xf002">
                 </form>
