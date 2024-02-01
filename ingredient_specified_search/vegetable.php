@@ -43,7 +43,7 @@ try {
                 }
                 ?>
                 <li class="vegetable-item">
-                    <input type="image" src="<?php echo "../img/" . $ingredient_image; ?>" width="250px" height="120px">
+                    <img src="<?php echo "../img/" . $ingredient_image; ?>" width="250px" height="120px" alt="Ingredient Image">
                     <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id']; ?>" <?php echo $checked; ?>>
                     <label>
                         <?php echo $row['ingredient_name']; ?>
