@@ -155,3 +155,21 @@ img.chatbot_button:active{
     top: 100px;
     width:  400px;
 }
+
+.selected_ingredient{
+    margin-left: 20px;
+    font-size: 50px;
+}
+
+.ingredient_name{
+    display: inline-block;
+    vertical-align: middle;
+    font-size:30px;
+}
+
+.select_message{
+    width: 200px;
+    height: 350px;
+    margin: auto;
+    padding: 275px 0;
+}

@@ -1,13 +1,4 @@
 /* Made by Jimmy Gillam */
-html,
-body {
-  padding: 0;
-  margin: 0;
-  background-color: #667788;
-  color: #efefef;
-  font-family: "Open Sans";
-}
-
 .container {
   box-sizing: border-box;
   padding: 25px;
@@ -49,6 +40,9 @@ input[type=checkbox] {
   box-sizing: border-box;
   transition: border-color ease 0.2s;
   cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  vertical-align: middle;
 }
 .check-box::before, .check-box::after {
   box-sizing: border-box;
