@@ -4,10 +4,10 @@ include("../const.php");
 session_start();
 
 if ($user_id = $_SESSION['user']['id']){
-$user_id = $_SESSION['user']['id'];
-$user_email = $_SESSION["user"]["email"];
-$plan =  filter_input(INPUT_POST, 'radio');
-$db = new PDO(DSN, DB_USER, '');
+    $user_id = $_SESSION['user']['id'];
+    $user_email = $_SESSION["user"]["email"];
+    $plan =  filter_input(INPUT_POST, 'radio');
+    $db = new PDO(DSN, DB_USER, '');
 } else {
     header("Location:subscription_result.php?error=4");
     exit();
