@@ -15,9 +15,14 @@ button {
 h1 {
     margin-left: 750px;
 }
+
 .r_name {
     width: 50%;
     margin: auto;
     text-align: center;
 }
 
+.error{
+    margin-left: 40%;
+    margin-top: 20%;
+}

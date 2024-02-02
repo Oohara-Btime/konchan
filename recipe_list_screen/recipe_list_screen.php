@@ -96,7 +96,9 @@ try {
     <?php
         }
     } else {
-        echo '<p>検索結果がありません。</p>';
+    ?>
+        <h1 class="error">検索結果がありません。</h1>;
+    <?php
     }
     ?>
     <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
