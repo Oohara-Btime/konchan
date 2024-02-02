@@ -35,7 +35,7 @@ if ($prefectures_id != '' && $prefectures_id != null) {
     }
     $sql .= ' WHERE ri.recipe_id IS NULL';
 } elseif ($keyword != '' && $keyword != null ){
-    $sql = 'SELECT id as recipe_id, prefectures_id, recipe_name, recipe, cooking_time, recipe_image FROM recipe WHERE recipe_name like :keyword AND recipe.delete_flag = false';
+    $sql = 'SELECT id as recipe_id, prefectures_id, recipe_name, recipe, cooking_time, recipe_image FROM recipe WHERE (recipe_name like :keyword or recipe like :keyword) AND recipe.delete_flag = false';
 }
 try {
     $db = new PDO(DSN, DB_USER, '');
