@@ -6,26 +6,22 @@ $recipe_id = filter_input(INPUT_POST, 'recipe_id');
 
 try {
     $db = new PDO(DSN, DB_USER, '');
-    
-    // ----- recipe select を実施 ----------
-    // echo'DB接続確認';
-    $stmt = $db->prepare('SELECT * FROM recipe WHERE id = :id');
 
-    // var_dump($_POST);
-        // echo $_POST['recipe_id'];
-    $inID = intval($_POST['recipe_id']);
+    // recipeテーブルから詳細情報を取得
+    $stmt = $db->prepare('SELECT * FROM recipe WHERE id = :id');
+    $inID = intval($recipe_id);
     $stmt->bindParam(':id', $inID, PDO::PARAM_INT);
-    // "select name from test where id = :id and num = :num"
-    // SQL実行
     $stmt->execute();
     if ($stmt) {
-        $date = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $recipe_data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    // ------------------------------------
 
-    // ----
-    
-
+    $stmt_ingredient = $db->prepare('SELECT * FROM recipe_ingredient WHERE recipe_id = :id');
+    $stmt_ingredient->bindParam(':id', $inID, PDO::PARAM_INT);
+    $stmt_ingredient->execute();
+    if ($stmt_ingredient) {
+        $ingredients = $stmt_ingredient->fetchAll(PDO::FETCH_ASSOC);
+    }
 } catch (PDOException $e) {
     echo "接続に失敗しました。";
     echo $e->getMessage();
@@ -35,35 +31,69 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/recipi_detail_screen.css">
     <title>こんちゃん</title>
 </head>
-<body>
-    <?php 
-        echo '<p>';
-        echo '<p>';
-        echo '<p>';
-        echo '料理名: ';
-        echo $date[0]["recipe_name"];
-        echo '<p>';
-        echo 'レシピ: ';
-        echo $date[0]["recipe"];
-        echo '<p>';
-        echo '調理時間: ';
-        echo $date[0]["cooking_time"];
-        echo '分';
-        echo '<p>';
 
-    ?>
-    <html>
-        <div class=foodimage>
-            <image src=<?php echo ("../img/" . $date[0]["recipe_image"]); ?> width = "250px" height ="250px">
+<body>
+    <header>
+        <button type="button" onclick="location.href='../index.php'" class="headerButton">ホームに戻る</button>
+    </header>
+    <div class="three_line">
+        <div class="foodimage">
+            <img src=<?php echo ("../img/" . $recipe_data[0]["recipe_image"]); ?> width="400px" height="400px"
+                alt="Recipe Image">
         </div>
-    </image>
-    <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
-    </html>
+
+<!-- 既存のコードの後に追加 -->
+<div class="foodstuff">
+    <div class="title">
+        材料
+    </div>
+    <ul>
+        <?php
+        foreach ($ingredients as $ingredient) {
+            // 食材情報を取得
+            $ingredientId = $ingredient['ingredient_id'];
+            $stmt_ingredient_info = $db->prepare('SELECT * FROM foodstuff WHERE id = :id');
+            $stmt_ingredient_info->bindParam(':id', $ingredientId, PDO::PARAM_INT);
+            $stmt_ingredient_info->execute();
+            $ingredientInfo = $stmt_ingredient_info->fetch(PDO::FETCH_ASSOC);
+
+            // 食材名を表示
+        ?>
+        <h3>
+            <?php
+                echo '<li>' . $ingredientInfo['ingredient_name'] . '</li>';
+            ?>
+        </h3>
+        <?php    
+        }
+        ?>
+    </ul>
+
+        <div class="cookingtime">
+            <div class="title">
+                調理時間
+            </div>
+            <div class="cooktime">
+                <h2>
+                    <?php echo $recipe_data[0]["cooking_time"]; ?>分
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="recipe">
+        <?php
+        echo $recipe_data[0]["recipe"];
+        ?>
+    </div>
+    <!-- <button type="button" onclick="location.href='../index.php'">ホームに戻る</button> -->
 </body>
+
 </html>

@@ -2,11 +2,60 @@ body{
     background-color: cornsilk;
 }
 
+/* header{
+    margin: 50px;
+} */
+
+.three_line{
+    display: flex;
+    width: 50%;
+    margin: auto;
+}
+
+.foodimage{
+    margin-right: 100px;
+}
+.foodstuff{
+    width: calc((100% - 500px) / 2);
+}
+
+.cookingtime{
+    width: calc((100% - 500px) / 2);
+}
+
+.title{
+    border: 5px solid black;
+    text-align: center;
+    background-color: white;
+    font-size: 30px;
+    width: 130px;
+    height: 45px;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.recipe{
+    clear: both;
+    margin: 50px 300px;
+    padding:  60px;
+    border: 7px ridge RGB(255, 248,220);
+    background-color: white;
+}
+
+h2{
+    text-align: center;
+}
+
+li{
+    margin-left: 12%;
+}
+
+
+
 button{
     margin-left: 50%;
 }
 
-
-.foodimage{
-    margin-left: 670px;
+.headerButton{
+    margin: 20px 50px 0px 284px;
 }
