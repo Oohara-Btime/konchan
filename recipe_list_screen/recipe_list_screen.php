@@ -64,7 +64,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>こんちゃん</title>
 </head>
-<link rel="stylesheet" href="../css/recipi_list_screen.css">
+<link rel="stylesheet" href="../css/recipe_list_screen.css">
 
 <body>
     <?php
@@ -84,7 +84,7 @@ try {
                 ?>
             </h3>
         </div>
-        <form action="recipi_detail_screen.php" method="post">
+        <form action="recipe_detail_screen.php" method="post">
             <!-- <input type="text" name="recipe_id" src=<?php echo ("../img/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>"> -->
             <div class="foodimage">
                 <input type="image" src=<?php echo ("../img/" . $recipe); ?> width="250px" height="250px">

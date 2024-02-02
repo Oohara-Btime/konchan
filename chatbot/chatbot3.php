@@ -18,12 +18,12 @@ $taste_id = filter_input(INPUT_POST, 'taste_id');
 
 <body>
     <!-- <h1>今日はどのような味のものが食べたいですか？</h1> -->
-    <div class="continput">
+    <div class="cont-input">
         <p>
             調理時間はどれくらいがですか？
         </p>
         <!-- <h4>I hope you enjoyed it</h4>   -->
-        <form action="../recipi_list_screen/recipi_list_screen.php" method="post">
+        <form action="../recipe_list_screen/recipe_list_screen.php" method="post">
             <input type="hidden" name="taste_id" value="<?php echo $taste_id ?>">
             <input type="hidden" name="genre_id" value="<?php echo $genre_id ?>">
             <ul>

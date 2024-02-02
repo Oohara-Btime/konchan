@@ -252,7 +252,7 @@
 
 
     <!-- 日本地図 -->
-    <form name="map" action="../recipi_list_screen/recipi_list_screen.php" method="post">
+    <form name="map" action="../recipe_list_screen/recipe_list_screen.php" method="post">
         <input type="hidden" name="prefectures_id">
         <div id="japan-map" class="clearfix">
 
