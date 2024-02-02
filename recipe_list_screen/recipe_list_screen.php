@@ -26,7 +26,7 @@ if ($prefectures_id != '' && $prefectures_id != null) {
         ' WHERE recipe.cooking_time <= ' . $cooking_time . ' and recipe.delete_flag = false';
 } elseif ($foodstuff_id_list != '' && $foodstuff_id_list != null) {
     $ids = implode(',', $foodstuff_id_list);
-    $sql .= 'SELECT r.id as recipe_id ,r.recipe_image FROM recipe AS r ' .
+    $sql .= 'SELECT r.id as recipe_id ,r.recipe_image,recipe_name FROM recipe AS r ' .
         ' LEFT JOIN(SELECT distinct recipe_id FROM recipe_ingredient WHERE ingredient_id NOT IN (' . $ids . ')) AS ri' .
         ' ON r.id = ri.recipe_id';
     foreach ($foodstuff_id_list as $i => $foodstuff_id) {
