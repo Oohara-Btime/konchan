@@ -32,6 +32,7 @@
         <link rel="stylesheet" href="css/top.css">
         <link rel="stylesheet" href="css/menu_bar.css">
         <link rel="stylesheet" href="css/au.css">
+        <link rel="stylesheet" href="css/checkbox.css">
     </head>
     <body>
         <header id="header">
@@ -71,7 +72,7 @@
                     </ul>
                     <select class="old-select">
                         <option value="detailed_preference/login-input">新規登録</option>
-                        <option value="detailed_preference/subscription_registration">有料会員登録</option>
+                    checkbox.scss    <option value="detailed_preference/subscription_registration">有料会員登録</option>
                         <option value="detailed_preference/login-input">ログイン</option>
                         <option value="detailed_preference/email_address_changing">メールアドレス変更</option>
                         <!-- <option value="detailed_preference/password_changing">パスワード変更</option> -->
@@ -114,24 +115,32 @@
             </section>
 
             <section class="cooking">
-                <div class="">
+                <div class="selected_ingredient">選択した食材</div>
+                <!-- <div class=""> -->
                     <!-- <form action="recipe_list_screen/recipe_list_screen.php"> -->
                     <?php
                         // 取得したデータを出力
                         if ($stmt!== null) {
                             foreach ($stmt as $row) {
                     ?>
-                            <input type="checkbox" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
-                            <label><?php echo $row['ingredient_name'] ?></label><br>
+                        <input type="checkbox" id="cb<?php echo $row['id'] ?>" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
+                        <label for="cb<?php echo $row['id'] ?>" class="check-box"></label>
+                        <label class="ingredient_name"><?php echo $row['ingredient_name'] ?></label><br>
                             <?php
                             }
                             ?>
                         <br>
-                        <button type="button"  onclick="ingredientSpecification('recipe_list_screen/recipe_list_screen.php')">調理開始</button>
+                        
+                        <!-- <button class="cooking_button" type="button"  onclick="ingredientSpecification('recipe_list_screen/recipe_list_screen.php')">調理開始</button> -->
+                        <button class="cooking" typ="button" disabled>調理開始</button>
+                        <?php
+                        }else{
+                        ?>
+                        <div class="select_message">食材を選んでください</div>
                         <?php
                         }
                         ?>
-                </div>
+                <!-- </div> -->
             </section>
         </form>
 
