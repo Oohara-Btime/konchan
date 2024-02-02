@@ -29,7 +29,7 @@ try {
 
 <body>
     <!-- <h1>今日はどのような味のものが食べたいですか？</h1> -->
-    <div class="continput">
+    <div class="cont-input">
         <p>
             何風の料理が食べたいですか？
         </p>

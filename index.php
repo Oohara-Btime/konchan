@@ -39,7 +39,7 @@
                 <p class = logo>こんちゃん</p>
             </div>
             <div class="input-keyword">    
-                <form method="post" action="recipi_list_screen/recipi_list_screen.php" class="search_container">
+                <form method="post" action="recipe_list_screen/recipe_list_screen.php" class="search_container">
                     <input type="text" name="keyword" size="60" placeholder="キーワード検索">
                     <input type="submit" value="&#xf002">
                 </form>
@@ -115,7 +115,7 @@
 
             <section class="cooking">
                 <div class="">
-                    <!-- <form action="recipi_list_screen/recipi_list_screen.php"> -->
+                    <!-- <form action="recipe_list_screen/recipe_list_screen.php"> -->
                     <?php
                         // 取得したデータを出力
                         if ($stmt!== null) {
@@ -127,7 +127,7 @@
                             }
                             ?>
                         <br>
-                        <button type="button"  onclick="ingredientSpecification('recipi_list_screen/recipi_list_screen.php')">調理開始</button>
+                        <button type="button"  onclick="ingredientSpecification('recipe_list_screen/recipe_list_screen.php')">調理開始</button>
                         <?php
                         }
                         ?>

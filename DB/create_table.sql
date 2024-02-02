@@ -161,7 +161,7 @@ CREATE TABLE `recipe_ingredient` (
 
 CREATE TABLE `recipe_seasoning` (
   `id` bigint(20) NOT NULL COMMENT 'id',
-  `recipi_id` bigint(20) NOT NULL COMMENT 'レシピID',
+  `recipe_id` bigint(20) NOT NULL COMMENT 'レシピID',
   `seasoning_id` bigint(20) NOT NULL COMMENT '調味料ID',
   `create_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT '作成日時',
   `update_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '更新日時',
@@ -352,7 +352,7 @@ ALTER TABLE `recipe_ingredient`
 --
 ALTER TABLE `recipe_seasoning`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `recipi_id` (`recipi_id`),
+  ADD KEY `recipe_id` (`recipe_id`),
   ADD KEY `seasoning_id` (`seasoning_id`);
 
 --
@@ -542,7 +542,7 @@ ALTER TABLE `recipe_ingredient`
 -- テーブルの制約 `recipe_seasoning`
 --
 ALTER TABLE `recipe_seasoning`
-  ADD CONSTRAINT `recipe_seasoning_ibfk_1` FOREIGN KEY (`recipi_id`) REFERENCES `recipe` (`id`),
+  ADD CONSTRAINT `recipe_seasoning_ibfk_1` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`),
   ADD CONSTRAINT `recipe_seasoning_ibfk_2` FOREIGN KEY (`seasoning_id`) REFERENCES `seasoning` (`id`);
 
 --
