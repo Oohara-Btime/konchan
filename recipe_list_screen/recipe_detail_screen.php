@@ -40,46 +40,43 @@ try {
 </head>
 
 <body>
-    <header>
-        <button type="button" onclick="location.href='../index.php'" class="headerButton">ホームに戻る</button>
-    </header>
     <div class="three_line">
         <div class="foodimage">
-            <img src=<?php echo ("../img/" . $recipe_data[0]["recipe_image"]); ?> width="400px" height="400px"
-                alt="Recipe Image">
+            <img src=<?php echo ("../img/" . $recipe_data[0]["recipe_image"]); ?> width="400px" height="400px">
         </div>
 
 <!-- 既存のコードの後に追加 -->
 <div class="foodstuff">
-    <div class="title">
-        材料
-    </div>
-    <ul>
-        <?php
-        foreach ($ingredients as $ingredient) {
-            // 食材情報を取得
-            $ingredientId = $ingredient['ingredient_id'];
-            $stmt_ingredient_info = $db->prepare('SELECT * FROM foodstuff WHERE id = :id');
-            $stmt_ingredient_info->bindParam(':id', $ingredientId, PDO::PARAM_INT);
-            $stmt_ingredient_info->execute();
-            $ingredientInfo = $stmt_ingredient_info->fetch(PDO::FETCH_ASSOC);
+        <div class="zairyou">
+            <h2 class="title">材料</h2>
+            <div class = "ingre">
+            <ul>
+                <?php
+                foreach ($ingredients as $ingredient) {
+                    // 食材情報を取得
+                    $ingredientId = $ingredient['ingredient_id'];
+                    $stmt_ingredient_info = $db->prepare('SELECT * FROM foodstuff WHERE id = :id');
+                    $stmt_ingredient_info->bindParam(':id', $ingredientId, PDO::PARAM_INT);
+                    $stmt_ingredient_info->execute();
+                    $ingredientInfo = $stmt_ingredient_info->fetch(PDO::FETCH_ASSOC);
 
-            // 食材名を表示
-        ?>
-        <h3>
-            <?php
-                echo '<li>' . $ingredientInfo['ingredient_name'] . '</li>';
-            ?>
-        </h3>
-        <?php    
-        }
-        ?>
-    </ul>
-
-        <div class="cookingtime">
-            <div class="title">
-                調理時間
+                    // 食材名を表示
+                ?>
+                <h3>
+                    <?php
+                        echo '<li>' . $ingredientInfo['ingredient_name'] . '</li>';
+                    ?>
+                </h3>
+                <?php    
+                }
+                ?>
+            </ul>
             </div>
+        </div>
+        <div class="cookingtime">
+            <!-- <div class="title"> -->
+                <h2 class="title">調理時間</h2>
+            <!-- </div> -->
             <div class="cooktime">
                 <h2>
                     <?php echo $recipe_data[0]["cooking_time"]; ?>分
@@ -88,12 +85,13 @@ try {
         </div>
     </div>
 
-    <div class="recipe">
+    </div>
+    <div class="cookingmethod">
         <?php
         echo $recipe_data[0]["recipe"];
         ?>
     </div>
-    <!-- <button type="button" onclick="location.href='../index.php'">ホームに戻る</button> -->
+    <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
 </body>
 
 </html>
