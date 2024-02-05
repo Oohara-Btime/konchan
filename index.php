@@ -3,6 +3,7 @@
     session_start();
     $foodstuff_id_list=filter_input(INPUT_POST, 'foodstuff_id_list' , FILTER_DEFAULT,FILTER_REQUIRE_ARRAY);
     $stmt=null;
+    $button_disabled=" disabled";
     // idをコンマ区切りの文字列にする。(配列を文字列に変換)
     if($foodstuff_id_list != null){
     $ids = implode( ',', $foodstuff_id_list);
@@ -72,7 +73,7 @@
                     </ul>
                     <select class="old-select">
                         <option value="detailed_preference/login-input">新規登録</option>
-                    checkbox.scss    <option value="detailed_preference/subscription_registration">有料会員登録</option>
+                        <option value="detailed_preference/subscription_registration">有料会員登録</option>
                         <option value="detailed_preference/login-input">ログイン</option>
                         <option value="detailed_preference/email_address_changing">メールアドレス変更</option>
                         <!-- <option value="detailed_preference/password_changing">パスワード変更</option> -->
@@ -121,18 +122,22 @@
                     <?php
                         // 取得したデータを出力
                         if ($stmt!== null) {
-                            foreach ($stmt as $row) {
+                            $button_disabled="";
                     ?>
+                    <div class="checkbox_list">
+                        <?php
+                            foreach ($stmt as $row) {
+                        ?>
                         <input type="checkbox" id="cb<?php echo $row['id'] ?>" name="foodstuff_id_list[]" value="<?php echo $row['id'] ?>" checked>
                         <label for="cb<?php echo $row['id'] ?>" class="check-box"></label>
                         <label class="ingredient_name"><?php echo $row['ingredient_name'] ?></label><br>
                             <?php
                             }
                             ?>
+                    </div>
                         <br>
                         
                         <!-- <button class="cooking_button" type="button"  onclick="ingredientSpecification('recipe_list_screen/recipe_list_screen.php')">調理開始</button> -->
-                        <button class="cooking" typ="button" disabled>調理開始</button>
                         <?php
                         }else{
                         ?>
@@ -141,6 +146,8 @@
                         }
                         ?>
                 <!-- </div> -->
+                        <!-- <button class="cooking_button" type="button"  onclick="ingredientSpecification('recipe_list_screen/recipe_list_screen.php')">調理開始</button> -->
+                    <button class="cooking_button" type="button" onclick="ingredientSpecification('recipe_list_screen/recipe_list_screen.php')" <?php echo $button_disabled ?>>調理開始</button>
             </section>
         </form>
 
