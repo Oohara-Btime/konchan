@@ -22,7 +22,7 @@ if ($error == 1) {
     <!-- タイトルの表示 -->
     <h1>メールアドレス変更</h1>
     <div class="form">
-        <!-- <form action="email_address_process.php" method="post" name="email_address_process"> -->
+        <form action="email_address_process.php/" method="post" name="email_address_process">
             <!-- 新しいメールアドレスの入力フォーム -->
             <div class="text-input">
                 <?php
@@ -46,16 +46,15 @@ if ($error == 1) {
                 <!-- フォームの送信ボタン -->
                 <input type="submit" id="submit" value="変更" />
             </div>
-        <!-- </form> -->
+        </form>
     </div>
-    <!-- <script src="../js/setting.js"></script> -->
 
     <script>
         // new_registrationのフォーム
         var form = document.email_address_process;
         form.onsubmit = function() {
             // エラーメッセージをクリアする
-            form.email.setCustomValidity("");
+            form.new_email.setCustomValidity("");
             console.log(form.new_email.value);
             console.log(form.confirmation_email.value);
             // パスワードの一致確認

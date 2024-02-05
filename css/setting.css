@@ -24,7 +24,8 @@ h1 {
   margin-bottom: 0.875em;
 }
 .form form input[type=text],
-.form form input[type=password] {
+.form form input[type=password],
+.form form input[type=email] {
   width: 100%;
   padding: 1em 0 12px;
   padding-left: 0;
@@ -37,7 +38,8 @@ h1 {
   /*Some sibling magic happens */
 }
 .form form input[type=text]:focus + .separator,
-.form form input[type=password]:focus + .separator {
+.form form input[type=password]:focus + .separator,
+.form form input[type=email]:focus + .separator {
   transform: scaleX(1) translateY(-2px);
   opacity: 1;
 }

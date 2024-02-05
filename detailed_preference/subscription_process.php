@@ -3,7 +3,7 @@
 include("../const.php");
 session_start();
 
-if ($user_id = $_SESSION['user']['id']){
+if ($user_id = $_SESSION['user']['id'] and $user_email = $_SESSION["user"]["email"]){
     $user_id = $_SESSION['user']['id'];
     $user_email = $_SESSION["user"]["email"];
     if ( $plan =  filter_input(INPUT_POST, 'radio')){

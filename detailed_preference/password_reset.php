@@ -1,4 +1,7 @@
 <?php
+include("../const.php");
+session_start();
+
 // errorっていうパラメータが渡ってきたら$errorという変数に値を代入する
 $error = filter_input(INPUT_GET, 'error');
 $errormsg = '';
@@ -25,15 +28,15 @@ if ($error == 1) {
                 <?php
                 if ($error == 1) {
                     echo "<FONT COLOR=RED>$errormsg</FONT><br/>";
-                }
+                } 
                 ?>
                 <label for="email">メールアドレス入力</label>
-                <input type="email" name="email" id="email" placeholder="" />
+                <input type="email" name="email" id="email" placeholder="" required/>
                 <span class="separator"> </span>
             </div>
 
             <div class="form-bottom">
-                <input type="submit" id="submit" value="完了"/>
+                <input type="submit" id="submit" value="確認"/>
             </div>
         </form>
     </div>

@@ -3,11 +3,12 @@ include("../const.php");
 session_start();
 
 // var_dump($_SESSION);
-if ($email = filter_input(INPUT_POST, 'confirmation_email')) {
+if ($user_id = $_SESSION["user"]["id"] and $user_email = $_SESSION["user"]["email"]) {
     $user_id = $_SESSION["user"]["id"];
     $user_email = $_SESSION["user"]["email"];
     $email = filter_input(INPUT_POST, 'confirmation_email');
 } else {
+    unset($_SESSION['user']);
     header("Location:login-input.php?error=3");
     exit();
 }
