@@ -101,6 +101,7 @@ try {
     <?php
     }
     ?>
+    
     <button type="button" onclick="location.href='../index.php'">ホームに戻る</button>
 </body>
 
