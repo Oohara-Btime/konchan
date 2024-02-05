@@ -12,7 +12,7 @@ try {
 
     unset($_SESSION['user']);
 
-    header("Location:../index.php");
+    header("Location:password_reset_result.php?error=1");
     exit();
 
 } catch (PDOException $e) {
