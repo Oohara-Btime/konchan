@@ -36,7 +36,7 @@ if ($error == 1) {
                     echo ($errormsg);
                 }
                 ?>
-                <p class="forgot-pass">Forgot password?</p>
+                <a href="" onclick="location.href='detailed_preference/password_reset.php'"><p class="forgot-pass">Forgot password?</p></a>
                 <button type="submit" class="submit">Sign In</button>
             </form>
             <!-- <button type="button" class="fb-btn">Connect with <span>facebook</span></button> -->
