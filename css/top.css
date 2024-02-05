@@ -18,7 +18,8 @@ header {
     border-radius: 20px;
     height: 2.5em;
     width: 500px;
-    overflow: hidden; /*hiddenでもええで*/
+    overflow: hidden;
+    /*hiddenでもええで*/
     /* float: right; */
 }
 
@@ -50,9 +51,9 @@ header {
     /* float: right; */
 }
 
-.input-keyword{
+.input-keyword {
     position: relative;
-    display:flex ;
+    display: flex;
     top: -31px;
     padding-left: 670px;
 }
@@ -86,9 +87,10 @@ img.meat_button:hover {
     width: 350px;
     height: 300px;
     opacity: 0.5;
-    cursor:pointer;
+    cursor: pointer;
 }
-img.meat_button:active{
+
+img.meat_button:active {
     position: relative;
     top: 3px;
 }
@@ -97,9 +99,10 @@ img.fish_button:hover {
     width: 350px;
     height: 300px;
     opacity: 0.5;
-    cursor:pointer;
+    cursor: pointer;
 }
-img.fish_button:active{
+
+img.fish_button:active {
     position: relative;
     top: 3px;
 }
@@ -108,9 +111,10 @@ img.vegetable_button:hover {
     width: 350px;
     height: 300px;
     opacity: 0.5;
-    cursor:pointer;
+    cursor: pointer;
 }
-img.vegetable_button:active{
+
+img.vegetable_button:active {
     position: relative;
     top: 3px;
 }
@@ -119,9 +123,10 @@ img.other_button:hover {
     width: 528px;
     height: 230px;
     opacity: 0.5;
-    cursor:pointer;
+    cursor: pointer;
 }
-img.other-button:active{
+
+img.other-button:active {
     position: relative;
     top: 3px;
 }
@@ -130,9 +135,10 @@ img.local_cuisine_button:hover {
     width: 528px;
     height: 230px;
     opacity: 0.5;
-    cursor:pointer;
+    cursor: pointer;
 }
-img.local_cuisine_button:active{
+
+img.local_cuisine_button:active {
     position: relative;
     top: 3px;
 }
@@ -141,35 +147,64 @@ img.chatbot_button:hover {
     width: 528px;
     height: 230px;
     opacity: 0.5;
-    cursor:pointer;
+    cursor: pointer;
 }
-img.chatbot_button:active{
+
+img.chatbot_button:active {
     position: relative;
     top: 3px;
 }
 
-.cooking{
-    height: 100%;
+.cooking {
+    height:100%;
     right: 0;
     position: fixed;
-    top: 100px;
-    width:  400px;
+    top: 0;
+    padding-top: 100px;
+    width: calc(100% - 1464px);
+    overflow: scroll;
 }
 
-.selected_ingredient{
-    margin-left: 20px;
+.checkbox_list{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.selected_ingredient {
+    width: 380px;
+    margin: auto;
     font-size: 50px;
+    text-align: center;
 }
 
-.ingredient_name{
+.ingredient_name {
     display: inline-block;
     vertical-align: middle;
-    font-size:30px;
+    font-size: 30px;
 }
 
-.select_message{
+.select_message {
     width: 200px;
     height: 350px;
     margin: auto;
     padding: 275px 0;
+    text-align: center;
+}
+
+.cooking_button {
+    width: 220px;
+    /* height: 20px; */
+    margin: auto;
+    /* padding: 200px 0; */
+    display: block;
+    font-size: 45px;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #fff;
+    /* transform: translate(230%, 250%); */
+}
+
+.cooking_button:hover {
+    color: #fff;
+    background: #000;
 }
