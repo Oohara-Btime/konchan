@@ -12,6 +12,8 @@ if ($error == 1) {
     $errormsg = 'ログインまたは新規登録をしてください。';
 } elseif ($error == 5) {
     $errormsg = '次のプランを登録しました。';
+} elseif ($error == 6) {
+    $errormsg = 'プランを選択してください。';
 }
 ?>
 

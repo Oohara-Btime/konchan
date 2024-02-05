@@ -3,9 +3,15 @@ include("../const.php");
 session_start();
 
 // var_dump($_SESSION);
-$user_id = $_SESSION["user"]["id"];
-$password = filter_input(INPUT_POST, 'password');
-$db = new PDO(DSN, DB_USER, '');
+if ($user_id = $_SESSION["user"]["id"]){
+    $user_id = $_SESSION["user"]["id"];
+    $password = filter_input(INPUT_POST, 'password');
+    $db = new PDO(DSN, DB_USER, '');
+} else {
+    header('Location:login-input.php?error=3');
+    exit();
+}
+
 
 
 try {

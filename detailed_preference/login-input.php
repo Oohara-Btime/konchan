@@ -6,6 +6,8 @@ if ($error == 1) {
     $errormsg = 'メールアドレスまたはパスワードが違います。';
 } elseif ($error == 2) {
     $errormsg = 'このメールアドレスは登録されています。';
+} elseif ($error == 3) {
+    $errormsg = 'ログインをしてください';
 }
 ?>
 <!DOCTYPE html>
@@ -33,6 +35,8 @@ if ($error == 1) {
                 </label>
                 <?php
                 if ($error == 1) {
+                    echo ($errormsg);
+                } elseif ($error == 3) {
                     echo ($errormsg);
                 }
                 ?>

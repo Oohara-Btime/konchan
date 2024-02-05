@@ -28,7 +28,7 @@ if ($error == 1) {
                 }
                 ?>
                 <label for="email">メールアドレス入力</label>
-                <input type="text" name="email" id="email" placeholder="" />
+                <input type="email" name="email" id="email" placeholder="" />
                 <span class="separator"> </span>
             </div>
 
