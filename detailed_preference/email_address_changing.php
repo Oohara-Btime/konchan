@@ -4,7 +4,9 @@ $error = filter_input(INPUT_GET, 'error');
 $errormsg = '';
 if ($error == 1) {
     $errormsg = 'このメールアドレスは既に登録されています。';
-} 
+} elseif ($error == 4) {
+    $errormsg = '新しいメールアドレスと確認のメールアドレスが一致しません。';
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +24,15 @@ if ($error == 1) {
     <!-- タイトルの表示 -->
     <h1>メールアドレス変更</h1>
     <div class="form">
-        <form action="email_address_process.php/" method="post" name="email_address_process">
+        <form action="email_address_process.php" method="post" name="email_address_process">
             <!-- 新しいメールアドレスの入力フォーム -->
             <div class="text-input">
                 <?php
                     if ($error == 1) {
                         echo "<FONT COLOR=RED>$errormsg</FONT><br/>";
-                    } 
+                    } elseif ($error == 4) {
+                        echo "<FONT COLOR=RED>$errormsg</FONT><br/>";
+                    }
                 ?>
                 <label for="new-email">新しいメールアドレス</label>
                 <input type="email" name="new_email" id="new_email" placeholder=""  required/>
@@ -49,22 +53,6 @@ if ($error == 1) {
         </form>
     </div>
 
-    <script>
-        // new_registrationのフォーム
-        var form = document.email_address_process;
-        form.onsubmit = function() {
-            // エラーメッセージをクリアする
-            form.new_email.setCustomValidity("");
-            console.log(form.new_email.value);
-            console.log(form.confirmation_email.value);
-            // パスワードの一致確認
-            if (form.new_email.value != form.confirmation_email.value) {
-                // 一致していなかったら、エラーメッセージを表示する
-                form.confirmation_email.setCustomValidity("新しいメールアドレスと確認のメールアドレスが一致しません");
-                return false;
-            };
-        };
-    </script>
 
 </body>
 
