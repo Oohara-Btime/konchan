@@ -47,7 +47,8 @@ body{
 
 
 .ingre{
-    transform: translate(-20%);
+    white-space:nowrap;
+    transform: translate(-18%);
 }
 h2{
     text-align: center;
