@@ -1,6 +1,6 @@
 <?php
 // errorっていうパラメータが渡ってきたら$errorという変数に値を代入する
-$error = $_GET['error'];
+$error = filter_input(INPUT_GET, 'error');
 $errormsg = '';
 if ($error == 1) {
     $errormsg = 'メールアドレスまたはパスワードが違います。';
@@ -8,7 +8,9 @@ if ($error == 1) {
     $errormsg = 'このメールアドレスは登録されています。';
 } elseif ($error == 3) {
     $errormsg = 'ログインをしてください';
-}
+} elseif ($error == 4) {
+    $errormsg = '新しいパスワードと確認パスワードが一致しません';
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,6 +72,8 @@ if ($error == 1) {
                     <?php
                     if ($error == 2) {
                         echo ($errormsg);
+                    } elseif ($error == 4) {
+                        echo ($errormsg);
                     }
                     ?>
                     <label>
@@ -86,22 +90,6 @@ if ($error == 1) {
             </div>
         </div>
     </div>
-    <script>
-        // new_registrationのフォーム
-        var form = document.new_registration;
-        form.onsubmit = function() {
-            // エラーメッセージをクリアする
-            form.password.setCustomValidity("");
-            console.log(form.password.value);
-            console.log(form.retype_password.value);
-            // パスワードの一致確認
-            if (form.password.value != form.retype_password.value) {
-                // 一致していなかったら、エラーメッセージを表示する
-                form.password.setCustomValidity("パスワードと確認用パスワードが一致しません");
-                return false;
-            };
-        };
-    </script>
 
     <!-- <a href="https://dribbble.com/shots/3306190-Login-Registration-form" target="_blank" class="icon-link"> -->
     <!-- <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png"> -->

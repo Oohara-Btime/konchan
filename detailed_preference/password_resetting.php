@@ -6,7 +6,6 @@ session_start();
 $email = filter_input(INPUT_POST, 'email');
 $db = new PDO(DSN, DB_USER, '');
 
-
 try {
     $stmt = $db->prepare('select * from user where email=? and delete_flag = false');
     $stmt->execute([$email]);
@@ -45,13 +44,13 @@ try {
         <form action="password_reset_process.php" method="post" name="password_reset_process">
             <div class="text-input">
                 <label for="password">新しいパスワード</label>
-                <input type="password" name="password" id="password" placeholder="" />
+                <input type="password" name="password" id="password" placeholder="" required/>
                 <span class="separator"> </span>
             </div>
 
             <div class="text-input">
                 <label for="retype_password">パスワードの確認</label>
-                <input type="password" name="retype_password" id="retype_password" placeholder="" />
+                <input type="password" name="retype_password" id="retype_password" placeholder="" required/>
                 <span class="separator"> </span>
             </div>
 

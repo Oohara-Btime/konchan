@@ -34,7 +34,7 @@
     <div id="overlay1"></div>
 
     <div id="popup1">
-        <h2>クーポン取得</h2>
+        <h2>今日の郷土料理</h2>
         <span id="gty">表示場所</span>
         <p><button type="button" class="home" onclick="location.href='../index.php'">ホームへ</button></p>
     </div>
@@ -124,11 +124,54 @@
 
 <script type="text/javascript">
     function random() {
-        var rand = Math.floor(Math.random() * 4);
-        if (rand == 0) msg = "A賞";
-        if (rand == 1) msg = "B賞";
-        if (rand == 2) msg = "C賞";
-        if (rand == 3) msg = "D賞";
+        var rand = Math.floor(Math.random() * 47);
+        if (rand == 0) msg = "北海道";
+        if (rand == 1) msg = "青森県";
+        if (rand == 2) msg = "秋田県";
+        if (rand == 3) msg = "岩手県";
+        if (rand == 4) msg = "山形県";
+        if (rand == 5) msg = "宮城県";
+        if (rand == 6) msg = "福島県";
+        if (rand == 7) msg = "群馬県";
+        if (rand == 8) msg = "栃木県";
+        if (rand == 9) msg = "茨城県";
+        if (rand == 10) msg = "千葉県";
+        if (rand == 11) msg = "埼玉県";
+        if (rand == 12) msg = "東京都";
+        if (rand == 13) msg = "神奈川県";
+        if (rand == 14) msg = "新潟県";
+        if (rand == 15) msg = "富山県";
+        if (rand == 16) msg = "長野県";
+        if (rand == 17) msg = "山梨県";
+        if (rand == 18) msg = "静岡県";
+        if (rand == 19) msg = "石川県";
+        if (rand == 20) msg = "福井県";
+        if (rand == 21) msg = "岐阜県";
+        if (rand == 22) msg = "愛知県";
+        if (rand == 23) msg = "滋賀県";
+        if (rand == 24) msg = "三重県";
+        if (rand == 25) msg = "奈良県";
+        if (rand == 26) msg = "和歌山県";
+        if (rand == 27) msg = "京都府";
+        if (rand == 28) msg = "大阪府";
+        if (rand == 29) msg = "兵庫県";
+        if (rand == 30) msg = "鳥取県";
+        if (rand == 31) msg = "岡山県";
+        if (rand == 32) msg = "島根県";
+        if (rand == 33) msg = "広島県";
+        if (rand == 34) msg = "山口県";
+        if (rand == 35) msg = "愛媛県";
+        if (rand == 36) msg = "香川県";
+        if (rand == 37) msg = "高知県";
+        if (rand == 38) msg = "徳島県";
+        if (rand == 39) msg = "福岡県";
+        if (rand == 40) msg = "大分県";
+        if (rand == 41) msg = "宮城県";
+        if (rand == 42) msg = "佐賀県";
+        if (rand == 43) msg = "長崎県";
+        if (rand == 44) msg = "熊本県";
+        if (rand == 45) msg = "鹿児島";
+        if (rand == 46) msg = "沖縄県";
         document.getElementById("gty").innerHTML = msg;
     }
 </script>

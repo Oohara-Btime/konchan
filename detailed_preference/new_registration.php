@@ -4,6 +4,11 @@ session_start();
 
 $email = filter_input(INPUT_POST, 'email');
 $password =  filter_input(INPUT_POST, 'password');
+$retype_password = filter_input(INPUT_POST, 'retype_password');
+if ($password !== $retype_password){
+    header('Location:login-input.php?error=4');
+    exit();
+}
 
 try {
     $db = new PDO(DSN, DB_USER, '');
@@ -17,7 +22,7 @@ try {
     if ($count === 0){
         // ユーザテーブルにメールアドレスとパスワードを追加している
         $stmt = $db->prepare('insert into user (email,password) values(?,?)');
-        $stmt->execute([$email,$password]);
+        $stmt->execute([$email,$retype_password]);
 
         // 登録したユーザのIDを取得している
         $stmt = $db->prepare('select * from user where email=? and delete_flag = false');

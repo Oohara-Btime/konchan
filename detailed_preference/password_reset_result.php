@@ -1,6 +1,6 @@
 <?php
 // errorっていうパラメータが渡ってきたら$errorという変数に値を代入する
-$error = $_GET['error'];
+$error = filter_input(INPUT_GET, 'error');
 $errormsg = '';
 if ($error == 1) {
     $errormsg = 'ログインをしてください。';
