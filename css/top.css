@@ -136,6 +136,7 @@ img.local_cuisine_button:hover {
     height: 230px;
     opacity: 0.5;
     cursor: pointer;
+    background-color: red;
 }
 
 img.local_cuisine_button:active {
@@ -151,6 +152,18 @@ img.chatbot_button:hover {
 }
 
 img.chatbot_button:active {
+    position: relative;
+    top: 3px;
+}
+
+img.gatya-button:hover {
+    width: 528px;
+    height: 230px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+img.gatya-button:active {
     position: relative;
     top: 3px;
 }
