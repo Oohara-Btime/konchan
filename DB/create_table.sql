@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: 127.0.0.1
--- 生成日時: 2024-02-05 02:17:40
+-- 生成日時: 2024-02-07 06:19:25
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -43,10 +43,10 @@ CREATE TABLE `foodstuff` (
 --
 
 INSERT INTO `foodstuff` (`id`, `ingredient_name`, `ingredient_category_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`, `ingredient_image`) VALUES
-(1, 'アスパラガス', 3, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x412e706e67),
-(2, 'ベーコン', 1, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x422e706e67),
-(3, '大根', 3, '2024-01-11 12:20:49', '2024-01-11 12:20:49', NULL, 0, 0x442e706e67),
-(4, 'イカ', 2, '2024-01-16 10:49:29', '2024-01-16 10:49:29', NULL, 0, 0x494b412e706e67),
+(1, 'アスパラガス', 3, '2024-02-07 13:53:05', '2024-02-07 13:53:05', NULL, 0, 0x412e706e67),
+(2, 'ベーコン', 1, '2024-02-07 13:53:05', '2024-02-07 13:53:05', NULL, 0, 0x422e706e67),
+(3, '大根', 3, '2024-02-07 13:53:05', '2024-02-07 13:53:05', NULL, 0, 0x442e706e67),
+(4, 'イカ', 2, '2024-02-07 13:53:05', '2024-02-07 13:53:05', NULL, 0, 0x494b412e706e67),
 (5, '米', 4, '2024-01-16 10:50:20', '2024-01-16 10:50:20', NULL, 0, 0x4b4f4d452e706e67),
 (6, 'ウインナー', 1, '2024-01-22 10:46:29', '2024-01-22 10:46:29', NULL, 0, 0x55494e4e45522e706e67),
 (7, 'ハム', 1, '2024-01-22 10:46:29', '2024-01-22 10:46:29', NULL, 0, 0x48414d552e706e67),
@@ -179,7 +179,8 @@ INSERT INTO `foodstuff` (`id`, `ingredient_name`, `ingredient_category_id`, `cre
 (137, '牛乳', 4, '2024-01-29 11:09:52', '2024-01-29 11:09:52', NULL, 0, 0x4759554e59552e706e67),
 (138, 'ヨーグルト', 4, '2024-01-29 11:09:52', '2024-01-29 11:09:52', NULL, 0, 0x594f47552e706e67),
 (141, 'タコ', 2, '2024-01-29 13:56:12', '2024-01-29 13:56:12', NULL, 0, 0x4d4144414b4f2e706e67),
-(142, '白ネギ', 3, '2024-01-29 14:38:26', '2024-01-29 14:40:32', NULL, 0, 0x5349524f4e454749322e706e67);
+(142, '白ネギ', 3, '2024-01-29 14:38:26', '2024-01-29 14:40:32', NULL, 0, 0x5349524f4e454749322e706e67),
+(143, '生クリーム', 4, '2024-02-07 13:40:13', '2024-02-07 13:40:13', NULL, 0, 0x4b5552494d552e706e67);
 
 -- --------------------------------------------------------
 
@@ -300,10 +301,6 @@ CREATE TABLE `recipe` (
 --
 
 INSERT INTO `recipe` (`id`, `prefectures_id`, `recipe_name`, `recipe`, `cooking_time`, `create_date`, `update_date`, `delete_date`, `delete_flag`, `recipe_image`) VALUES
-(1, 0, 'アスパラベーコン', '巻いて焼く', 3, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x41422e706e67),
-(2, 0, '切り干し大根', '切って浸す', 9, '2024-01-11 12:37:08', '2024-01-11 12:37:08', NULL, 0, 0x4b442e706e67),
-(3, 1, 'イカ飯', '焼いて米を詰める', 10, '2024-01-16 10:53:46', '2024-01-16 10:53:46', NULL, 0, 0x494b414d4553492e706e67),
-(4, 0, '焼きベーコン', '2分焼く', 2, '2024-01-25 11:36:39', '2024-01-25 11:36:39', NULL, 0, 0x4242422e706e67),
 (5, 0, '炒飯', '1.米300gをお皿に移し粗熱を取り(触って表面がペタつかないぐらい)、醤油小さじ1、酒を小さじ1を混ぜておく\n2.白ねぎ3/1(小さめな白ねぎなら半分ぐらい)を粗みじん切りにして、卵2個をしっかりとく\n3.フライパンを温め、油大さじ2を入れてなじませる(もっとしっとりがいい方は、小さじ1追加して)\n卵を一気に入れ、半熟になるまでかき混ぜたら米を入れて、おたまで軽くほぐしながら炒める\n4.全体程よく黄色になるまで炒めてたら、白ねぎ、塩3g、味の素3gを入れて炒める(ここで味見をして物足りなかったら自分なりに調整して)\n混ぜておいた酒醤油を入れて炒める\n最後に白胡椒を少々入れて全体煽れば完成', 15, '2024-02-02 15:08:10', '2024-02-02 15:08:10', NULL, 0, 0x43484148414e2e706e67);
 
 -- --------------------------------------------------------
@@ -327,9 +324,6 @@ CREATE TABLE `recipe_genre` (
 --
 
 INSERT INTO `recipe_genre` (`id`, `recipe_id`, `genre_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
-(1, 1, 1, '2024-01-15 10:16:04', '2024-01-15 10:16:04', NULL, 0),
-(2, 2, 1, '2024-01-15 10:16:45', '2024-01-15 10:16:45', NULL, 0),
-(3, 3, 1, '2024-01-16 11:13:32', '2024-01-16 11:13:32', NULL, 0),
 (4, 5, 2, '2024-02-02 15:11:05', '2024-02-02 15:11:05', NULL, 0);
 
 -- --------------------------------------------------------
@@ -353,12 +347,6 @@ CREATE TABLE `recipe_ingredient` (
 --
 
 INSERT INTO `recipe_ingredient` (`id`, `recipe_id`, `ingredient_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
-(1, 1, 1, '2024-01-15 10:20:25', '2024-01-15 10:20:25', NULL, 0),
-(2, 1, 2, '2024-01-15 10:21:11', '2024-01-15 10:21:11', NULL, 0),
-(3, 2, 3, '2024-01-15 10:22:05', '2024-01-15 10:22:05', NULL, 0),
-(4, 3, 4, '2024-01-16 11:14:32', '2024-01-16 11:14:32', NULL, 0),
-(5, 3, 5, '2024-01-16 11:14:43', '2024-01-16 11:14:43', NULL, 0),
-(6, 4, 2, '2024-01-25 11:37:43', '2024-01-25 11:37:43', NULL, 0),
 (19, 5, 5, '2024-02-02 15:19:16', '2024-02-02 15:19:16', NULL, 0),
 (20, 5, 133, '2024-02-02 15:19:16', '2024-02-02 15:19:16', NULL, 0),
 (21, 5, 142, '2024-02-02 15:19:16', '2024-02-02 15:19:16', NULL, 0);
@@ -400,9 +388,6 @@ CREATE TABLE `recipe_taste` (
 --
 
 INSERT INTO `recipe_taste` (`id`, `recipe_id`, `taste_id`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
-(1, 1, 1, '2024-01-15 10:24:33', '2024-01-15 10:24:33', NULL, 0),
-(2, 2, 1, '2024-01-15 10:25:01', '2024-01-15 10:25:01', NULL, 0),
-(3, 3, 2, '2024-01-16 11:16:29', '2024-01-16 11:16:29', NULL, 0),
 (4, 5, 2, '2024-02-02 15:12:17', '2024-02-02 15:12:17', NULL, 0);
 
 -- --------------------------------------------------------
@@ -444,7 +429,8 @@ CREATE TABLE `subscription` (
 
 INSERT INTO `subscription` (`id`, `email`, `plan`, `use_start_date`, `use_end_date`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
 (1, '', '12', '2024-02-01', '2025-02-01', '2024-02-01', '2024-02-01 10:08:52', NULL, 0),
-(2, '', '6', '2025-02-01', '2025-05-01', '2024-02-01', '2024-02-01 15:40:01', NULL, 0);
+(2, '', '6', '2025-02-01', '2025-05-01', '2024-02-01', '2024-02-01 15:40:01', NULL, 0),
+(3, 'Amiki@gmail.com', '12', '2024-02-07', '2025-02-07', '2024-02-07', '2024-02-07 09:41:00', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -510,7 +496,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `password`, `create_date`, `update_date`, `delete_date`, `delete_flag`) VALUES
 (1, '', '', '2024-01-11 11:32:38', '2024-02-05 10:08:15', NULL, 0),
-(2, 'kkr2290007@stu.o-hara.ac.jp', 'ren20032525', '2024-01-17 12:15:29', '2024-01-17 12:15:29', NULL, 0);
+(2, 'kkr2290007@stu.o-hara.ac.jp', 'ren20032525', '2024-01-17 12:15:29', '2024-01-17 12:15:29', NULL, 0),
+(3, 'Amiki@gmail.com', 'otintin', '2024-02-05 11:28:52', '2024-02-05 11:28:52', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -658,7 +645,7 @@ ALTER TABLE `user_owned_coupon`
 -- テーブルの AUTO_INCREMENT `foodstuff`
 --
 ALTER TABLE `foodstuff`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=143;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=144;
 
 --
 -- テーブルの AUTO_INCREMENT `genre`
@@ -724,7 +711,7 @@ ALTER TABLE `seasoning`
 -- テーブルの AUTO_INCREMENT `subscription`
 --
 ALTER TABLE `subscription`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
 
 --
 -- テーブルの AUTO_INCREMENT `taste`
@@ -742,7 +729,7 @@ ALTER TABLE `url_holding`
 -- テーブルの AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id', AUTO_INCREMENT=4;
 
 --
 -- テーブルの AUTO_INCREMENT `user_owned_coupon`
@@ -798,3 +785,17 @@ ALTER TABLE `recipe_taste`
 -- テーブルの制約 `url_holding`
 --
 ALTER TABLE `url_holding`
+  ADD CONSTRAINT `url_holding_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `url_holding_ibfk_2` FOREIGN KEY (`email`) REFERENCES `user` (`email`) ON UPDATE CASCADE;
+
+--
+-- テーブルの制約 `user_owned_coupon`
+--
+ALTER TABLE `user_owned_coupon`
+  ADD CONSTRAINT `user_owned_coupon_ibfk_1` FOREIGN KEY (`coupon_id`) REFERENCES `m_coupon` (`id`),
+  ADD CONSTRAINT `user_owned_coupon_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
