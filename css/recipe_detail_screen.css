@@ -39,8 +39,8 @@ body{
     padding:  5px;
     border: 7px ridge RGB(255, 248,220);
     background-color: white;
-    width: 1350px;
-    height: 400px;
+    width: 1400px;
+    /* height: 500px; */
     font-size: 30px;
 }
 
