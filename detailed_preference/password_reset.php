@@ -7,6 +7,8 @@ $error = filter_input(INPUT_GET, 'error');
 $errormsg = '';
 if ($error == 1) {
     $errormsg = 'メールアドレスが違います。';
+} elseif ($error == 2){
+    $errormsg = '新しいパスワードと確認のパスワードが一致しません。';
 }
 ?>
 
@@ -28,7 +30,9 @@ if ($error == 1) {
                 <?php
                 if ($error == 1) {
                     echo "<FONT COLOR=RED>$errormsg</FONT><br/>";
-                } 
+                } elseif ($error == 2){
+                    echo "<FONT COLOR=RED>$errormsg</FONT><br/>";
+                }
                 ?>
                 <label for="email">メールアドレス入力</label>
                 <input type="email" name="email" id="email" placeholder="" required/>
