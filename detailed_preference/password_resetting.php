@@ -60,22 +60,6 @@ try {
         </form>
     </div>
 
-    <script>
-        // new_registrationのフォーム
-        var form = document.password_reset_process;
-        form.onsubmit = function() {
-            // エラーメッセージをクリアする
-            form.password.setCustomValidity("");
-            console.log(form.password.value);
-            console.log(form.retype_password.value);
-            // パスワードの一致確認
-            if (form.password.value != form.retype_password.value) {
-                // 一致していなかったら、エラーメッセージを表示する
-                form.retype_password.setCustomValidity("新しいパスワードと確認のパスワードが一致しません");
-                return false;
-            };
-        };
-    </script>
 
 </body>
 
