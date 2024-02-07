@@ -60,5 +60,5 @@ li{
 
 button{
     margin-left: 50%;
-    transform: translate(-700%, -2000%);
+    /* transform: translate(-700%, -2000%); */
 }

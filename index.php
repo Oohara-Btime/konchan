@@ -106,12 +106,12 @@
 
                     <div class="other-button">
                             <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
-                            <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/local_cuisine.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
+                            <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/local_cuisine.jpg" class="local_cuisine_button" alt="#" width="528" height="230"></button>
                     </div>
 
                 <div class="chat_bot-button">
                         <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/ダウンロード (2).jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
-                        <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/ガチャ.jpg" alt="#" width="528" height="230"></button>
+                        <button type="button" onclick="ingredientSpecification('gatya/gatya.php')"><img src="img/ガチャ.jpg" class="gatya-button" alt="#" width="528" height="230"></button>
                 </div>
             </section>
 
