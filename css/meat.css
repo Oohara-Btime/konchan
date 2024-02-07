@@ -1,9 +1,9 @@
-h1{
+h1 {
     text-align: center;
     font-size: 60px;
 }
 
-.next{
+.next {
     margin-top: 30%;
     margin-left: 56.35%;
     width: 8%;
@@ -11,14 +11,39 @@ h1{
     text-size-adjust: 30px;
 }
 
-.finish{
+.finish {
     margin-left: 25.04%;
     width: 8%;
     height: 55px;
     background-color: rgba(0, 0, 0, 0.555);
 }
 
-body{
+body {
     background-color: rgba(220, 20, 60, 0.157);
 }
 
+
+.ingredient-item {
+    margin: auto;
+    width: 200px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px rgba(153, 153, 153, 1.0);
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+}
+
+    .ingredient_name {
+        font-weight: bold;
+        margin: 4px auto;
+    
+}
+
+.ingredient-item:hover {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    box-shadow: unset;
+}

@@ -106,7 +106,7 @@
 
                     <div class="other-button">
                             <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
-                            <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/other.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
+                            <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/local_cuisine.jpg" class="local_cuisine.button" alt="#" width="528" height="230"></button>
                     </div>
 
                 <div class="chat_bot-button">
