@@ -7,9 +7,37 @@ button {
     margin-top: 2%;
 }
 
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    /* 適切な間隔を設定してください */
+}
 
-.foodimage {
-    margin-left: 830px;
+.food-image {
+    margin: auto;
+    width: 250px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px rgba(153, 153, 153, 1.0);
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer;
+
+    .title {
+        font-weight: bold;
+        margin: 4px auto;
+    }
+}
+
+.food-image:hover {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    box-shadow: unset;
 }
 
 h1 {
@@ -26,3 +54,4 @@ h1 {
     margin-left: 42%;
     margin-top: 20%;
 }
+

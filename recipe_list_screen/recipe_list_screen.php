@@ -70,31 +70,35 @@ try {
     <?php
         if ($stmt && $stmt->rowCount() > 0) {
     ?>
-        <h1>画像を押してレシピを表示！</h1>
-    <?php
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $recipe = $row['recipe_image'];
-                $recipe_id = $row['recipe_id'];
-                $recipe_name = $row['recipe_name'];
-    ?>
-        <div class="r_name">
-            <h3>
-                <?php
-                    echo $recipe_name;
-                ?>
-            </h3>
-        </div>
-        <form action="recipe_detail_screen.php" method="post">
-            <!-- <input type="text" name="recipe_id" src=<?php echo ("../img/" . $recipe); ?> alt="画像なし" value="<?php echo ($recipe_id); ?>"> -->
-            <div class="foodimage">
-                <input type="image" src=<?php echo ("../img/" . $recipe); ?> width="250px" height="250px">
-                <input type="hidden" name="recipe_id" alt="画像なし" value="<?php echo ($recipe_id); ?>">
-                </input>
-                </input>
-            </div>
+    <h1>レシピ一覧</h1>
+    <div class="recipe-container">
+        <?php
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $recipe = $row['recipe_image'];
+                    $recipe_id = $row['recipe_id'];
+                    $recipe_name = $row['recipe_name'];
+        ?>
+
+        <form name="form<?php echo $recipe_id ?>" action="recipe_detail_screen.php" method="post">
+            <a onclick="document.form<?php echo $recipe_id ?>.submit()">
+                <div class="food-image">
+                    <div class="r_name">
+                        <h3>
+                            <?php
+                                echo $recipe_name;
+                            ?>
+                        </h3>
+                    </div>
+                    <img src=<?php echo ("../img/" . $recipe); ?> width="250px" height="250px"/>
+                    <input type="hidden" name="recipe_id" alt="画像なし" value="<?php echo ($recipe_id); ?>"/>
+                </div>
+            </a>
         </form>
     <?php
         }
+    ?>
+    </div>
+    <?php
     } else {
     ?>
         <h1 class="error">検索結果がありません。</h1>;
