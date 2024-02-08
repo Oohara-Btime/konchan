@@ -1,18 +1,18 @@
 <?php
-include("../const.php");
-session_start();
+    include("../const.php");
+    session_start();
 
-try {
-    $db = new PDO(DSN, DB_USER, '');
-    $stmt = $db->prepare('SELECT * FROM taste');
+    try {
+        $db = new PDO(DSN, DB_USER, '');
+        $stmt = $db->prepare('SELECT * FROM taste');
 
-    // SQL実行
-    $stmt->execute();
-} catch (PDOException $e) {
-    echo "接続に失敗しました。";
-    echo $e->getMessage();
-    exit;
-}
+        // SQL実行
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "接続に失敗しました。";
+        echo $e->getMessage();
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +27,7 @@ try {
     <body>
         <!-- <h1>今日はどのような味のものが食べたいですか？</h1> -->
         <div class="cont-input">
-            <p>
-                どんな感じ食事が良いですか？
-            </p>
+            <p>どんな感じ食事が良いですか？</p>
             <!-- <h4>I hope you enjoyed it</h4>   -->
             <form action="chatbot2.php" method="post">
                 <ul>
@@ -37,6 +35,7 @@ try {
                     // 取得したデータを出力
                     foreach ($stmt as $row) {
                     ?>
+                    <div class="chatbot_list">
                         <li>
                             <input type="radio" name="taste_id" value="<?php echo $row['id'] ?>">
                             <label><?php echo $row['taste_name'] ?>の料理</label>
@@ -51,6 +50,7 @@ try {
                                 <div class="line seven"></div>
                             </div>
                         </li>
+                    </div>
                     <?php
                     }
                     ?>
@@ -61,7 +61,7 @@ try {
                     <div class="circle_number">2</div>
                     <div class="circle_number">3</div>
                 </div>
-                <button type="submit" class="next">次へ</button>
+                <button type="submit" class="next">next</button>
             </form>
         </div>
     </body>
