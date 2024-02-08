@@ -1,21 +1,21 @@
 <?php
-include("../const.php");
-session_start();
+    include("../const.php");
+    session_start();
 
-$foodstuff_id_list = filter_input(INPUT_POST, 'foodstuff_id_list', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
-$vegetable_list = [];
+    $foodstuff_id_list = filter_input(INPUT_POST, 'foodstuff_id_list', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+    $vegetable_list = [];
 
-try {
-    $db = new PDO(DSN, DB_USER, '');
-    $stmt = $db->prepare('SELECT * FROM foodstuff WHERE ingredient_category_id = 3');
+    try {
+        $db = new PDO(DSN, DB_USER, '');
+        $stmt = $db->prepare('SELECT * FROM foodstuff WHERE ingredient_category_id = 3');
 
-    // SQL実行
-    $stmt->execute();
-} catch (PDOException $e) {
-    echo "接続に失敗しました。";
-    echo $e->getMessage();
-    exit;
-}
+        // SQL実行
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "接続に失敗しました。";
+        echo $e->getMessage();
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,6 @@ try {
 
     <body>
         <h1>野菜</h1>
-
         <form action="../index.php" method="post">
             <div class="ingredient-container">
                 <?php foreach ($stmt as $row): ?>

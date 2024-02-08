@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/gty.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/gty.css">
+    </head>
 
 <body>
     <!-- <form><input type="button" id="start" class="btn-circle-fishy" value="ガチャ" onClick="random()">
@@ -34,9 +33,10 @@
     <div id="overlay1"></div>
 
     <div id="popup1">
-        <h2>今日の郷土料理</h2>
-        <span id="gty">表示場所</span>
-        <p><button type="button" class="home" onclick="location.href='../index.php'">ホームへ</button></p>
+        <h2>表示された郷土料理を作ってみよう</h2>
+        <p><span id="gty">表示場所</span></p>
+        <button type="button" class="home" onclick="location.href='../localCuisine/local_cuisine.php'">郷土料理検索へ</button>
+        <button type="button" class="home" onclick="location.href='../index.php'">ホームへ</button>
     </div>
 </body>
 
