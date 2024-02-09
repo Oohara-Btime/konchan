@@ -16,7 +16,7 @@
         <div class="container">
             <div class="radio-tile-group">
                 <div class="input-container">
-                    <input id="walk" class="radio-button" type="radio" name="radio" value="1" />
+                    <input id="walk" class="radio-button" type="radio" name="radio" value="1" onclick="radio1(this.checked);" />
                     <div class="radio-tile">
                         <!-- <div class="icon walk-icon">
                         <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="input-container">
-                    <input id="bike" class="radio-button" type="radio" name="radio" value="3"/>
+                    <input id="bike" class="radio-button" type="radio" name="radio" value="3" onclick="radio3(this.checked);" />
                     <div class="radio-tile">
                         <!-- <div class="icon bike-icon">
                         <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="input-container">
-                    <input id="drive" class="radio-button" type="radio" name="radio" value="6"/>
+                    <input id="drive" class="radio-button" type="radio" name="radio" value="6" onclick="radio6(this.checked);" />
                     <div class="radio-tile">
                         <!-- <div class="icon car-icon">
                         <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="input-container">
-                    <input id="fly" class="radio-button" type="radio" name="radio" value="12"/>
+                    <input id="fly" class="radio-button" type="radio" name="radio" value="12" onclick="radio12(this.checked);" />
                     <div class="radio-tile">
                         <!-- <div class="icon fly-icon">
                         <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24"
@@ -100,11 +100,45 @@
         </div>
 
         <div class="button">
-            <button type="submit" name="sumbit" id="submit" class="registration">登録する</button><br>
+            <button type="submit" name="sumbit" id="submit" class="registration" disabled="disabled">登録する</button><br>
             <button type="button" onclick="location.href='../index.php'" class="cancel">キャンセル</button>
         </div>
 
         <script src="menu_bar.js"></script>
+
+        <script>
+            function radio1(ischecked) {
+                if (ischecked == true) {
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+
+            function radio3(ischecked) {
+                if (ischecked == true) {
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+
+            function radio6(ischecked) {
+                if (ischecked == true) {
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+
+            function radio12(ischecked) {
+                if (ischecked == true) {
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("submit").disabled = true;
+                }
+            }
+        </script>
 
     </form>
 </body>
