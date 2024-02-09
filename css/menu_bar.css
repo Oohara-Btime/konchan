@@ -145,6 +145,24 @@ span {
     font-family: 'Open Sans';
     text-align: center;
     cursor: pointer;
+
+    display: none;
+}
+
+.nav_list li a{
+    /* padding-left: 90px; */
+    padding-top: 18px;
+    font-size: 15px;
+    /* line-height: 30px; */
+    /* word-break: break-all; */
+    font-family: 'Open Sans';
+    margin-top: 1px;
+    background-color: white; /*黄色*/
+    display: block;
+}
+
+.nav_list.display {
+    display: block;
 }
 
 .nav_list.reveal:hover{

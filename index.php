@@ -52,7 +52,7 @@
             <section>
                 <input id="drawer_input" class="drawer_hidden" type="checkbox">
                 <div class="menu">
-                    <a href="#" class="burger on">
+                    <a href="#" class="burger">
                         <label for="drawer_input"><span class="bar bun-top"></span></label>
                         <label for="drawer_input"><span class="bar lettuce"></span></label>
                         <label for="drawer_input"><span class="bar mustard"></span></label>
@@ -63,7 +63,7 @@
                 </div>
                 <nav class="nav_content">
                     <ul class="nav_list">
-                        <li class="nav_item1"><a href="" onclick="ingredientSpecification('index.html'); return false">⌂ホーム</a></li>
+                        <li class="nav_item1"><a href="" onclick="ingredientSpecification('index.php'); return false">⌂ホーム</a></li>
                         <li class="nav_item2"><a href="">🔎検索</a></li>
                         <li class="nav_item3"><a href="" onclick="ingredientSpecification('ingredient_specified_search/meat.php'); return false">🥩肉</a></li>
                         <li class="nav_item3"><a href="" onclick="ingredientSpecification('ingredient_specified_search/fish.php'); return false">🐟魚</a></li>
