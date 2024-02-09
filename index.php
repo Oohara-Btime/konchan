@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="chat_bot-button">
-                    <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/ダウンロード (2).jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
+                    <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/chef2.jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
                     <button type="button" onclick="ingredientSpecification('gatya/gatya.php')"><img src="img/ガチャ.jpg" class="gatya-button" alt="#" width="528" height="230"></button>
                 </div>
             </section>
