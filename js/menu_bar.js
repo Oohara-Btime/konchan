@@ -104,3 +104,13 @@ $(document).ready(function(){
         
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.burger');
+    const navMenu = document.querySelector('.nav_list');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('display');
+    });
+});
+
