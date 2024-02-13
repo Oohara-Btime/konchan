@@ -53,7 +53,7 @@ button:active {
 .ingredient-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 70px; /* 適切な間隔を設定してください */
+    gap: 47.5px; /* 適切な間隔を設定してください */
 }
 
 .vegetable-item {

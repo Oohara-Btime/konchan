@@ -58,7 +58,7 @@ button:active {
 
 .ingredient-item {
     text-align: center;
-    width: 250px; /* 要素の横幅を調整してください */
+    width: 246px; /* 要素の横幅を調整してください */
     margin-bottom: 10px; /* 要素の下部のマージンを設定してください */
 }
 
