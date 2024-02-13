@@ -2,15 +2,42 @@ body{
     background-color: cornsilk;
 }
 
-button {
-    margin-left: 48%;
-    margin-top: 2%;
+button{
+    margin-left: 25%;
+    width: 8%;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.555);
+
+    /* フォント関連のスタイル */
+    font-size: 22px;
+    /* サイズを大きくする */
+    font-weight: bold;
+    /* ボタンの色と背景色 */
+    color: #ffffff;
+    background-color: black;
+    /* ボタンを中央に配置する */
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+/* マウスホバー時のスタイル */
+button:hover {
+    background-color: #2980b9;
+    border-color: #3498db;
+}
+
+/* アクティブ（クリック時）のスタイル */
+button:active {
+    background-color: #1f618d;
+    border-color: #2874a6;
 }
 
 .recipe-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: 47.5px;
     /* 適切な間隔を設定してください */
 }
 
@@ -41,17 +68,19 @@ button {
 }
 
 h1 {
-    margin-left: 750px;
-}
-
-.r_name {
-    width: 50%;
-    margin: auto;
+    font-size: 50px;
     text-align: center;
 }
 
+.r_name {
+    text-align: center;
+    white-space: nowrap;
+}
+
 .error{
-    margin-left: 42%;
+    margin-left: 37.5%;
     margin-top: 20%;
+    display: flex;
+    text-align: center;
 }
 

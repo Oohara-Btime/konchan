@@ -58,7 +58,40 @@ li{
     margin-left: 12%;
 }
 
+
 button{
-    margin-left: 50%;
-    /* transform: translate(-700%, -2000%); */
+    margin-left: 25%;
+    width: 8%;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.555);
+
+    /* フォント関連のスタイル */
+    font-size: 22px;
+    /* サイズを大きくする */
+    font-weight: bold;
+    /* ボタンの色と背景色 */
+    color: #ffffff;
+    background-color: black;
+    /* ボタンを中央に配置する */
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
+
+/* マウスホバー時のスタイル */
+button:hover {
+    background-color: #2980b9;
+    border-color: #3498db;
+}
+
+/* アクティブ（クリック時）のスタイル */
+button:active {
+    background-color: #1f618d;
+    border-color: #2874a6;
+}
+
+/* button{
+    margin-left: 50%;
+    transform: translate(-700%, -2000%);
+} */
