@@ -5,249 +5,89 @@
     <meta charset="UTF-8">
     <title>無題ドキュメント</title>
     <link href="../css/local_cuisine.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/menu_bar.css">
+    <link rel="stylesheet" href="../css/top.css">
+    <link rel="stylesheet" href="../css/au.css">
+    <link rel="stylesheet" href="../css/checkbox.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
 </head>
 
 <body>
-    <!-- 北海道 -->
+    <header id="header">
+        <div class="inner">
+            <p class=logo>こんちゃん</p>
+        </div>
+        <div class="input-keyword">
+            <form method="post" action="../recipe_list_screen/recipe_list_screen.php" class="search_container">
+                <input type="text" name="keyword" size="60" placeholder="キーワード検索">
+                <input type="submit" value="&#xf002">
+            </form>
+        </div>
+    </header>
+
+    <section>
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+        <div class="menu">
+            <a href="#" class="burger">
+                <label for="drawer_input"><span class="bar bun-top"></span></label>
+                <label for="drawer_input"><span class="bar lettuce"></span></label>
+                <label for="drawer_input"><span class="bar mustard"></span></label>
+                <label for="drawer_input"><span class="bar ketchup"></span></label>
+                <label for="drawer_input"><span class="bar patty"></span></label>
+                <label for="drawer_input"><span class="bar bun-bot"></span></label>
+            </a>
+        </div>
+        <nav class="nav_content">
+            <ul class="nav_list">
+                <li class="nav_item1"><a href="../index.php" onclick="ingredientSpecification('../index.php'); return false">⌂ホーム</a></li>
+                <li class="nav_item2"><a href="">🔎検索</a></li>
+                <li class="nav_item3"><a href="../ingredient_specified_search/meat.php" onclick="ingredientSpecification('../ingredient_specified_search/meat.php'); return false">🥩肉</a></li>
+                <li class="nav_item3"><a href="../ingredient_specified_search/fish.php" onclick="ingredientSpecification('../ingredient_specified_search/fish.php'); return false">🐟魚</a></li>
+                <li class="nav_item3"><a href="../ingredient_specified_search/vegetable.php" onclick="ingredientSpecification('../ingredient_specified_search/vegetable.php'); return false">🥬野菜</a></li>
+                <li class="nav_item3"><a href="../ingredient_specified_search/other.php" onclick="ingredientSpecification('../ingredient_specified_search/other.php'); return false">☣その他</a></li>
+                <li class="nav_item4"><a href="localCuisine/local_cuisine.php" onclick="ingredientSpecification('localCuisine/local_cuisine.php'); return false">郷土料理</a></li>
+            </ul>
+            <select class="old-select">
+                <option value="../detailed_preference/login-input">新規登録</option>
+                <option value="../detailed_preference/subscription_registration">有料会員登録</option>
+                <option value="../detailed_preference/login-input">ログイン</option>
+                <option value="../detailed_preference/email_address_changing">メールアドレス変更</option>
+                <!-- <option value="detailed_preference/password_changing">パスワード変更</option> -->
+                <!-- <option value="detailed_preference/password_resetting">パスワード再設定</option> -->
+                <option value="../detailed_preference/password_reset">パスワードリセット</option>
+                <option value="../detailed_preference/logout-input">ログアウト</option>
+                <option value="../detailed_preference/unsubscribe">退会</option>
+                <option value="../index" selected>⚙️詳細設定</option>
+            </select>
+
+            <!-- Bouton Select reconstruit -->
+            <div class="new-select">
+                <div class="selection">
+                    <p>
+                        <span></span>
+                        <i></i>
+                    </p>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </section>
     <script>
-        function togglePopup1(prefectures_id) {
+        var form = document.ingredientSpecificationForm;
+
+        function ingredientSpecification(page) {
+            form.action = page;
+            form.submit();
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/menu_bar.js"></script>
+
+    <script>
+        function togglePopup(prefectures_id) {
             document.map.prefectures_id.value = prefectures_id;
             document.map.submit();
         }
-
-        function togglePopup2(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup3(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup4(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup5(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup6(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup7(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup8(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup9(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup10(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup11(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup12(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup13(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup14(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup15(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup16(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup17(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup18(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup19(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup20(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup21(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup22(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup23(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup24(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup25(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup26(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup27(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup28(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup29(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup30(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup31(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup32(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup33(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup34(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup35(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup36(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup37(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup38(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup39(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup40(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup41(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup42(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup43(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup44(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup45(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup46(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        function togglePopup47(prefectures_id) {
-            document.map.prefectures_id.value = prefectures_id;
-            document.map.submit();
-        }
-
-        
-
     </script>
 
 
@@ -259,35 +99,35 @@
             <div id="hokkaido-touhoku" class="clearfix">
                 <p class="area-title">北海道・東北</p>
                 <div class="area">
-                    <div id="hokkaido" onclick="togglePopup1(1)">
+                    <div id="hokkaido" onclick="togglePopup(1)">
                         <p>北海道</p>
                     </div>
 
 
-                    <div id="aomori" onclick="togglePopup2(2)">
+                    <div id="aomori" onclick="togglePopup(2)">
                         <p>青森</p>
                     </div>
 
 
-                    <div id="akita" onclick="togglePopup3(3)">
+                    <div id="akita" onclick="togglePopup(3)">
                         <p>秋田</p>
                     </div>
 
 
-                    <div id="iwate" onclick="togglePopup4(4)">
+                    <div id="iwate" onclick="togglePopup(4)">
                         <p>岩手</p>
                     </div>
 
-                    <div id="yamagata" onclick="togglePopup5(5)">
+                    <div id="yamagata" onclick="togglePopup(5)">
                         <p>山形</p>
                     </div>
 
-                    <div id="miyagi" onclick="togglePopup6(6)">
+                    <div id="miyagi" onclick="togglePopup(6)">
                         <p>宮城</p>
                     </div>
 
 
-                    <div id="fukushima" onclick="togglePopup7(7)">
+                    <div id="fukushima" onclick="togglePopup(7)">
                         <p>福島</p>
                     </div>
 
@@ -298,34 +138,34 @@
                 <p class="area-title">関東</p>
                 <div class="area">
 
-                    <div id="gunma" onclick="togglePopup8(8)">
+                    <div id="gunma" onclick="togglePopup(8)">
                         <p>群馬</p>
                     </div>
 
 
-                    <div id="tochigi" onclick="togglePopup9(9)">
+                    <div id="tochigi" onclick="togglePopup(9)">
                         <p>栃木</p>
                     </div>
 
 
-                    <div id="ibaraki" onclick="togglePopup10(10)">
+                    <div id="ibaraki" onclick="togglePopup(10)">
                         <p>茨城</p>
                     </div>
 
 
-                    <div id="saitama" onclick="togglePopup11(11)">
+                    <div id="saitama" onclick="togglePopup(11)">
                         <p>埼玉</p>
                     </div>
 
-                    <div id="chiba" onclick="togglePopup12(12)">
+                    <div id="chiba" onclick="togglePopup(12)">
                         <p>千葉</p>
                     </div>
 
-                    <div id="tokyo" onclick="togglePopup13(13)">
+                    <div id="tokyo" onclick="togglePopup(13)">
                         <p>東京</p>
                     </div>
 
-                    <div id="kanagawa" onclick="togglePopup14(14)">
+                    <div id="kanagawa" onclick="togglePopup(14)">
                         <p>神奈川</p>
                     </div>
 
@@ -336,40 +176,40 @@
                 <p class="area-title">中部</p>
                 <div class="area">
 
-                    <div id="nigata" onclick="togglePopup15(15)">
+                    <div id="nigata" onclick="togglePopup(15)">
                         <p>新潟</p>
                     </div>
 
 
-                    <div id="toyama" onclick="togglePopup16(16)">
+                    <div id="toyama" onclick="togglePopup(16)">
                         <p>富山</p>
                     </div>
 
-                    <div id="ishikawa" onclick="togglePopup17(17)">
+                    <div id="ishikawa" onclick="togglePopup(17)">
                         <p>石川</p>
                     </div>
 
-                    <div id="fukui" onclick="togglePopup18(18)">
+                    <div id="fukui" onclick="togglePopup(18)">
                         <p>福井</p>
                     </div>
 
-                    <div id="nagano" onclick="togglePopup19(19)">
+                    <div id="nagano" onclick="togglePopup(19)">
                         <p>長野</p>
                     </div>
 
-                    <div id="gifu" onclick="togglePopup20(20)">
+                    <div id="gifu" onclick="togglePopup(20)">
                         <p>岐阜</p>
                     </div>
 
-                    <div id="yamanashi" onclick="togglePopup21(21)">
+                    <div id="yamanashi" onclick="togglePopup(21)">
                         <p>山梨</p>
                     </div>
 
-                    <div id="aichi" onclick="togglePopup22(22)">
+                    <div id="aichi" onclick="togglePopup(22)">
                         <p>愛知</p>
                     </div>
 
-                    <div id="shizuoka" onclick="togglePopup23(23)">
+                    <div id="shizuoka" onclick="togglePopup(23)">
                         <p>静岡</p>
                     </div>
 
@@ -380,31 +220,31 @@
                 <p class="area-title">近畿</p>
                 <div class="area">
 
-                    <div id="kyoto" onclick="togglePopup24(24)">
+                    <div id="kyoto" onclick="togglePopup(24)">
                         <p>京都</p>
                     </div>
 
-                    <div id="shiga" onclick="togglePopup25(25)">
+                    <div id="shiga" onclick="togglePopup(25)">
                         <p>滋賀</p>
                     </div>
 
-                    <div id="osaka" onclick="togglePopup26(26)">
+                    <div id="osaka" onclick="togglePopup(26)">
                         <p>大阪</p>
                     </div>
 
-                    <div id="nara" onclick="togglePopup27(27)">
+                    <div id="nara" onclick="togglePopup(27)">
                         <p>奈良</p>
                     </div>
 
-                    <div id="mie" onclick="togglePopup28(28)">
+                    <div id="mie" onclick="togglePopup(28)">
                         <p>三重</p>
                     </div>
 
-                    <div id="wakayama" onclick="togglePopup29(29)">
+                    <div id="wakayama" onclick="togglePopup(29)">
                         <p>和歌山</p>
                     </div>
 
-                    <div id="hyougo" onclick="togglePopup30(30)">
+                    <div id="hyougo" onclick="togglePopup(30)">
                         <p>兵庫</p>
                     </div>
 
@@ -415,24 +255,24 @@
                 <p class="area-title">中国</p>
                 <div class="area">
 
-                    <div id="tottori" onclick="togglePopup31(31)">
+                    <div id="tottori" onclick="togglePopup(31)">
                         <p>鳥取</p>
                     </div>
 
-                    <div id="okayama" onclick="togglePopup32(32)">
+                    <div id="okayama" onclick="togglePopup(32)">
                         <p>岡山</p>
                     </div>
 
-                    <div id="shimane" onclick="togglePopup33(33)">
+                    <div id="shimane" onclick="togglePopup(33)">
                         <p>島根</p>
                     </div>
 
-                    <div id="hiroshima" onclick="togglePopup34(34)">
+                    <div id="hiroshima" onclick="togglePopup(34)">
                         <p>広島</p>
                     </div>
 
 
-                    <div id="yamaguchi" onclick="togglePopup35(35)">
+                    <div id="yamaguchi" onclick="togglePopup(35)">
                         <p>山口</p>
                     </div>
 
@@ -443,19 +283,19 @@
                 <p class="area-title">四国</p>
                 <div class="area">
 
-                    <div id="kagawa" onclick="togglePopup36(36)">
+                    <div id="kagawa" onclick="togglePopup(36)">
                         <p>香川</p>
                     </div>
 
-                    <div id="ehime" onclick="togglePopup37(37)">
+                    <div id="ehime" onclick="togglePopup(37)">
                         <p>愛媛</p>
                     </div>
 
-                    <div id="tokushima" onclick="togglePopup38(38)">
+                    <div id="tokushima" onclick="togglePopup(38)">
                         <p>徳島</p>
                     </div>
 
-                    <div id="kouchi" onclick="togglePopup39(39)">
+                    <div id="kouchi" onclick="togglePopup(39)">
                         <p>高知</p>
                     </div>
 
@@ -466,35 +306,35 @@
                 <p class="area-title">九州・沖縄</p>
                 <div class="area">
 
-                    <div id="fukuoka" onclick="togglePopup40(40)">
+                    <div id="fukuoka" onclick="togglePopup(40)">
                         <p>福岡</p>
                     </div>
 
-                    <div id="saga" onclick="togglePopup41(41)">
+                    <div id="saga" onclick="togglePopup(41)">
                         <p>佐賀</p>
                     </div>
 
-                    <div id="nagasaki" onclick="togglePopup42(42)">
+                    <div id="nagasaki" onclick="togglePopup(42)">
                         <p>長崎</p>
                     </div>
 
-                    <div id="oita" onclick="togglePopup43(43)">
+                    <div id="oita" onclick="togglePopup(43)">
                         <p>大分</p>
                     </div>
 
-                    <div id="kumamoto" onclick="togglePopup44(44)">
+                    <div id="kumamoto" onclick="togglePopup(44)">
                         <p>熊本</p>
                     </div>
 
-                    <div id="miyazaki" onclick="togglePopup45(45)">
+                    <div id="miyazaki" onclick="togglePopup(45)">
                         <p>宮崎</p>
                     </div>
 
-                    <div id="kagoshima" onclick="togglePopup46(46)">
+                    <div id="kagoshima" onclick="togglePopup(46)">
                         <p>鹿児島</p>
                     </div>
 
-                    <div id="okinawa" onclick="togglePopup47(47)">
+                    <div id="okinawa" onclick="togglePopup(47)">
                         <p>沖縄</p>
                     </div>
 
