@@ -99,18 +99,18 @@
 
             <section>
                 <div class="food-button">
-                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/meat.php')"><img src="img/meat.jpg" class="meat_button" alt="#" width="350" height="300"></button>
-                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/fish.php')"><img src="img/fish.jpg" class="fish_button" alt="#" width="350" height="300"></button>
-                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/vegetable.php')"><img src="img/vegetable.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
+                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/meat.php')"><img src="img/meat2.jpg" class="meat_button" alt="#" width="350" height="300"></button>
+                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/fish.php')"><img src="img/fish2.jpg" class="fish_button" alt="#" width="350" height="300"></button>
+                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/vegetable.php')"><img src="img/vegetable2.jpg" class="vegetable_button" alt="#" width="350" height="300"></button>
                 </div>
 
                 <div class="other-button">
-                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/other.jpg" class="other_button" alt="#" width="528" height="230"></button>
-                    <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/local_cuisine.jpg" class="local_cuisine_button" alt="#" width="528" height="230"></button>
+                    <button type="button" onclick="ingredientSpecification('ingredient_specified_search/other.php')"><img src="img/other2.jpg" class="other_button" alt="#" width="528" height="230"></button>
+                    <button type="button" onclick="ingredientSpecification('localCuisine/local_cuisine.php')"><img src="img/local_cuisine2.jpg" class="local_cuisine_button" alt="#" width="528" height="230"></button>
                 </div>
 
                 <div class="chat_bot-button">
-                    <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/chef2.jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
+                    <button type="button" onclick="ingredientSpecification('chatbot/chatbot1.php')"><img src="img/chatbot2.jpg" class="chatbot_button" alt="#" width="528" height="230"></button>
                     <button type="button" onclick="ingredientSpecification('gatya/gatya.php')"><img src="img/ガチャ.jpg" class="gatya-button" alt="#" width="528" height="230"></button>
                 </div>
             </section>
