@@ -380,12 +380,45 @@
         }
     }
 
-    .next {
+    .next{
         margin-left: 80%;
         margin-top: 10%;
         padding: 1%;
         width: 10%;
+        background-color: rgba(0, 0, 0, 0.555);
+    
+        /* フォント関連のスタイル */
+        font-size: 22px;
+        /* サイズを大きくする */
+        font-weight: bold;
+        /* ボタンの色と背景色 */
+        color: #000000;
+        background-color: black;
+        /* ボタンを中央に配置する */
+        display: block;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 20px;
     }
+    
+    /* マウスホバー時のスタイル */
+    button:hover {
+        background-color: #2980b9;
+        border-color: #3498db;
+    }
+    
+    /* アクティブ（クリック時）のスタイル */
+    button:active {
+        background-color: #1f618d;
+        border-color: #2874a6;
+    }
+
+    /* .next {
+        margin-left: 80%;
+        margin-top: 10%;
+        padding: 1%;
+        width: 10%;
+    } */
 
     .circle_number {
         width: 50px;
@@ -418,7 +451,7 @@
     }
 
     body {
-        background: khaki;
+        background: rgba(255, 0, 242, 0.158);
         font-family: 'Roboto';
         font-weight: 500;
         text-transform: uppercase;
